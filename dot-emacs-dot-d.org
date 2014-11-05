@@ -1,0 +1,168 @@
+Emacs is by far the most important application I use to develop. It is also the
+most fun to configure application I use, period. That means configuring it can
+be a daunting task. This document is my attempt to create an Emacs setup that
+is comprehensive and easy to extend. To this end, I've made it a literate Org
+file, which means it is organized, easy to modify, and easily convertible to
+web page. It is also version controlled.
+
+Now, for some code.
+
+* Bootstrap.
+  
+  To load various packages and initialize them succinctly, I use =quelpa= and
+  =use-package=. =quelpa= builds packages from source so I can stay on the
+  bleeding edge. =use-package= loads and initializes the packages in a compact
+  and readable macro. Unfortunately, one cannot load those packages using
+  them. Fortunately, the bootstrapping process is relatively painless.
+  
+  The =quelpa= bootstrap snippet comes straight from the project's GitHub
+  page. I use the non-auto-updating version.
+  
+  #+NAME: quelpa
+  #+BEGIN_SRC emacs-lisp
+    (package-initialize)
+    (unless (require 'quelpa nil t)
+      (with-temp-buffer
+        (url-insert-file-contents
+         "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
+        (eval-buffer)))
+  #+END_SRC
+  
+  Because of the last snippet, =use-package= can be downloaded using the
+  =quelpa= function, but it must be loaded manually. (Manually being a
+  one-liner. :-)
+  
+  #+NAME: use-package
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'use-package)
+    (require 'use-package)
+  #+END_SRC
+  
+* Improve Emacs' interface.
+  
+  Vanilla Emacs is usable, but not usable enough to allow me to be
+  productive. A few small packages allow me to actually function in the editor.
+  
+  Phil Hagelberg's =better-defaults= is a good start, including several
+  one-line configuration options and usability rebinds.
+  
+  #+NAME: better-defaults
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'better-defaults)
+    (use-package better-defaults)
+  #+END_SRC
+  
+  Exposing Emacs' multi-branch undo and redo feature graphically is
+  fantastically useful. Tony Cubitt's =undo-tree-mode= does just that.
+  
+  #+NAME: undo-tree
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'undo-tree)
+    (use-package undo-tree
+      :init (global-undo-tree-mode))
+  #+END_SRC
+  
+  Donald Ephraim Curtis had made a great port of Vim Powerline. It is helpful
+  for keeping track of location in a file, and it looks pretty.
+  
+  #+NAME: powerline
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'powerline)
+    (use-package powerline
+      :init (powerline-default-theme))
+  #+END_SRC
+  
+  I have used many themes for Emacs during my time using it. I tend to come
+  back to kuanyui's =moe-theme= due to its amount of contrast and variety of
+  faces.
+  
+  #+NAME: moe-theme
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'moe-theme)
+    (use-package moe-theme
+      :init (load-theme 'moe-dark t))
+  #+END_SRC
+  
+  I'm a lazy Lisper, so I have never taken the time to learn =paredit=
+  properly. Matus Goljer has created a =smartparens= package that makes many
+  paren-editing commands automatic.
+  
+  #+NAME: smartparens
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'smartparens)
+    (use-package smartparens
+      :init (smartparens-global-mode))
+  #+END_SRC
+  
+* Manage projects.
+  
+  One-off-file hacking is great, but most of what I do is done in the context
+  of a project, often one too big to fit inside my head. The following packages
+  integrate tools that do the legwork of project management with Emacs.
+  
+  Bozhidar Batsov's =projectile= is an all-inclusive project management
+  navigator and indexer for Emacs. The indexing it does is especially useful,
+  letting you grep an entire project with a simple key chord.
+  
+  #+NAME: projectile
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'projectile)
+    (use-package projectile
+      :init (projectile-global-mode))
+  #+END_SRC
+  
+  Git is the modern king of version control. The Magit project turns Emacs into
+  an extremely powerful interface to it. I find that key chords are much more
+  efficient than terminal commands after a few days' practice.
+  
+  #+NAME: magit
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'magit)
+    (use-package magit)
+  #+END_SRC
+  
+* Complete symbols.
+  
+  It's nearly impossible to work with large projects or avoid misspellings
+  without a good, always-accessible completion framework. The Emacs community
+  is split between using Company and Auto-Complete. I've used Auto-Complete for
+  quite a while and have no pressing reason to switch. Its initialization is
+  rather simple; Sources are initialized later with the modes they are
+  associated with.
+  
+  #+NAME: auto-complete
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'auto-complete)
+    (use-package auto-complete
+      :init (progn (require 'auto-complete-config)
+                   (ac-config-default)))
+  #+END_SRC
+  
+* Tangle source code.
+  
+  All files get tangled to =tangled=, which is a subdirectory of the directory
+  that this file is in.
+  
+** =init.el=
+   
+   #+BEGIN_SRC emacs-lisp :noweb no-export :mkdirp yes :tangle tangled/init.el
+     <<quelpa>>
+
+     <<use-package>>
+
+     <<better-defaults>>
+
+     <<undo-tree>>
+
+     <<powerline>>
+
+     <<moe-theme>>
+
+     <<smartparens>>
+
+     <<projectile>>
+
+     <<magit>>
+
+     <<auto-complete>>
+   #+END_SRC
