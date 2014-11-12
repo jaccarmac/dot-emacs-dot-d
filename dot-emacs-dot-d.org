@@ -137,6 +137,34 @@ Now, for some code.
       :init (progn (require 'auto-complete-config)
                    (ac-config-default)))
   #+END_SRC
+
+* Clojure.
+
+  Clojure is a fantastic Lisp that gives me access to the JVM without having to
+  deal with Java.
+
+  CIDER is, in my opinion, the best way to edit Clojure in Emacs, bar
+  none. Loading is done in the standard quelpa way; The configuration options
+  are taken from CIDER's GitHub page.
+
+  #+NAME: cider
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'cider)
+    (use-package cider
+      :init (progn (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+                   (setq cider-repl-tab-command 'indent-for-tab-command)))
+  #+END_SRC
+
+  CIDER can be integrated with Auto-Complete painlessly by using the ac-cider
+  package.
+
+  #+NAME: ac-cider
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'ac-cider)
+    (use-package ac-cider
+      :init (progn (add-hook 'cider-mode-hook 'ac-cider-setup)
+                   (add-hook 'cider-repl-mode-hook 'ac-cider-setup)))
+  #+END_SRC
   
 * Tangle source code.
   
@@ -165,4 +193,8 @@ Now, for some code.
      <<magit>>
 
      <<auto-complete>>
+
+     <<cider>>
+
+     <<ac-cider>>
    #+END_SRC
