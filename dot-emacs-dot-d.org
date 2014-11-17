@@ -93,6 +93,18 @@ Now, for some code.
     (use-package smartparens
       :init (smartparens-global-mode))
   #+END_SRC
+
+* Manage my money.
+
+  Ledger is a fantastic personal accounting application. It has a ton of
+  features, but it relatively easy to configure in plain text. It comes with an
+  Emacs mode.
+
+  #+NAME: ledger-mode
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'ledger-mode)
+    (use-package ledger-mode)
+  #+END_SRC
   
 * Manage projects.
   
