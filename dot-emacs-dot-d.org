@@ -200,6 +200,8 @@ Now, for some code.
 
      <<smartparens>>
 
+     <<ledger-mode>>
+
      <<projectile>>
 
      <<magit>>
