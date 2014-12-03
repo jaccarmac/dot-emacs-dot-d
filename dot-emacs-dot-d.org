@@ -177,7 +177,40 @@ Now, for some code.
       :init (progn (add-hook 'cider-mode-hook 'ac-cider-setup)
                    (add-hook 'cider-repl-mode-hook 'ac-cider-setup)))
   #+END_SRC
-  
+
+* Hack with Common Lisp.
+
+  While most of my Lisp-writing has been in Clojure, the majority of my
+  Lisp-learning has been in Common Lisp. Fanboys say there's nothing you can't
+  do with CL, and, while I don't have enough experience to confirm or deny
+  this, I always enjoy exploring the language. The Emacs/CL ecosystem is
+  amazing as well.
+
+  SLIME is indescribably good. 'Nuff said. As for the configuration, I set SBCL
+  as my preferred Lisp, and tell SLIME to look fancy.
+
+  #+NAME: slime
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'slime)
+    (use-package slime
+      :init (progn (setq inferior-lisp-program "sbcl")
+                   (setq slime-contribs '(slime-fancy))
+                   (slime-setup)))
+  #+END_SRC
+
+  Integrating Auto-Complete and SLIME is painless, thanks to the work of Steve
+  Purcell.
+
+  #+NAME: ac-slime
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'ac-slime)
+    (use-package ac-slime
+      :init (progn (add-hook 'slime-mode-hook 'set-up-slime-ac)
+                   (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+                   (eval-after-load "auto-complete"
+                     '(add-to-list 'ac-modes 'slime-repl-mode))))
+  #+END_SRC
+
 * Tangle source code.
   
   All files get tangled to =tangled=, which is a subdirectory of the directory
@@ -211,4 +244,8 @@ Now, for some code.
      <<cider>>
 
      <<ac-cider>>
+
+     <<slime>>
+
+     <<ac-slime>>
    #+END_SRC
