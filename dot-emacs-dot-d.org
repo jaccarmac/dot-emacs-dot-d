@@ -187,13 +187,16 @@ Now, for some code.
   amazing as well.
 
   SLIME is indescribably good. 'Nuff said. As for the configuration, I set SBCL
-  as my preferred Lisp, and tell SLIME to look fancy.
+  as my preferred Lisp, and tell SLIME to look fancy. In addition, I tell SLIME
+  where to find the Common Lisp Hyperspec so I can look up HTML documentation
+  on the fly.
 
   #+NAME: slime
   #+BEGIN_SRC emacs-lisp
     (quelpa 'slime)
     (use-package slime
       :init (progn (setq inferior-lisp-program "sbcl")
+                   (setq common-lisp-hyperspec-root "/usr/share/doc/hyperspec/")
                    (setq slime-contribs '(slime-fancy))
                    (slime-setup)))
   #+END_SRC
