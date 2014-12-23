@@ -63,6 +63,15 @@ Now, for some code.
     (quse-package better-defaults)
   #+END_SRC
   
+  On top of the sensible settings in =better-defaults=, I like to set
+  =fill-column= to a sane value that doesn't depend on Emacs' frame
+  size.
+
+  #+NAME: fill-column
+  #+BEGIN_SRC emacs-lisp
+    (setq-default fill-column 79)
+  #+END_SRC
+
   Exposing Emacs' multi-branch undo and redo feature graphically is
   fantastically useful. Tony Cubitt's =undo-tree-mode= does just that.
   
@@ -244,6 +253,8 @@ Now, for some code.
      <<quse-package>>
 
      <<better-defaults>>
+
+     <<fill-column>>
 
      <<undo-tree>>
 
