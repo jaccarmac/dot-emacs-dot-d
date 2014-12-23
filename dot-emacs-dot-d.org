@@ -38,6 +38,18 @@ Now, for some code.
     (require 'use-package)
   #+END_SRC
   
+  After the actual boostrapping I can use a small convenience macro I wrote
+  myself to combine =quelpa= and =use-package=. It is called =quse-package= and
+  is fetched via (you guessed it) =quelpa=.
+
+  #+NAME: quse-package
+  #+BEGIN_SRC emacs-lisp
+    (quelpa '(quse-package :fetcher github
+                           :repo "jaccarmac/quse-package"
+                           :files ("tangled/quse-package.el")))
+    (require 'quse-package)
+  #+END_SRC
+
 * Improve Emacs' interface.
   
   Vanilla Emacs is usable, but not usable enough to allow me to be
@@ -48,8 +60,7 @@ Now, for some code.
   
   #+NAME: better-defaults
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'better-defaults)
-    (use-package better-defaults)
+    (quse-package better-defaults)
   #+END_SRC
   
   Exposing Emacs' multi-branch undo and redo feature graphically is
@@ -57,9 +68,8 @@ Now, for some code.
   
   #+NAME: undo-tree
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'undo-tree)
-    (use-package undo-tree
-      :init (global-undo-tree-mode))
+    (quse-package undo-tree
+                  :init (global-undo-tree-mode))
   #+END_SRC
   
   Donald Ephraim Curtis had made a great port of Vim Powerline. It is helpful
@@ -67,9 +77,8 @@ Now, for some code.
   
   #+NAME: powerline
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'powerline)
-    (use-package powerline
-      :init (powerline-default-theme))
+    (quse-package powerline
+                  :init (powerline-default-theme))
   #+END_SRC
   
   I have used many themes for Emacs during my time using it. I tend to come
@@ -78,9 +87,8 @@ Now, for some code.
   
   #+NAME: moe-theme
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'moe-theme)
-    (use-package moe-theme
-      :init (load-theme 'moe-dark t))
+    (quse-package moe-theme
+                  :init (load-theme 'moe-dark t))
   #+END_SRC
   
   I'm a lazy Lisper, so I have never taken the time to learn =paredit=
@@ -89,9 +97,8 @@ Now, for some code.
   
   #+NAME: smartparens
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'smartparens)
-    (use-package smartparens
-      :init (smartparens-global-mode))
+    (quse-package smartparens
+                  :init (smartparens-global-mode))
   #+END_SRC
 
 * Manage my money.
@@ -102,8 +109,7 @@ Now, for some code.
 
   #+NAME: ledger-mode
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'ledger-mode)
-    (use-package ledger-mode)
+    (quse-package ledger-mode)
   #+END_SRC
   
 * Manage projects.
@@ -118,9 +124,8 @@ Now, for some code.
   
   #+NAME: projectile
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'projectile)
-    (use-package projectile
-      :init (projectile-global-mode))
+    (quse-package projectile
+                  :init (projectile-global-mode))
   #+END_SRC
   
   Git is the modern king of version control. The Magit project turns Emacs into
@@ -129,8 +134,7 @@ Now, for some code.
   
   #+NAME: magit
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'magit)
-    (use-package magit)
+    (quse-package magit)
   #+END_SRC
   
 * Complete symbols.
@@ -144,10 +148,9 @@ Now, for some code.
   
   #+NAME: auto-complete
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'auto-complete)
-    (use-package auto-complete
-      :init (progn (require 'auto-complete-config)
-                   (ac-config-default)))
+    (quse-package auto-complete
+                  :init (progn (require 'auto-complete-config)
+                               (ac-config-default)))
   #+END_SRC
 
 * Clojure.
@@ -161,10 +164,10 @@ Now, for some code.
 
   #+NAME: cider
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'cider)
-    (use-package cider
-      :init (progn (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-                   (setq cider-repl-tab-command 'indent-for-tab-command)))
+    (quse-package cider
+                  :init (progn
+                          (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+                          (setq cider-repl-tab-command 'indent-for-tab-command)))
   #+END_SRC
 
   CIDER can be integrated with Auto-Complete painlessly by using the ac-cider
@@ -172,10 +175,9 @@ Now, for some code.
 
   #+NAME: ac-cider
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'ac-cider)
-    (use-package ac-cider
-      :init (progn (add-hook 'cider-mode-hook 'ac-cider-setup)
-                   (add-hook 'cider-repl-mode-hook 'ac-cider-setup)))
+    (quse-package ac-cider
+                  :init (progn (add-hook 'cider-mode-hook 'ac-cider-setup)
+                               (add-hook 'cider-repl-mode-hook 'ac-cider-setup)))
   #+END_SRC
 
 * Hack with Common Lisp.
@@ -193,12 +195,13 @@ Now, for some code.
 
   #+NAME: slime
   #+BEGIN_SRC emacs-lisp
-    (quelpa 'slime)
-    (use-package slime
-      :init (progn (setq inferior-lisp-program "sbcl")
-                   (setq common-lisp-hyperspec-root "/usr/share/doc/hyperspec/")
-                   (setq slime-contribs '(slime-fancy))
-                   (slime-setup)))
+    (quse-package slime
+                  :init (progn
+                          (setq inferior-lisp-program "sbcl")
+                          (setq common-lisp-hyperspec-root
+                                "/usr/share/doc/hyperspec/")
+                          (setq slime-contribs '(slime-fancy))
+                          (slime-setup)))
   #+END_SRC
 
   Integrating Auto-Complete and SLIME is painless, thanks to the work of Steve
@@ -225,6 +228,8 @@ Now, for some code.
      <<quelpa>>
 
      <<use-package>>
+
+     <<quse-package>>
 
      <<better-defaults>>
 
