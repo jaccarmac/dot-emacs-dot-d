@@ -58,11 +58,10 @@
                       (setq slime-contribs '(slime-fancy))
                       (slime-setup)))
 
-(quelpa 'ac-slime)
-(use-package ac-slime
-  :init (progn (add-hook 'slime-mode-hook 'set-up-slime-ac)
-               (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-               (eval-after-load "auto-complete"
-                 '(add-to-list 'ac-modes 'slime-repl-mode))))
+(quse-package ac-slime
+              :init (progn (add-hook 'slime-mode-hook 'set-up-slime-ac)
+                           (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+                           (eval-after-load "auto-complete"
+                             '(add-to-list 'ac-modes 'slime-repl-mode))))
 
 (quse-package web-mode)
