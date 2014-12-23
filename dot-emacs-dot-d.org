@@ -217,6 +217,18 @@ Now, for some code.
                      '(add-to-list 'ac-modes 'slime-repl-mode))))
   #+END_SRC
 
+* Edit web applications.
+
+  Managing modes to edit the dozens of new file formats for a new web project
+  every month is a nightmare. So much so I don't like to talk about it. I've
+  found that =web-mode.el= does a pretty good job of managing them
+  automagically.
+
+  #+NAME: web-mode
+  #+BEGIN_SRC emacs-lisp
+    (quse-package web-mode)
+  #+END_SRC
+
 * Tangle source code.
   
   All files get tangled to =tangled=, which is a subdirectory of the directory
@@ -256,4 +268,6 @@ Now, for some code.
      <<slime>>
 
      <<ac-slime>>
+
+     <<web-mode>>
    #+END_SRC
