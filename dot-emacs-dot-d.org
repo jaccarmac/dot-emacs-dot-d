@@ -237,6 +237,23 @@ Now, for some code.
     (quse-package web-mode)
   #+END_SRC
 
+* Steal Java-editing features from Eclipse.
+
+  Trying to edit Java with just Emacs is a nightmare. I tried it for a while,
+  but eventually caved into practicality and installed Eclipse, eclim, and
+  =emacs-eclim=. The trio of software packages work together to use Eclipse's
+  editing features and completion in Emacs. The configuration here comes
+  straight from the =emacs-eclim= website, converted to a slightly strange form
+  because of the project's package structure.
+
+  #+NAME: emacs-eclim
+  #+BEGIN_SRC emacs-lisp
+    (quelpa 'emacs-eclim)
+    (use-package eclim :init (global-eclim-mode))
+    (use-package eclimd)
+    (use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to =tangled=, which is a subdirectory of the directory
@@ -280,4 +297,6 @@ Now, for some code.
      <<ac-slime>>
 
      <<web-mode>>
+
+     <<emacs-eclim>>
    #+END_SRC
