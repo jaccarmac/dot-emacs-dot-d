@@ -65,3 +65,8 @@
                              '(add-to-list 'ac-modes 'slime-repl-mode))))
 
 (quse-package web-mode)
+
+(quelpa 'emacs-eclim)
+(use-package eclim :init (global-eclim-mode))
+(use-package eclimd)
+(use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
