@@ -256,12 +256,11 @@ Now, for some code.
 
 * Tangle source code.
 
-  All files get tangled to =tangled=, which is a subdirectory of the directory
-  that this file is in.
+  All files get tangled to the directory that this file is in.
 
 ** =init.el=
 
-   #+BEGIN_SRC emacs-lisp :noweb no-export :mkdirp yes :tangle tangled/init.el
+   #+BEGIN_SRC emacs-lisp :noweb no-export :mkdirp yes :tangle init.el
      <<quelpa>>
 
      <<use-package>>
