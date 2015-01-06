@@ -250,7 +250,6 @@ Now, for some code.
   #+BEGIN_SRC emacs-lisp
     (quelpa 'emacs-eclim)
     (use-package eclim :init (global-eclim-mode))
-    (use-package eclimd)
     (use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
   #+END_SRC
 

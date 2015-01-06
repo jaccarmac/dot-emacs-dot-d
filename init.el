@@ -68,5 +68,4 @@
 
 (quelpa 'emacs-eclim)
 (use-package eclim :init (global-eclim-mode))
-(use-package eclimd)
 (use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
