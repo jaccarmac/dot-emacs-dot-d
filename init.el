@@ -69,3 +69,8 @@
 (quelpa 'emacs-eclim)
 (use-package eclim :init (global-eclim-mode))
 (use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
+
+(quse-package nim-mode)
+
+(quse-package ac-nim :init (eval-after-load 'nim-mode
+                             '(add-hook 'nim-mode-hook 'ac-nim-enable)))
