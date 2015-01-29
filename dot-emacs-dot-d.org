@@ -72,6 +72,14 @@ Now, for some code.
     (setq-default fill-column 79)
   #+END_SRC
 
+  It's also nice to not have to deal with the splash screen every time Emacs
+  starts.
+
+  #+NAME: inhibit-splash-screen
+  #+BEGIN_SRC emacs-lisp
+    (setq-default inhibit-splash-screen t)
+  #+END_SRC
+
   Exposing Emacs' multi-branch undo and redo feature graphically is
   fantastically useful. Tony Cubitt's =undo-tree-mode= does just that.
 
@@ -287,6 +295,8 @@ Now, for some code.
      <<better-defaults>>
 
      <<fill-column>>
+
+     <<inhibit-splash-screen>>
 
      <<undo-tree>>
 
