@@ -18,6 +18,8 @@
 
 (setq-default fill-column 79)
 
+(setq-default inhibit-splash-screen t)
+
 (quse-package undo-tree
               :init (global-undo-tree-mode))
 
