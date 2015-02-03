@@ -72,6 +72,8 @@
 (use-package eclim :init (global-eclim-mode))
 (use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
 
+(quse-package yasnippet)
+
 (quse-package nim-mode)
 
 (quse-package ac-nim :init (eval-after-load 'nim-mode

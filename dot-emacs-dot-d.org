@@ -261,6 +261,17 @@ Now, for some code.
     (use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
   #+END_SRC
 
+** Include YASnippet.
+
+   Some features of =emacs-eclim= depend on having YASnippet, a popular Emacs
+   snippet package, installed. I don't use YASnippet directly, only through
+   =emacs-eclim=, but I may change my mind in the future.
+
+   #+NAME: yasnippet
+   #+BEGIN_SRC emacs-lisp
+     (quse-package yasnippet)
+   #+END_SRC
+
 * Edit and complete Nim.
 
   Nim is a systems programming languages that compiles to C, C++, ObjC, and
@@ -335,6 +346,8 @@ Now, for some code.
      <<web-mode>>
 
      <<emacs-eclim>>
+
+     <<yasnippet>>
 
      <<nim-mode>>
 
