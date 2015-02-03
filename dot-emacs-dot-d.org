@@ -279,6 +279,16 @@ Now, for some code.
                                  '(add-hook 'nim-mode-hook 'ac-nim-enable)))
   #+END_SRC
 
+* View Markdown.
+
+  I prefer Org to Markdown in every situation, but sometimes it is necessary to
+  be able to read Markdown. Good thing there's a mode on MELPA!
+
+  #+NAME: markdown-mode
+  #+BEGIN_SRC emacs-lisp
+    (quse-package markdown-mode)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -329,4 +339,6 @@ Now, for some code.
      <<nim-mode>>
 
      <<ac-nim>>
+
+     <<markdown-mode>>
    #+END_SRC
