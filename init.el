@@ -66,7 +66,14 @@
                            (eval-after-load "auto-complete"
                              '(add-to-list 'ac-modes 'slime-repl-mode))))
 
-(quse-package web-mode)
+(quse-package web-mode
+              :init (progn
+                      (add-to-list 'auto-mode-alist
+                                   '("\\.html?\\'" . web-mode))
+                      (add-to-list 'auto-mode-alist
+                                   '("\\.css?\\'" . web-mode))
+                      (add-to-list 'auto-mode-alist
+                                   '("\\.js?\\'" . web-mode))))
 
 (quelpa 'emacs-eclim)
 (use-package eclim :init (global-eclim-mode))
