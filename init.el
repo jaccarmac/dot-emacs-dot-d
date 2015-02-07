@@ -1,4 +1,3 @@
-
 (package-initialize)
 (unless (require 'quelpa nil t)
   (with-temp-buffer

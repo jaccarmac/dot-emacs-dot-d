@@ -329,7 +329,7 @@ Now, for some code.
 
 ** =init.el=
 
-   #+BEGIN_SRC emacs-lisp :noweb no-export :tangle init.el
+   #+BEGIN_SRC emacs-lisp :noweb no-export :tangle init.el :padline no
      <<quelpa>>
 
      <<use-package>>
