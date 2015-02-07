@@ -87,3 +87,7 @@
                              '(add-hook 'nim-mode-hook 'ac-nim-enable)))
 
 (quse-package markdown-mode)
+
+(quse-package go-mode)
+
+(quse-package go-autocomplete)
