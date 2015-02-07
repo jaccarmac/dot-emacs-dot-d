@@ -307,6 +307,22 @@ Now, for some code.
     (quse-package markdown-mode)
   #+END_SRC
 
+* Edit and complete Go.
+
+  I have fun with Go, and it's as simple as that :-). Its tooling for Emacs
+  follows the theme of the rest of the tooling I use: It's simple and easy to
+  install.
+
+  #+NAME: go-mode
+  #+BEGIN_SRC emacs-lisp
+    (quse-package go-mode)
+  #+END_SRC
+
+  #+NAME: go-autocomplete
+  #+BEGIN_SRC emacs-lisp
+    (quse-package go-autocomplete)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -361,4 +377,8 @@ Now, for some code.
      <<ac-nim>>
 
      <<markdown-mode>>
+
+     <<go-mode>>
+
+     <<go-autocomplete>>
    #+END_SRC
