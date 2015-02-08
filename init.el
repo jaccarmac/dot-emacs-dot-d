@@ -8,9 +8,7 @@
 (quelpa 'use-package)
 (require 'use-package)
 
-(quelpa '(quse-package :fetcher github
-                       :repo "jaccarmac/quse-package"
-                       :files ("tangled/quse-package.el")))
+(quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
 (require 'quse-package)
 
 (quse-package better-defaults)
