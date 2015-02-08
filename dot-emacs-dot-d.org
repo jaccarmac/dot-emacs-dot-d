@@ -71,9 +71,7 @@ Now, for some code.
 
   #+NAME: quse-package
   #+BEGIN_SRC emacs-lisp
-    (quelpa '(quse-package :fetcher github
-                           :repo "jaccarmac/quse-package"
-                           :files ("tangled/quse-package.el")))
+    (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
     (require 'quse-package)
   #+END_SRC
 
