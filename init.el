@@ -24,7 +24,7 @@
               :init (powerline-default-theme))
 
 (quse-package moe-theme
-              :init (load-theme 'moe-dark t))
+              :config (load-theme 'moe-dark t))
 
 (quse-package smartparens
               :init (smartparens-global-mode))
@@ -73,8 +73,8 @@
                                    '("\\.js?\\'" . web-mode))))
 
 (quelpa 'emacs-eclim)
-(use-package eclim :init (global-eclim-mode))
-(use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
+(use-package eclim :config (global-eclim-mode))
+(use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
 
 (quse-package yasnippet)
 

@@ -130,7 +130,7 @@ Now, for some code.
   #+NAME: moe-theme
   #+BEGIN_SRC emacs-lisp
     (quse-package moe-theme
-                  :init (load-theme 'moe-dark t))
+                  :config (load-theme 'moe-dark t))
   #+END_SRC
 
   I'm a lazy Lisper, so I have never taken the time to learn =paredit=
@@ -289,8 +289,8 @@ Now, for some code.
   #+NAME: emacs-eclim
   #+BEGIN_SRC emacs-lisp
     (quelpa 'emacs-eclim)
-    (use-package eclim :init (global-eclim-mode))
-    (use-package ac-emacs-eclim-source :init (ac-emacs-eclim-config))
+    (use-package eclim :config (global-eclim-mode))
+    (use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
   #+END_SRC
 
 ** Include YASnippet.
