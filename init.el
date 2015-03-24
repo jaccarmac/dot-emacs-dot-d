@@ -70,7 +70,9 @@
                       (add-to-list 'auto-mode-alist
                                    '("\\.css?\\'" . web-mode))
                       (add-to-list 'auto-mode-alist
-                                   '("\\.js?\\'" . web-mode))))
+                                   '("\\.js?\\'" . web-mode))
+                      (add-to-list 'auto-mode-alist
+                                   '("\\.php?\\'" . web-mode))))
 
 (quelpa 'emacs-eclim)
 (use-package eclim :config (global-eclim-mode))
