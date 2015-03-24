@@ -274,7 +274,9 @@ Now, for some code.
                           (add-to-list 'auto-mode-alist
                                        '("\\.css?\\'" . web-mode))
                           (add-to-list 'auto-mode-alist
-                                       '("\\.js?\\'" . web-mode))))
+                                       '("\\.js?\\'" . web-mode))
+                          (add-to-list 'auto-mode-alist
+                                       '("\\.php?\\'" . web-mode))))
   #+END_SRC
 
 * Steal Java-editing features from Eclipse.
