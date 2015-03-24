@@ -65,6 +65,7 @@
 
 (quse-package web-mode
               :init (progn
+                      (setq web-mode-enable-engine-detection t)
                       (add-to-list 'auto-mode-alist
                                    '("\\.html?\\'" . web-mode))
                       (add-to-list 'auto-mode-alist
