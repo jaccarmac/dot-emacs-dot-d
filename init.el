@@ -29,7 +29,9 @@
 (quse-package smartparens
               :init (smartparens-global-mode))
 
-(quse-package ledger-mode)
+(quse-package ledger-mode
+              :init (add-to-list 'auto-mode-alist
+                                 '("ledger/.*\\.dat\\'" . ledger-mode)))
 
 (quse-package projectile
               :init (projectile-global-mode))

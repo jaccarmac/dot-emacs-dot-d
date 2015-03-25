@@ -151,7 +151,9 @@ Now, for some code.
 
   #+NAME: ledger-mode
   #+BEGIN_SRC emacs-lisp
-    (quse-package ledger-mode)
+    (quse-package ledger-mode
+                  :init (add-to-list 'auto-mode-alist
+                                     '("ledger/.*\\.dat\\'" . ledger-mode)))
   #+END_SRC
 
 * Manage projects.
