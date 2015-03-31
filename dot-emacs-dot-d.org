@@ -354,6 +354,17 @@ Now, for some code.
     (quse-package go-autocomplete)
   #+END_SRC
 
+* Edit Protocol Buffer files.
+
+  Google's Protocol Buffers are a data exchange format useful for quick
+  over-the-wire messages. The canonical implementation comes with a major mode
+  for editing a Protocol Buffer definition.
+
+  #+NAME: protobuf-mode
+  #+BEGIN_SRC emacs-lisp
+    (quse-package protobuf-mode)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -412,4 +423,6 @@ Now, for some code.
      <<go-mode>>
 
      <<go-autocomplete>>
+
+     <<protobuf-mode>>
    #+END_SRC

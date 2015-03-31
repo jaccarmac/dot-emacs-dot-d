@@ -93,3 +93,5 @@
 (quse-package go-mode)
 
 (quse-package go-autocomplete)
+
+(quse-package protobuf-mode)
