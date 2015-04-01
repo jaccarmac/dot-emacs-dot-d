@@ -365,6 +365,15 @@ Now, for some code.
     (quse-package protobuf-mode)
   #+END_SRC
 
+* YAML.
+
+  "Yet Another Markup Language" indeed. It's the wrong acronym. Sue me. Ugh.
+
+  #+NAME: yaml-mode
+  #+BEGIN_SRC emacs-lisp
+    (quse-package yaml-mode)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -425,4 +434,6 @@ Now, for some code.
      <<go-autocomplete>>
 
      <<protobuf-mode>>
+
+     <<yaml-mode>>
    #+END_SRC

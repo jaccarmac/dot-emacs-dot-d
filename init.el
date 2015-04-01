@@ -95,3 +95,5 @@
 (quse-package go-autocomplete)
 
 (quse-package protobuf-mode)
+
+(quse-package yaml-mode)
