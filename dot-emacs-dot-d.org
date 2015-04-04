@@ -265,12 +265,13 @@ Now, for some code.
   Managing modes to edit the dozens of new file formats for a new web project
   every month is a nightmare. So much so I don't like to talk about it. I've
   found that =web-mode.el= does a pretty good job of managing them
-  automagically. Setting ~web-mode-enable-engine-detection~ allows the mode to
-  pick up on ~-*-~-style comments at the top of files.
+  automagically. I use the version from which I sometimes submit pull
+  requests. Setting ~web-mode-enable-engine-detection~ allows the mode to pick
+  up on ~-*-~-style comments at the top of files.
 
   #+NAME: web-mode
   #+BEGIN_SRC emacs-lisp
-    (quse-package web-mode
+    (quse-package (web-mode :fetcher github :repo "jaccarmac/web-mode")
                   :init (progn
                           (setq web-mode-enable-engine-detection t)
                           (add-to-list 'auto-mode-alist

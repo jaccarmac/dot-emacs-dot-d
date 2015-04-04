@@ -65,7 +65,7 @@
                            (eval-after-load "auto-complete"
                              '(add-to-list 'ac-modes 'slime-repl-mode))))
 
-(quse-package web-mode
+(quse-package (web-mode :fetcher github :repo "jaccarmac/web-mode")
               :init (progn
                       (setq web-mode-enable-engine-detection t)
                       (add-to-list 'auto-mode-alist
