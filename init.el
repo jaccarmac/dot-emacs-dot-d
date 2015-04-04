@@ -36,7 +36,8 @@
 (quse-package projectile
               :init (projectile-global-mode))
 
-(quse-package magit)
+(quse-package magit
+              :init (setq magit-last-seen-setup-instructions "1.4.0"))
 
 (quse-package auto-complete
               :init (progn (require 'auto-complete-config)

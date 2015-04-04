@@ -178,7 +178,8 @@ Now, for some code.
 
   #+NAME: magit
   #+BEGIN_SRC emacs-lisp
-    (quse-package magit)
+    (quse-package magit
+                  :init (setq magit-last-seen-setup-instructions "1.4.0"))
   #+END_SRC
 
 * Complete symbols.
