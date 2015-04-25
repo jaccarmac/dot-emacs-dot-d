@@ -29,7 +29,10 @@
 (quse-package smartparens
               :init (smartparens-global-mode))
 
-(quse-package ledger-mode
+(quse-package (ledger-mode :fetcher github
+                           :repo "jaccarmac/ledger"
+                           :branch "next"
+                           :files ("lisp/*.el"))
               :init (add-to-list 'auto-mode-alist
                                  '("ledger/.*\\.dat\\'" . ledger-mode)))
 
