@@ -59,7 +59,7 @@
               :init (progn
                       (setq inferior-lisp-program "sbcl")
                       (setq common-lisp-hyperspec-root
-                            "/usr/share/doc/hyperspec/")
+                            (getenv "HYPERSPEC_ROOT"))
                       (setq slime-contribs '(slime-fancy))
                       (slime-setup)))
 
