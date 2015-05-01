@@ -368,7 +368,9 @@ Now, for some code.
 
   #+NAME: protobuf-mode
   #+BEGIN_SRC emacs-lisp
-    (quse-package protobuf-mode)
+    (quse-package (protobuf-mode :fetcher github
+                                 :repo "google/protobuf"
+                                 :files ("editors/protobuf-mode.el")))
   #+END_SRC
 
 * YAML.

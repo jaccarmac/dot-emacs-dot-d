@@ -99,6 +99,8 @@
 
 (quse-package go-autocomplete)
 
-(quse-package protobuf-mode)
+(quse-package (protobuf-mode :fetcher github
+                             :repo "google/protobuf"
+                             :files ("editors/protobuf-mode.el")))
 
 (quse-package yaml-mode)
