@@ -37,6 +37,8 @@
               :init (add-to-list 'auto-mode-alist
                                  '("ledger/.*\\.dat\\'" . ledger-mode)))
 
+(quse-package password-store)
+
 (quse-package projectile
               :init (projectile-global-mode))
 

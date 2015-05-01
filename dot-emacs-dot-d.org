@@ -160,6 +160,19 @@ Now, for some code.
                                      '("ledger/.*\\.dat\\'" . ledger-mode)))
   #+END_SRC
 
+* Generate and secure passwords.
+
+  I use =password-store= to manage and generate all my passwords. This utility
+  stores passwords in text files encrypted by my GPG key, and can copy them to
+  the system clipboard when I need to use them. A work-in-progress Emacs mode
+  is included in the distribution and cloned and installed in the following
+  snippet.
+
+  #+NAME: password-store
+  #+BEGIN_SRC emacs-lisp
+    (quse-package password-store)
+  #+END_SRC
+
 * Manage projects.
 
   One-off-file hacking is great, but most of what I do is done in the context
@@ -410,6 +423,8 @@ Now, for some code.
      <<smartparens>>
 
      <<ledger-mode>>
+
+     <<password-store>>
 
      <<projectile>>
 
