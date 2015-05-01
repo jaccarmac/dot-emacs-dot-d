@@ -4,6 +4,7 @@
     (url-insert-file-contents
      "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
     (eval-buffer)))
+(setq quelpa-update-melpa-p nil)
 
 (quelpa 'use-package)
 (require 'use-package)
