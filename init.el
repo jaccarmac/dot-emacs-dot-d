@@ -16,6 +16,8 @@
 
 (setq-default fill-column 79)
 
+(prefer-coding-system 'utf-8-unix)
+
 (setq-default inhibit-splash-screen t)
 
 (quse-package undo-tree
