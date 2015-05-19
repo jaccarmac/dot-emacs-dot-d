@@ -48,12 +48,12 @@ Now, for some code.
   #+NAME: quelpa
   #+BEGIN_SRC emacs-lisp
     (package-initialize)
+    (setq quelpa-update-melpa-p nil)
     (unless (require 'quelpa nil t)
       (with-temp-buffer
         (url-insert-file-contents
          "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
         (eval-buffer)))
-    (setq quelpa-update-melpa-p nil)
   #+END_SRC
 
   Because of the last snippet, =use-package= can be downloaded using the
