@@ -160,10 +160,7 @@ Now, for some code.
 
   #+NAME: ledger-mode
   #+BEGIN_SRC emacs-lisp
-    (quse-package (ledger-mode :fetcher github
-                               :repo "jaccarmac/ledger"
-                               :branch "next"
-                               :files ("lisp/*.el"))
+    (quse-package ledger-mode
                   :init (add-to-list 'auto-mode-alist
                                      '("ledger/.*\\.dat\\'" . ledger-mode)))
   #+END_SRC
@@ -297,7 +294,7 @@ Now, for some code.
 
   #+NAME: web-mode
   #+BEGIN_SRC emacs-lisp
-    (quse-package (web-mode :fetcher github :repo "jaccarmac/web-mode")
+    (quse-package web-mode
                   :init (progn
                           (setq web-mode-enable-engine-detection t)
                           (add-to-list 'auto-mode-alist
@@ -340,19 +337,11 @@ Now, for some code.
 * Edit and complete Nim.
 
   Nim is a systems programming languages that compiles to C, C++, ObjC, and
-  JavaScript. It's the latest toy language I am trying to learn. Two packages
-  provided by a single repository provide all the features needed to edit Nim
-  in Emacs.
+  JavaScript. It's the latest toy language I am trying to learn.
 
   #+NAME: nim-mode
   #+BEGIN_SRC emacs-lisp
     (quse-package nim-mode)
-  #+END_SRC
-
-  #+NAME: ac-nim
-  #+BEGIN_SRC emacs-lisp
-    (quse-package ac-nim :init (eval-after-load 'nim-mode
-                                 '(add-hook 'nim-mode-hook 'ac-nim-enable)))
   #+END_SRC
 
 * View Markdown.
@@ -457,8 +446,6 @@ Now, for some code.
      <<yasnippet>>
 
      <<nim-mode>>
-
-     <<ac-nim>>
 
      <<markdown-mode>>
 

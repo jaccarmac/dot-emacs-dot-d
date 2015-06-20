@@ -32,10 +32,7 @@
 (quse-package smartparens
               :init (smartparens-global-mode))
 
-(quse-package (ledger-mode :fetcher github
-                           :repo "jaccarmac/ledger"
-                           :branch "next"
-                           :files ("lisp/*.el"))
+(quse-package ledger-mode
               :init (add-to-list 'auto-mode-alist
                                  '("ledger/.*\\.dat\\'" . ledger-mode)))
 
@@ -74,7 +71,7 @@
                            (eval-after-load "auto-complete"
                              '(add-to-list 'ac-modes 'slime-repl-mode))))
 
-(quse-package (web-mode :fetcher github :repo "jaccarmac/web-mode")
+(quse-package web-mode
               :init (progn
                       (setq web-mode-enable-engine-detection t)
                       (add-to-list 'auto-mode-alist
@@ -93,9 +90,6 @@
 (quse-package yasnippet)
 
 (quse-package nim-mode)
-
-(quse-package ac-nim :init (eval-after-load 'nim-mode
-                             '(add-hook 'nim-mode-hook 'ac-nim-enable)))
 
 (quse-package markdown-mode)
 
