@@ -81,7 +81,9 @@
                       (add-to-list 'auto-mode-alist
                                    '("\\.js?\\'" . web-mode))
                       (add-to-list 'auto-mode-alist
-                                   '("\\.php?\\'" . web-mode))))
+                                   '("\\.php?\\'" . web-mode))
+                      (add-to-list 'auto-mode-alist
+                                   '("\\.tmpl?\\'" . web-mode))))
 
 (quelpa 'emacs-eclim)
 (use-package eclim :config (global-eclim-mode))
