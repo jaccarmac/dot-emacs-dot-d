@@ -6,6 +6,8 @@
      "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
     (eval-buffer)))
 
+(setq async-bytecomp-allowed-packages nil)
+
 (quelpa 'use-package)
 (require 'use-package)
 
