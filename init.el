@@ -41,7 +41,10 @@
 (quse-package password-store)
 
 (quse-package projectile
-              :init (projectile-global-mode))
+              :init (progn
+                      (projectile-global-mode)
+                      (setq projectile-switch-project-action
+                            'projectile-dired)))
 
 (quse-package magit
               :init (setq magit-last-seen-setup-instructions "1.4.0"))
