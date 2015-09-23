@@ -199,7 +199,10 @@ Now, for some code.
   #+NAME: projectile
   #+BEGIN_SRC emacs-lisp
     (quse-package projectile
-                  :init (projectile-global-mode))
+                  :init (progn
+                          (projectile-global-mode)
+                          (setq projectile-switch-project-action
+                                'projectile-dired)))
   #+END_SRC
 
   Git is the modern king of version control. The Magit project turns Emacs into
