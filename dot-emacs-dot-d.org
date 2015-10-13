@@ -405,6 +405,35 @@ Now, for some code.
     (quse-package yaml-mode)
   #+END_SRC
 
+* Edit and complete Python.
+
+  There are quite a few options for this in Emacs. The one I have found to be
+  the most useful personally is Jedi, which is relatively minimal as full
+  language environments go. It hooks up to a Python component which must be
+  installed separately. The following snippet is the minimal Jedi setup taken
+  from Jedi's own documentation.
+
+  #+NAME: jedi
+  #+BEGIN_SRC emacs-lisp
+    (quse-package jedi
+                  :init (progn
+                          (add-hook 'python-mode-hook 'jedi:setup)
+                          (setq jedi:complete-on-dot t)))
+  #+END_SRC
+
+  Unfortunately, Jedi does not handle virtual environments by itself, so we
+  need to install and configure the =virtualenvwrapper.el= package for
+  everything to work properly.
+
+  #+NAME: virtualenvwrapper
+  #+BEGIN_SRC emacs-lisp
+    (quse-package virtualenvwrapper
+                  :init (progn
+                          (venv-initialize-interactive-shells)
+                          (venv-initialize-eshell)
+                          (setq venv-location (getenv "VIRTUALENVS"))))
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -471,4 +500,8 @@ Now, for some code.
      <<protobuf-mode>>
 
      <<yaml-mode>>
+
+     <<jedi>>
+
+     <<virtualenvwrapper>>
    #+END_SRC
