@@ -109,3 +109,14 @@
                              :files ("editors/protobuf-mode.el")))
 
 (quse-package yaml-mode)
+
+(quse-package jedi
+              :init (progn
+                      (add-hook 'python-mode-hook 'jedi:setup)
+                      (setq jedi:complete-on-dot t)))
+
+(quse-package virtualenvwrapper
+              :init (progn
+                      (venv-initialize-interactive-shells)
+                      (venv-initialize-eshell)
+                      (setq venv-location (getenv "VIRTUALENVS"))))
