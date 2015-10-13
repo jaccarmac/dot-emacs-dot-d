@@ -34,6 +34,13 @@
 (quse-package smartparens
               :init (smartparens-global-mode))
 
+(quse-package (org :fetcher git
+                   :url "git://orgmode.org/org-mode.git"
+                   :files ("lisp/*.el"
+                           "contrib/lisp/*.el"
+                           "doc/dir"
+                           "doc/*.texi")))
+
 (quse-package ledger-mode
               :init (add-to-list 'auto-mode-alist
                                  '("ledger/.*\\.dat\\'" . ledger-mode)))
