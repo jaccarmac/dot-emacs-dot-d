@@ -118,5 +118,4 @@
 (quse-package virtualenvwrapper
               :init (progn
                       (venv-initialize-interactive-shells)
-                      (venv-initialize-eshell)
-                      (setq venv-location (getenv "VIRTUALENVS"))))
+                      (venv-initialize-eshell)))

@@ -430,8 +430,7 @@ Now, for some code.
     (quse-package virtualenvwrapper
                   :init (progn
                           (venv-initialize-interactive-shells)
-                          (venv-initialize-eshell)
-                          (setq venv-location (getenv "VIRTUALENVS"))))
+                          (venv-initialize-eshell)))
   #+END_SRC
 
 * Tangle source code.
