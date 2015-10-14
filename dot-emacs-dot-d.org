@@ -426,14 +426,16 @@ Now, for some code.
   the most useful personally is Jedi, which is relatively minimal as full
   language environments go. It hooks up to a Python component which must be
   installed separately. The following snippet is the minimal Jedi setup taken
-  from Jedi's own documentation.
+  from Jedi's own documentation. I choose to override Emacs jump-to shortcuts
+  with Jedi's.
 
   #+NAME: jedi
   #+BEGIN_SRC emacs-lisp
     (quse-package jedi
                   :init (progn
                           (add-hook 'python-mode-hook 'jedi:setup)
-                          (setq jedi:complete-on-dot t)))
+                          (setq jedi:complete-on-dot t)
+                          (setq jedi:use-shortcuts t)))
   #+END_SRC
 
   Unfortunately, Jedi does not handle virtual environments by itself, so we
