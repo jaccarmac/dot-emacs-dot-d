@@ -120,7 +120,8 @@
 (quse-package jedi
               :init (progn
                       (add-hook 'python-mode-hook 'jedi:setup)
-                      (setq jedi:complete-on-dot t)))
+                      (setq jedi:complete-on-dot t)
+                      (setq jedi:use-shortcuts t)))
 
 (quse-package virtualenvwrapper
               :init (progn
