@@ -157,7 +157,9 @@ Now, for some code.
   #+NAME: smartparens
   #+BEGIN_SRC emacs-lisp
     (quse-package smartparens
-                  :init (smartparens-global-mode))
+                  :init (progn
+                          (smartparens-global-mode)
+                          (require 'smartparens-config)))
   #+END_SRC
 
 * Install a recent version of Org mode.
