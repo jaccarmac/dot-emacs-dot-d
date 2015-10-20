@@ -32,7 +32,9 @@
               :config (load-theme 'moe-dark t))
 
 (quse-package smartparens
-              :init (smartparens-global-mode))
+              :init (progn
+                      (smartparens-global-mode)
+                      (require 'smartparens-config)))
 
 (quse-package (org :fetcher git
                    :url "git://orgmode.org/org-mode.git"
