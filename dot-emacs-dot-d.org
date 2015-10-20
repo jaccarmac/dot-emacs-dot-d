@@ -150,16 +150,17 @@ Now, for some code.
                   :config (load-theme 'moe-dark t))
   #+END_SRC
 
-  I'm a lazy Lisper, so I have never taken the time to learn =paredit=
-  properly. Matus Goljer has created a =smartparens= package that makes many
-  paren-editing commands automatic.
+  The =smartparens= package is like =paredit= plus a bunch of nice extras. I
+  enable the strict mode globally and use the maintainer's default keybindings.
 
   #+NAME: smartparens
   #+BEGIN_SRC emacs-lisp
     (quse-package smartparens
                   :init (progn
                           (smartparens-global-mode)
-                          (require 'smartparens-config)))
+                          (smartparens-global-strict-mode)
+                          (require 'smartparens-config)
+                          (sp-use-smartparens-bindings)))
   #+END_SRC
 
 * Install a recent version of Org mode.

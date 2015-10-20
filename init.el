@@ -34,7 +34,9 @@
 (quse-package smartparens
               :init (progn
                       (smartparens-global-mode)
-                      (require 'smartparens-config)))
+                      (smartparens-global-strict-mode)
+                      (require 'smartparens-config)
+                      (sp-use-smartparens-bindings)))
 
 (quse-package (org :fetcher git
                    :url "git://orgmode.org/org-mode.git"
