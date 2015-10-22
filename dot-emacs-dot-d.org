@@ -453,6 +453,19 @@ Now, for some code.
                           (venv-initialize-eshell)))
   #+END_SRC
 
+* Edit Hoon files.
+
+  Hoon is a somewhat esoteric programming language created and used on the
+  functional Urbit operating system. The Urbit distribution contains an Emacs
+  mode.
+
+  #+NAME: hoon-mode
+  #+BEGIN_SRC emacs-lisp
+    (quse-package (hoon-mode :fetcher github
+                             :repo "urbit/urbit"
+                             :files ("extras/hoon-mode.el/hoon-mode.el")))
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -525,4 +538,6 @@ Now, for some code.
      <<jedi>>
 
      <<virtualenvwrapper>>
+
+     <<hoon-mode>>
    #+END_SRC

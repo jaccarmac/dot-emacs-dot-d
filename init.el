@@ -131,3 +131,7 @@
               :init (progn
                       (venv-initialize-interactive-shells)
                       (venv-initialize-eshell)))
+
+(quse-package (hoon-mode :fetcher github
+                         :repo "urbit/urbit"
+                         :files ("extras/hoon-mode.el/hoon-mode.el")))
