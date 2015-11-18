@@ -256,14 +256,16 @@ Now, for some code.
 
   CIDER is, in my opinion, the best way to edit Clojure in Emacs, bar
   none. Loading is done in the standard quelpa way; The configuration options
-  are taken from CIDER's GitHub page.
+  are taken from CIDER's GitHub page. I prefer Boot over Leiningen, so I set
+  Boot as my default REPL.
 
   #+NAME: cider
   #+BEGIN_SRC emacs-lisp
     (quse-package cider
                   :init (progn
                           (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-                          (setq cider-repl-tab-command 'indent-for-tab-command)))
+                          (setq cider-repl-tab-command 'indent-for-tab-command)
+                          (setq cider-default-repl-command "boot")))
   #+END_SRC
 
   CIDER can be integrated with Auto-Complete painlessly by using the ac-cider

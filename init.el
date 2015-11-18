@@ -67,7 +67,8 @@
 (quse-package cider
               :init (progn
                       (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-                      (setq cider-repl-tab-command 'indent-for-tab-command)))
+                      (setq cider-repl-tab-command 'indent-for-tab-command)
+                      (setq cider-default-repl-command "boot")))
 
 (quse-package ac-cider
               :init (progn (add-hook 'cider-mode-hook 'ac-cider-setup)
