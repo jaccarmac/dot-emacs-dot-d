@@ -48,7 +48,7 @@ Now, for some code.
   #+NAME: quelpa
   #+BEGIN_SRC emacs-lisp
     (package-initialize)
-    (setq quelpa-update-melpa-p nil)
+    (setf quelpa-update-melpa-p nil)
     (unless (require 'quelpa nil t)
       (with-temp-buffer
         (url-insert-file-contents
@@ -61,7 +61,7 @@ Now, for some code.
 
   #+NAME: async-bytecomp-allowed-packages
   #+BEGIN_SRC emacs-lisp
-    (setq async-bytecomp-allowed-packages nil)
+    (setf async-bytecomp-allowed-packages nil)
   #+END_SRC
 
   Because of the last snippet, =use-package= can be downloaded using the
@@ -219,7 +219,7 @@ Now, for some code.
     (quse-package projectile
                   :init (progn
                           (projectile-global-mode)
-                          (setq projectile-switch-project-action
+                          (setf projectile-switch-project-action
                                 'projectile-dired)))
   #+END_SRC
 
@@ -230,7 +230,7 @@ Now, for some code.
   #+NAME: magit
   #+BEGIN_SRC emacs-lisp
     (quse-package magit
-                  :init (setq magit-last-seen-setup-instructions "1.4.0"))
+                  :init (setf magit-last-seen-setup-instructions "1.4.0"))
   #+END_SRC
 
 * Complete symbols.
@@ -264,8 +264,8 @@ Now, for some code.
     (quse-package cider
                   :init (progn
                           (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-                          (setq cider-repl-tab-command 'indent-for-tab-command)
-                          (setq cider-default-repl-command "boot")))
+                          (setf cider-repl-tab-command 'indent-for-tab-command)
+                          (setf cider-default-repl-command "boot")))
   #+END_SRC
 
   CIDER can be integrated with Auto-Complete painlessly by using the ac-cider
@@ -295,10 +295,10 @@ Now, for some code.
   #+BEGIN_SRC emacs-lisp
     (quse-package slime
                   :init (progn
-                          (setq inferior-lisp-program "sbcl")
-                          (setq common-lisp-hyperspec-root
+                          (setf inferior-lisp-program "sbcl")
+                          (setf common-lisp-hyperspec-root
                                 (getenv "HYPERSPEC_ROOT"))
-                          (setq slime-contribs '(slime-fancy))
+                          (setf slime-contribs '(slime-fancy))
                           (slime-setup)))
   #+END_SRC
 
@@ -327,7 +327,7 @@ Now, for some code.
   #+BEGIN_SRC emacs-lisp
     (quse-package web-mode
                   :init (progn
-                          (setq web-mode-enable-engine-detection t)
+                          (setf web-mode-enable-engine-detection t)
                           (add-to-list 'auto-mode-alist
                                        '("\\.html?\\'" . web-mode))
                           (add-to-list 'auto-mode-alist
@@ -439,8 +439,8 @@ Now, for some code.
     (quse-package jedi
                   :init (progn
                           (add-hook 'python-mode-hook 'jedi:setup)
-                          (setq jedi:complete-on-dot t)
-                          (setq jedi:use-shortcuts t)))
+                          (setf jedi:complete-on-dot t)
+                          (setf jedi:use-shortcuts t)))
   #+END_SRC
 
   Unfortunately, Jedi does not handle virtual environments by itself, so we

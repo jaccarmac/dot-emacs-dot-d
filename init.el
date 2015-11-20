@@ -1,12 +1,12 @@
 (package-initialize)
-(setq quelpa-update-melpa-p nil)
+(setf quelpa-update-melpa-p nil)
 (unless (require 'quelpa nil t)
   (with-temp-buffer
     (url-insert-file-contents
      "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
     (eval-buffer)))
 
-(setq async-bytecomp-allowed-packages nil)
+(setf async-bytecomp-allowed-packages nil)
 
 (quelpa 'use-package)
 (require 'use-package)
@@ -54,11 +54,11 @@
 (quse-package projectile
               :init (progn
                       (projectile-global-mode)
-                      (setq projectile-switch-project-action
+                      (setf projectile-switch-project-action
                             'projectile-dired)))
 
 (quse-package magit
-              :init (setq magit-last-seen-setup-instructions "1.4.0"))
+              :init (setf magit-last-seen-setup-instructions "1.4.0"))
 
 (quse-package auto-complete
               :init (progn (require 'auto-complete-config)
@@ -67,8 +67,8 @@
 (quse-package cider
               :init (progn
                       (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-                      (setq cider-repl-tab-command 'indent-for-tab-command)
-                      (setq cider-default-repl-command "boot")))
+                      (setf cider-repl-tab-command 'indent-for-tab-command)
+                      (setf cider-default-repl-command "boot")))
 
 (quse-package ac-cider
               :init (progn (add-hook 'cider-mode-hook 'ac-cider-setup)
@@ -76,10 +76,10 @@
 
 (quse-package slime
               :init (progn
-                      (setq inferior-lisp-program "sbcl")
-                      (setq common-lisp-hyperspec-root
+                      (setf inferior-lisp-program "sbcl")
+                      (setf common-lisp-hyperspec-root
                             (getenv "HYPERSPEC_ROOT"))
-                      (setq slime-contribs '(slime-fancy))
+                      (setf slime-contribs '(slime-fancy))
                       (slime-setup)))
 
 (quse-package ac-slime
@@ -90,7 +90,7 @@
 
 (quse-package web-mode
               :init (progn
-                      (setq web-mode-enable-engine-detection t)
+                      (setf web-mode-enable-engine-detection t)
                       (add-to-list 'auto-mode-alist
                                    '("\\.html?\\'" . web-mode))
                       (add-to-list 'auto-mode-alist
@@ -125,8 +125,8 @@
 (quse-package jedi
               :init (progn
                       (add-hook 'python-mode-hook 'jedi:setup)
-                      (setq jedi:complete-on-dot t)
-                      (setq jedi:use-shortcuts t)))
+                      (setf jedi:complete-on-dot t)
+                      (setf jedi:use-shortcuts t)))
 
 (quse-package virtualenvwrapper
               :init (progn
