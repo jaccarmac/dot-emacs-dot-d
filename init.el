@@ -57,8 +57,7 @@
                       (setf projectile-switch-project-action
                             'projectile-dired)))
 
-(quse-package magit
-              :init (setf magit-last-seen-setup-instructions "1.4.0"))
+(quse-package magit)
 
 (quse-package auto-complete
               :init (progn (require 'auto-complete-config)
