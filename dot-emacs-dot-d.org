@@ -467,6 +467,18 @@ Now, for some code.
                              :files ("extras/hoon-mode.el/hoon-mode.el")))
   #+END_SRC
 
+* Edit GDScript files.
+
+  The Godot game engine uses a Python-like scripting language. Their built-in
+  editor is not the greatest, so why not use Emacs to edit scripts instead?
+
+  #+NAME: gdscript-mode
+  #+BEGIN_SRC emacs-lisp
+    (quse-package (gdscript-mode :fetcher github
+                                 :repo "jaccarmac/gdscript-mode"
+                                 :branch "package-header"))
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -541,4 +553,6 @@ Now, for some code.
      <<virtualenvwrapper>>
 
      <<hoon-mode>>
+
+     <<gdscript-mode>>
    #+END_SRC
