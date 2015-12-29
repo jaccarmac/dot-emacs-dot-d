@@ -97,6 +97,18 @@ Now, for some code.
     (quse-package better-defaults)
   #+END_SRC
 
+  Emacs recently changed the way it handles saving the position of the point in
+  visited files. =better-defaults= uses the old way (setting a variable) while
+  newer versions of Emacs use a mode for the same behavior. I'm almost ready to
+  submit a pull request to =better-defaults=, but don't understand the nuts and
+  bolts of the change completely. Thus, here is a monkey-patch to fix the
+  behavior for myself.
+
+  #+NAME: save-place-mode
+  #+BEGIN_SRC emacs-lisp
+    (use-package saveplace :init (save-place-mode))
+  #+END_SRC
+
   On top of the sensible settings in =better-defaults=, I like to set
   =fill-column= to a sane value that doesn't depend on Emacs' frame
   size.
@@ -495,6 +507,8 @@ Now, for some code.
      <<quse-package>>
 
      <<better-defaults>>
+
+     <<save-place-mode>>
 
      <<fill-column>>
 

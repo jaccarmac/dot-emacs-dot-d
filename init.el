@@ -16,6 +16,8 @@
 
 (quse-package better-defaults)
 
+(use-package saveplace :init (save-place-mode))
+
 (setq-default fill-column 79)
 
 (prefer-coding-system 'utf-8-unix)
