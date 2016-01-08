@@ -1,7 +1,8 @@
 #+TITLE: =.emacs.d=
 #+AUTHOR: Jacob MacDonald
+#+PROPERTY: header-args :noweb yes :padline no
 
-#+BEGIN_SRC text :tangle UNLICENSE :padline no
+#+BEGIN_SRC text :tangle UNLICENSE
   This is free and unencumbered software released into the public domain.
 
   Anyone is free to copy, modify, publish, use, compile, sell, or distribute this
@@ -45,8 +46,7 @@ Now, for some code.
   The =quelpa= bootstrap snippet comes straight from the project's GitHub
   page. I use the non-auto-updating version.
 
-  #+NAME: quelpa
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref quelpa
     (package-initialize)
     (setf quelpa-update-melpa-p nil)
     (unless (require 'quelpa nil t)
@@ -59,8 +59,7 @@ Now, for some code.
   Apparently a certain package breaks =quelpa= in certain circumstances. This
   snippet fixes this problem.
 
-  #+NAME: async-bytecomp-allowed-packages
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref async-bytecomp-allowed-packages
     (setf async-bytecomp-allowed-packages nil)
   #+END_SRC
 
@@ -68,8 +67,7 @@ Now, for some code.
   =quelpa= function, but it must be loaded manually. (Manually being a
   one-liner. :-)
 
-  #+NAME: use-package
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref use-package
     (quelpa 'use-package)
     (require 'use-package)
   #+END_SRC
@@ -78,8 +76,7 @@ Now, for some code.
   myself to combine =quelpa= and =use-package=. It is called =quse-package= and
   is fetched via (you guessed it) =quelpa=.
 
-  #+NAME: quse-package
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref quse-package
     (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
     (require 'quse-package)
   #+END_SRC
@@ -92,8 +89,7 @@ Now, for some code.
   Phil Hagelberg's =better-defaults= is a good start, including several
   one-line configuration options and usability rebinds.
 
-  #+NAME: better-defaults
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref better-defaults
     (quse-package better-defaults)
   #+END_SRC
 
@@ -104,8 +100,7 @@ Now, for some code.
   bolts of the change completely. Thus, here is a monkey-patch to fix the
   behavior for myself.
 
-  #+NAME: save-place-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref save-place-mode
     (use-package saveplace :init (save-place-mode))
   #+END_SRC
 
@@ -113,32 +108,28 @@ Now, for some code.
   =fill-column= to a sane value that doesn't depend on Emacs' frame
   size.
 
-  #+NAME: fill-column
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref fill-column
     (setq-default fill-column 79)
   #+END_SRC
 
   Unix UTF-8 encoding is a better sensible default for encoding than whatever
   platform-dependent value Emacs uses by default.
 
-  #+NAME: prefer-coding-system
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref prefer-coding-system
     (prefer-coding-system 'utf-8-unix)
   #+END_SRC
 
   It's also nice to not have to deal with the splash screen every time Emacs
   starts.
 
-  #+NAME: inhibit-splash-screen
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref inhibit-splash-screen
     (setq-default inhibit-splash-screen t)
   #+END_SRC
 
   Exposing Emacs' multi-branch undo and redo feature graphically is
   fantastically useful. Tony Cubitt's =undo-tree-mode= does just that.
 
-  #+NAME: undo-tree
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref undo-tree
     (quse-package undo-tree
                   :init (global-undo-tree-mode))
   #+END_SRC
@@ -146,8 +137,7 @@ Now, for some code.
   Donald Ephraim Curtis had made a great port of Vim Powerline. It is helpful
   for keeping track of location in a file, and it looks pretty.
 
-  #+NAME: powerline
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref powerline
     (quse-package powerline
                   :init (powerline-default-theme))
   #+END_SRC
@@ -156,8 +146,7 @@ Now, for some code.
   back to kuanyui's =moe-theme= due to its amount of contrast and variety of
   faces.
 
-  #+NAME: moe-theme
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref moe-theme
     (quse-package moe-theme
                   :config (load-theme 'moe-dark t))
   #+END_SRC
@@ -165,8 +154,7 @@ Now, for some code.
   The =smartparens= package is like =paredit= plus a bunch of nice extras. I
   enable the strict mode globally and use the maintainer's default keybindings.
 
-  #+NAME: smartparens
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref smartparens
     (quse-package smartparens
                   :init (progn
                           (smartparens-global-mode)
@@ -180,8 +168,7 @@ Now, for some code.
   It works fine without installing the bleeding edge, but that's no fun. And
   installing the bleeding edge is just too easy...
 
-  #+NAME: org
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref org
     (quse-package (org :fetcher git
                        :url "git://orgmode.org/org-mode.git"
                        :files ("lisp/*.el"
@@ -196,8 +183,7 @@ Now, for some code.
   features, but it relatively easy to configure in plain text. It comes with an
   Emacs mode.
 
-  #+NAME: ledger-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref ledger-mode
     (quse-package ledger-mode
                   :init (add-to-list 'auto-mode-alist
                                      '("ledger/.*\\.dat\\'" . ledger-mode)))
@@ -211,8 +197,7 @@ Now, for some code.
   is included in the distribution and cloned and installed in the following
   snippet.
 
-  #+NAME: password-store
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref password-store
     (quse-package password-store)
   #+END_SRC
 
@@ -226,8 +211,7 @@ Now, for some code.
   navigator and indexer for Emacs. The indexing it does is especially useful,
   letting you grep an entire project with a simple key chord.
 
-  #+NAME: projectile
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref projectile
     (quse-package projectile
                   :init (progn
                           (projectile-global-mode)
@@ -239,8 +223,7 @@ Now, for some code.
   an extremely powerful interface to it. I find that key chords are much more
   efficient than terminal commands after a few days' practice.
 
-  #+NAME: magit
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref magit
     (quse-package magit)
   #+END_SRC
 
@@ -253,8 +236,7 @@ Now, for some code.
   rather simple; Sources are initialized later with the modes they are
   associated with.
 
-  #+NAME: auto-complete
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref auto-complete
     (quse-package auto-complete
                   :init (progn (require 'auto-complete-config)
                                (ac-config-default)))
@@ -270,8 +252,7 @@ Now, for some code.
   are taken from CIDER's GitHub page. I prefer Boot over Leiningen, so I set
   Boot as my default REPL.
 
-  #+NAME: cider
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref cider
     (quse-package cider
                   :init (progn
                           (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
@@ -282,8 +263,7 @@ Now, for some code.
   CIDER can be integrated with Auto-Complete painlessly by using the ac-cider
   package.
 
-  #+NAME: ac-cider
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref ac-cider
     (quse-package ac-cider
                   :init (progn (add-hook 'cider-mode-hook 'ac-cider-setup)
                                (add-hook 'cider-repl-mode-hook 'ac-cider-setup)))
@@ -302,8 +282,7 @@ Now, for some code.
   where to find the Common Lisp Hyperspec so I can look up HTML documentation
   on the fly.
 
-  #+NAME: slime
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref slime
     (quse-package slime
                   :init (progn
                           (setf inferior-lisp-program "sbcl")
@@ -316,8 +295,7 @@ Now, for some code.
   Integrating Auto-Complete and SLIME is painless, thanks to the work of Steve
   Purcell.
 
-  #+NAME: ac-slime
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref ac-slime
     (quse-package ac-slime
                   :init (progn (add-hook 'slime-mode-hook 'set-up-slime-ac)
                                (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
@@ -334,8 +312,7 @@ Now, for some code.
   requests. Setting ~web-mode-enable-engine-detection~ allows the mode to pick
   up on ~-*-~-style comments at the top of files.
 
-  #+NAME: web-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref web-mode
     (quse-package web-mode
                   :init (progn
                           (setf web-mode-enable-engine-detection t)
@@ -366,8 +343,7 @@ Now, for some code.
   straight from the =emacs-eclim= website, converted to a slightly strange form
   because of the project's package structure.
 
-  #+NAME: emacs-eclim
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref emacs-eclim
     (quelpa 'emacs-eclim)
     (use-package eclim :config (global-eclim-mode))
     (use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
@@ -379,8 +355,7 @@ Now, for some code.
    snippet package, installed. I don't use YASnippet directly, only through
    =emacs-eclim=, but I may change my mind in the future.
 
-   #+NAME: yasnippet
-   #+BEGIN_SRC emacs-lisp
+   #+BEGIN_SRC emacs-lisp :noweb-ref yasnippet
      (quse-package yasnippet)
    #+END_SRC
 
@@ -389,8 +364,7 @@ Now, for some code.
   Nim is a systems programming languages that compiles to C, C++, ObjC, and
   JavaScript. It's the latest toy language I am trying to learn.
 
-  #+NAME: nim-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref nim-mode
     (quse-package nim-mode)
   #+END_SRC
 
@@ -399,8 +373,7 @@ Now, for some code.
   I prefer Org to Markdown in every situation, but sometimes it is necessary to
   be able to read Markdown. Good thing there's a mode on MELPA!
 
-  #+NAME: markdown-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref markdown-mode
     (quse-package markdown-mode)
   #+END_SRC
 
@@ -410,13 +383,11 @@ Now, for some code.
   follows the theme of the rest of the tooling I use: It's simple and easy to
   install.
 
-  #+NAME: go-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref go-mode
     (quse-package go-mode)
   #+END_SRC
 
-  #+NAME: go-autocomplete
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref go-autocomplete
     (quse-package go-autocomplete)
   #+END_SRC
 
@@ -426,8 +397,7 @@ Now, for some code.
   over-the-wire messages. The canonical implementation comes with a major mode
   for editing a Protocol Buffer definition.
 
-  #+NAME: protobuf-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref protobuf-mode
     (quse-package (protobuf-mode :fetcher github
                                  :repo "google/protobuf"
                                  :files ("editors/protobuf-mode.el")))
@@ -437,8 +407,7 @@ Now, for some code.
 
   "Yet Another Markup Language" indeed. It's the wrong acronym. Sue me. Ugh.
 
-  #+NAME: yaml-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref yaml-mode
     (quse-package yaml-mode)
   #+END_SRC
 
@@ -451,8 +420,7 @@ Now, for some code.
   from Jedi's own documentation. I choose to override Emacs jump-to shortcuts
   with Jedi's.
 
-  #+NAME: jedi
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref jedi
     (quse-package jedi
                   :init (progn
                           (add-hook 'python-mode-hook 'jedi:setup)
@@ -464,8 +432,7 @@ Now, for some code.
   need to install and configure the =virtualenvwrapper.el= package for
   everything to work properly.
 
-  #+NAME: virtualenvwrapper
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref virtualenvwrapper
     (quse-package virtualenvwrapper
                   :init (progn
                           (venv-initialize-interactive-shells)
@@ -478,8 +445,7 @@ Now, for some code.
   functional Urbit operating system. The Urbit distribution contains an Emacs
   mode.
 
-  #+NAME: hoon-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref hoon-mode
     (quse-package (hoon-mode :fetcher github
                              :repo "urbit/urbit"
                              :files ("extras/hoon-mode.el/hoon-mode.el")))
@@ -490,8 +456,7 @@ Now, for some code.
   The Godot game engine uses a Python-like scripting language. Their built-in
   editor is not the greatest, so why not use Emacs to edit scripts instead?
 
-  #+NAME: gdscript-mode
-  #+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp :noweb-ref gdscript-mode
     (quse-package (gdscript-mode :fetcher github
                                  :repo "jaccarmac/gdscript-mode"
                                  :branch "package-header"))
@@ -503,7 +468,7 @@ Now, for some code.
 
 ** =init.el=
 
-   #+BEGIN_SRC emacs-lisp :noweb no-export :tangle init.el :padline no
+   #+BEGIN_SRC emacs-lisp :tangle init.el
      <<quelpa>>
 
      <<async-bytecomp-allowed-packages>>
