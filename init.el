@@ -20,6 +20,22 @@
 
 (ido-everywhere)
 
+(quse-package ido-ubiquitous
+              :init
+              (ido-ubiquitous-mode)
+              (setf org-completion-use-ido t)
+              (setf magit-completing-read-function 'magit-ido-completing-read))
+
+(quse-package ido-yes-or-no :init (ido-yes-or-no-mode))
+
+(quse-package crm-custom :init (crm-custom-mode))
+
+(quse-package smex
+              :init (smex-initialize)
+              :bind (("M-x" . smex)
+                     ("M-X" . smex-major-mode-commands)
+                     ("C-c C-c M-x" . execute-extended-command)))
+
 (setq-default fill-column 79)
 
 (prefer-coding-system 'utf-8-unix)
