@@ -104,6 +104,14 @@ Now, for some code.
     (use-package saveplace :init (save-place-mode))
   #+END_SRC
 
+  And while =better-defaults= enables Ido mode and Ido flex matching, both of
+  which are very useful settings, it does not enable Ido everyhwere, which is
+  very useful. Enabling the feature, which is built into Emacs, is trivial.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref ido-everywhere
+    (ido-everywhere)
+  #+END_SRC
+
   On top of the sensible settings in =better-defaults=, I like to set
   =fill-column= to a sane value that doesn't depend on Emacs' frame
   size.
@@ -480,6 +488,8 @@ Now, for some code.
      <<better-defaults>>
 
      <<save-place-mode>>
+
+     <<ido-everywhere>>
 
      <<fill-column>>
 
