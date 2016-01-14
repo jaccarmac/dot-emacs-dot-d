@@ -18,6 +18,8 @@
 
 (use-package saveplace :init (save-place-mode))
 
+(ido-everywhere)
+
 (setq-default fill-column 79)
 
 (prefer-coding-system 'utf-8-unix)
