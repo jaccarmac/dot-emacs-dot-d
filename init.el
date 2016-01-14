@@ -28,7 +28,9 @@
 
 (quse-package ido-yes-or-no :init (ido-yes-or-no-mode))
 
-(quse-package crm-custom :init (crm-custom-mode))
+(quse-package (crm-custom :fetcher github
+                          :repo "jaccarmac/crm-custom")
+              :init (crm-custom-mode))
 
 (quse-package smex
               :init (smex-initialize)
