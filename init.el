@@ -26,8 +26,7 @@
 
 (quse-package ido-yes-or-no :init (ido-yes-or-no-mode))
 
-(quse-package (crm-custom :fetcher github
-                          :repo "jaccarmac/crm-custom")
+(quse-package (crm-custom :fetcher github :repo "jaccarmac/crm-custom")
               :init (crm-custom-mode))
 
 (quse-package smex
@@ -42,21 +41,18 @@
 
 (setq-default inhibit-splash-screen t)
 
-(quse-package undo-tree
-              :init (global-undo-tree-mode))
+(quse-package undo-tree :init (global-undo-tree-mode))
 
-(quse-package powerline
-              :init (powerline-default-theme))
+(quse-package powerline :init (powerline-default-theme))
 
-(quse-package moe-theme
-              :config (load-theme 'moe-dark t))
+(quse-package moe-theme :config (load-theme 'moe-dark t))
 
 (quse-package smartparens
-              :init (progn
-                      (smartparens-global-mode)
-                      (smartparens-global-strict-mode)
-                      (require 'smartparens-config)
-                      (sp-use-smartparens-bindings)))
+              :init
+              (smartparens-global-mode)
+              (smartparens-global-strict-mode)
+              (require 'smartparens-config)
+              (sp-use-smartparens-bindings))
 
 (quse-package (org :fetcher git
                    :url "git://orgmode.org/org-mode.git"
@@ -72,60 +68,53 @@
 (quse-package password-store)
 
 (quse-package projectile
-              :init (progn
-                      (projectile-global-mode)
-                      (setf projectile-switch-project-action
-                            'projectile-dired)))
+              :init
+              (projectile-global-mode)
+              (setf projectile-switch-project-action 'projectile-dired))
 
 (quse-package magit)
 
 (quse-package auto-complete
-              :init (progn (require 'auto-complete-config)
-                           (ac-config-default)))
+              :init
+              (require 'auto-complete-config)
+              (ac-config-default))
 
 (quse-package cider
-              :init (progn
-                      (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-                      (setf cider-repl-tab-command 'indent-for-tab-command)
-                      (setf cider-default-repl-command "boot")))
+              :init
+              (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+              (setf cider-repl-tab-command 'indent-for-tab-command)
+              (setf cider-default-repl-command "boot"))
 
 (quse-package ac-cider
-              :init (progn (add-hook 'cider-mode-hook 'ac-cider-setup)
-                           (add-hook 'cider-repl-mode-hook 'ac-cider-setup)))
+              :init
+              (add-hook 'cider-mode-hook 'ac-cider-setup)
+              (add-hook 'cider-repl-mode-hook 'ac-cider-setup))
 
 (quse-package slime
-              :init (progn
-                      (setf inferior-lisp-program "sbcl")
-                      (setf common-lisp-hyperspec-root
-                            (getenv "HYPERSPEC_ROOT"))
-                      (setf slime-contribs '(slime-fancy))
-                      (slime-setup)))
+              :init
+              (setf inferior-lisp-program "sbcl")
+              (setf common-lisp-hyperspec-root (getenv "HYPERSPEC_ROOT"))
+              (setf slime-contribs '(slime-fancy))
+              (slime-setup))
 
 (quse-package ac-slime
-              :init (progn (add-hook 'slime-mode-hook 'set-up-slime-ac)
-                           (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-                           (eval-after-load "auto-complete"
-                             '(add-to-list 'ac-modes 'slime-repl-mode))))
+              :init
+              (add-hook 'slime-mode-hook 'set-up-slime-ac)
+              (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+              (eval-after-load "auto-complete"
+                '(add-to-list 'ac-modes 'slime-repl-mode)))
 
 (quse-package web-mode
-              :init (progn
-                      (setf web-mode-enable-engine-detection t)
-                      (add-to-list 'auto-mode-alist
-                                   '("\\.html?\\'" . web-mode))
-                      (add-to-list 'org-src-lang-modes
-                                   '("html" . web))
-                      (add-to-list 'auto-mode-alist
-                                   '("\\.css?\\'" . web-mode))
-                      (add-to-list 'org-src-lang-modes
-                                   '("css" . web))
-                      (add-to-list 'auto-mode-alist
-                                   '("\\.js?\\'" . web-mode))
-                      (add-to-list 'org-src-lang-modes
-                                   '("js" . web))
-                      (add-to-list 'auto-mode-alist
-                                   '("\\.php?\\'" . web-mode))
-                      (add-to-list 'auto-mode-alist
-                                   '("\\.tmpl?\\'" . web-mode))))
+              :init
+              (setf web-mode-enable-engine-detection t)
+              (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+              (add-to-list 'org-src-lang-modes '("html" . web))
+              (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+              (add-to-list 'org-src-lang-modes '("css" . web))
+              (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
+              (add-to-list 'org-src-lang-modes '("js" . web))
+              (add-to-list 'auto-mode-alist '("\\.php?\\'" . web-mode))
+              (add-to-list 'auto-mode-alist '("\\.tmpl?\\'" . web-mode)))
 
 (quelpa 'emacs-eclim)
 (use-package eclim :config (global-eclim-mode))
@@ -148,15 +137,15 @@
 (quse-package yaml-mode)
 
 (quse-package jedi
-              :init (progn
-                      (add-hook 'python-mode-hook 'jedi:setup)
-                      (setf jedi:complete-on-dot t)
-                      (setf jedi:use-shortcuts t)))
+              :init
+              (add-hook 'python-mode-hook 'jedi:setup)
+              (setf jedi:complete-on-dot t)
+              (setf jedi:use-shortcuts t))
 
 (quse-package virtualenvwrapper
-              :init (progn
-                      (venv-initialize-interactive-shells)
-                      (venv-initialize-eshell)))
+              :init
+              (venv-initialize-interactive-shells)
+              (venv-initialize-eshell))
 
 (quse-package (hoon-mode :fetcher github
                          :repo "urbit/urbit"
