@@ -14,7 +14,8 @@
 
 (quse-package better-defaults)
 
-(use-package saveplace :init (save-place-mode))
+(use-package saveplace :init
+  (when (fboundp 'save-place-mode) (save-place-mode)))
 
 (ido-everywhere)
 

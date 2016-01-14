@@ -94,7 +94,8 @@ Now, for some code.
   behavior for myself.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref save-place-mode
-    (use-package saveplace :init (save-place-mode))
+    (use-package saveplace :init
+      (when (fboundp 'save-place-mode) (save-place-mode)))
   #+END_SRC
 
   And while =better-defaults= enables Ido mode and Ido flex matching, both of
