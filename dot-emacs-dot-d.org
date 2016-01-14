@@ -56,13 +56,6 @@ Now, for some code.
         (eval-buffer)))
   #+END_SRC
 
-  Apparently a certain package breaks =quelpa= in certain circumstances. This
-  snippet fixes this problem.
-
-  #+BEGIN_SRC emacs-lisp :noweb-ref async-bytecomp-allowed-packages
-    (setf async-bytecomp-allowed-packages nil)
-  #+END_SRC
-
   Because of the last snippet, =use-package= can be downloaded using the
   =quelpa= function, but it must be loaded manually. (Manually being a
   one-liner. :-)
@@ -506,8 +499,6 @@ Now, for some code.
 
    #+BEGIN_SRC emacs-lisp :tangle init.el
      <<quelpa>>
-
-     <<async-bytecomp-allowed-packages>>
 
      <<use-package>>
 
