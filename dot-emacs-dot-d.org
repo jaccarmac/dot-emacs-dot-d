@@ -106,10 +106,32 @@ Now, for some code.
 
   And while =better-defaults= enables Ido mode and Ido flex matching, both of
   which are very useful settings, it does not enable Ido everyhwere, which is
-  very useful. Enabling the feature, which is built into Emacs, is trivial.
+  very useful. Fully converting Emacs to use Ido has to be done in several
+  steps. First comes the basic Ido setup included in =better-defaults=. Then,
+  ~ido-ubiquitous~, a slightly more dangerous built-in function, is
+  activated. Finally, several more packages are used to fill in the
+  gaps. Namely, they are =ido-ubiquitous= for a few edge cases, =smex= to
+  replace the =M-x= prompt, =ido-yes-or-no= to replace binary prompts, and
+  =crm-custom.el= to replace =completing-read-multiple=.
 
-  #+BEGIN_SRC emacs-lisp :noweb-ref ido-everywhere
+  #+BEGIN_SRC emacs-lisp :noweb-ref ido-really-everywhere
     (ido-everywhere)
+
+    (quse-package ido-ubiquitous
+                  :init
+                  (ido-ubiquitous-mode)
+                  (setf org-completion-use-ido t)
+                  (setf magit-completing-read-function 'magit-ido-completing-read))
+
+    (quse-package ido-yes-or-no :init (ido-yes-or-no-mode))
+
+    (quse-package crm-custom :init (crm-custom-mode))
+
+    (quse-package smex
+                  :init (smex-initialize)
+                  :bind (("M-x" . smex)
+                         ("M-X" . smex-major-mode-commands)
+                         ("C-c C-c M-x" . execute-extended-command)))
   #+END_SRC
 
   On top of the sensible settings in =better-defaults=, I like to set
@@ -489,7 +511,7 @@ Now, for some code.
 
      <<save-place-mode>>
 
-     <<ido-everywhere>>
+     <<ido-really-everywhere>>
 
      <<fill-column>>
 
