@@ -481,6 +481,21 @@ Now, for some code.
                                  :branch "package-header"))
   #+END_SRC
 
+* Create and control containers.
+
+  Short and uninsteresting story: I used to shun containers, thinking that they
+  were just a passing trend. I may be wrong, but using them changed my
+  mind. Two packages, Spotify's =dockerfile-mode= and Silex's =docker.el=,
+  allow Emacs to edit Dockerfiles and control docker operations, respectively.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref docker
+    (quse-package dockerfile-mode :init (add-to-list
+                                         'auto-mode-alist
+                                         '("Dockerfile\\'" . dockerfile-mode)))
+
+    (quse-package docker)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -559,4 +574,6 @@ Now, for some code.
      <<hoon-mode>>
 
      <<gdscript-mode>>
+
+     <<docker>>
    #+END_SRC
