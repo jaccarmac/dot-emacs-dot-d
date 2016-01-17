@@ -126,7 +126,7 @@
 
 (quse-package markdown-mode)
 
-(quse-package go-mode)
+(quse-package go-mode :init (add-hook 'before-save-hook #'gofmt-before-save))
 
 (quse-package go-autocomplete)
 
