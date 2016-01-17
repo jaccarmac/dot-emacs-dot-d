@@ -155,8 +155,11 @@
                              :repo "jaccarmac/gdscript-mode"
                              :branch "package-header"))
 
-(quse-package dockerfile-mode :init (add-to-list
-                                     'auto-mode-alist
-                                     '("Dockerfile\\'" . dockerfile-mode)))
+(quse-package (dockerfile-mode :fetcher github
+                               :repo "jaccarmac/dockerfile-mode"
+                               :branch "fix-space-regression")
+              :init (add-to-list
+                     'auto-mode-alist
+                     '("Dockerfile\\'" . dockerfile-mode)))
 
 (quse-package docker :init (docker-global-mode))
