@@ -159,4 +159,4 @@
                                      'auto-mode-alist
                                      '("Dockerfile\\'" . dockerfile-mode)))
 
-(quse-package docker)
+(quse-package docker :init (docker-global-mode))

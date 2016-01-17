@@ -488,7 +488,7 @@ Now, for some code.
                                          'auto-mode-alist
                                          '("Dockerfile\\'" . dockerfile-mode)))
 
-    (quse-package docker)
+    (quse-package docker :init (docker-global-mode))
   #+END_SRC
 
 * Tangle source code.
