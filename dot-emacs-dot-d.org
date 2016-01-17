@@ -476,7 +476,7 @@ Now, for some code.
                                  :branch "package-header"))
   #+END_SRC
 
-* Create and control containers.
+* Create and control Docker containers.
 
   Short and uninsteresting story: I used to shun containers, thinking that they
   were just a passing trend. I may be wrong, but using them changed my
