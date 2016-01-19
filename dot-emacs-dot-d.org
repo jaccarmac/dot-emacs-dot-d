@@ -483,17 +483,10 @@ Now, for some code.
   mind. Two packages, Spotify's =dockerfile-mode= and Silex's =docker.el=,
   allow Emacs to edit Dockerfiles and control docker operations, respectively.
 
-  Some of my containers live on paths with spaces in them, which breaks
-  dockerfile-mode as it stands today. Thus, I must use my fork and branch which
-  fix the regression.
-
   #+BEGIN_SRC emacs-lisp :noweb-ref docker
-    (quse-package (dockerfile-mode :fetcher github
-                                   :repo "jaccarmac/dockerfile-mode"
-                                   :branch "fix-space-regression")
-                  :init (add-to-list
-                         'auto-mode-alist
-                         '("Dockerfile\\'" . dockerfile-mode)))
+    (quse-package dockerfile-mode :init (add-to-list
+                                         'auto-mode-alist
+                                         '("Dockerfile\\'" . dockerfile-mode)))
 
     (quse-package docker :init (docker-global-mode))
   #+END_SRC
