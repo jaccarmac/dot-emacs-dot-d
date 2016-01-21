@@ -230,13 +230,17 @@ Now, for some code.
 
   Bozhidar Batsov's =projectile= is an all-inclusive project management
   navigator and indexer for Emacs. The indexing it does is especially useful,
-  letting you grep an entire project with a simple key chord.
+  letting you grep an entire project with a simple key chord. I force the
+  indexing to use fast Unix-y tools even on Windows. Even though this method is
+  faster than using Emacs Lisp indexing, note that it requires extra tools,
+  namely Git and =find=, to be installed.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref projectile
     (quse-package projectile
                   :init
                   (projectile-global-mode)
-                  (setf projectile-switch-project-action 'projectile-dired))
+                  (setf projectile-switch-project-action 'projectile-dired)
+                  (setf projectile-indexing-method 'alien))
   #+END_SRC
 
   Git is the modern king of version control. The Magit project turns Emacs into
