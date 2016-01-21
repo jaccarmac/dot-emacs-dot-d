@@ -70,7 +70,8 @@
 (quse-package projectile
               :init
               (projectile-global-mode)
-              (setf projectile-switch-project-action 'projectile-dired))
+              (setf projectile-switch-project-action 'projectile-dired)
+              (setf projectile-indexing-method 'alien))
 
 (quse-package magit)
 
