@@ -47,6 +47,8 @@
 
 (quse-package moe-theme :config (load-theme 'moe-dark t))
 
+(set-face-attribute 'default nil :font "Iosevka")
+
 (quse-package smartparens
               :init
               (smartparens-global-mode)

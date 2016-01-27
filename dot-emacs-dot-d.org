@@ -172,6 +172,17 @@ Now, for some code.
     (quse-package moe-theme :config (load-theme 'moe-dark t))
   #+END_SRC
 
+  I also enjoy using a pleasant monospace font. It's pretty easy to get Emacs
+  to recognize your global GTK settings on a Linux box, but for Windows
+  machines the font needs to be set programmatically or in the
+  registry. Explicitly using Iosevka works on all systems with the font
+  installed, and defaults back to the font provided by the system if Iosevka
+  isn't there.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref face-attribute-font
+    (set-face-attribute 'default nil :font "Iosevka")
+  #+END_SRC
+
   The =smartparens= package is like =paredit= plus a bunch of nice extras. I
   enable the strict mode globally and use the maintainer's default keybindings.
 
@@ -525,6 +536,8 @@ Now, for some code.
      <<powerline>>
 
      <<moe-theme>>
+
+     <<face-attribute-font>>
 
      <<smartparens>>
 
