@@ -155,8 +155,7 @@
                          :files ("extras/hoon-mode.el/hoon-mode.el")))
 
 (quse-package (gdscript-mode :fetcher github
-                             :repo "jaccarmac/gdscript-mode"
-                             :branch "package-header"))
+                             :repo "akoaysigod/gdscript-mode"))
 
 (quse-package dockerfile-mode :init (add-to-list
                                      'auto-mode-alist
