@@ -195,6 +195,16 @@ Now, for some code.
                   (sp-use-smartparens-bindings))
   #+END_SRC
 
+* Make copying in Dired marginally better.
+
+  `dired-dwim-target` makes Dired Do What I Mean when copying. This means I can
+  open two Dired windows in disparate locations and copy files between them
+  without having to edit long pathnames.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref dired-dwim-target
+    (setf dired-dwim-target t)
+  #+END_SRC
+
 * Install a recent version of Org mode.
 
   It works fine without installing the bleeding edge, but that's no fun. And
@@ -539,6 +549,8 @@ Now, for some code.
      <<face-attribute-font>>
 
      <<smartparens>>
+
+     <<dired-dwim-target>>
 
      <<org>>
 

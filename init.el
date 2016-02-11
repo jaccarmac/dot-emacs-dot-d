@@ -56,6 +56,8 @@
               (require 'smartparens-config)
               (sp-use-smartparens-bindings))
 
+(setf dired-dwim-target t)
+
 (quse-package (org :fetcher git
                    :url "git://orgmode.org/org-mode.git"
                    :files ("lisp/*.el"
