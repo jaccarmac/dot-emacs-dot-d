@@ -79,6 +79,8 @@
 
 (quse-package magit)
 
+(quse-package ssh-agency)
+
 (quse-package auto-complete
               :init
               (require 'auto-complete-config)

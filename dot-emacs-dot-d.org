@@ -272,6 +272,15 @@ Now, for some code.
     (quse-package magit)
   #+END_SRC
 
+  Using SSH Git remotes on Windows is a nightmare due to how difficult it is to
+  get ssh-agent's environment variables into an Emacs not started in Cygwin or
+  MSYS. Thankfully, the Magit maintainers have written a package to manage said
+  environment variables, just for Emacs, automatically!
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref ssh-agency
+    (quse-package ssh-agency)
+  #+END_SRC
+
 * Complete symbols.
 
   It's nearly impossible to work with large projects or avoid misspellings
@@ -561,6 +570,8 @@ Now, for some code.
      <<projectile>>
 
      <<magit>>
+
+     <<ssh-agency>>
 
      <<auto-complete>>
 
