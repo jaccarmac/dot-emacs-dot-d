@@ -524,6 +524,24 @@ Now, for some code.
     (quse-package docker :init (docker-global-mode))
   #+END_SRC
 
+* Make Emacs and .NET cooperate.
+
+  There is a complete and up-to-date major mode for C#, the only the .NET
+  language I use at the moment, on MELPA.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref csharp-mode
+    (quse-package csharp-mode)
+  #+END_SRC
+
+  OmniSharp is a project which provides integration with .NET's introspection
+  libraries to tools other than Visual Studio. I've had a lot of problems
+  installing the server component, but the Emacs mode is easy to install and
+  add to the C# mode's hook.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref omnisharp
+    (quse-package omnisharp :init (add-hook 'csharp-mode-hook 'omnisharp-mode))
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -610,4 +628,8 @@ Now, for some code.
      <<gdscript-mode>>
 
      <<docker>>
+
+     <<csharp-mode>>
+
+     <<omnisharp>>
    #+END_SRC
