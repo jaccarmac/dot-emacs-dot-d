@@ -166,3 +166,7 @@
                                      '("Dockerfile\\'" . dockerfile-mode)))
 
 (quse-package docker :init (docker-global-mode))
+
+(quse-package csharp-mode)
+
+(quse-package omnisharp :init (add-hook 'csharp-mode-hook 'omnisharp-mode))
