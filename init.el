@@ -124,6 +124,14 @@
               (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
               (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode)))
 
+(quse-package tern
+              :config
+              (setf tern-command '("tern"))
+              (add-hook 'web-mode-hook 'tern-mode)
+              (add-to-list 'auto-mode-alist '(".tern-project" . web-mode))
+              (add-to-list 'web-mode-content-types '("json" . ".tern-project")))
+(quse-package tern-auto-complete :config (tern-ac-setup))
+
 (quelpa 'emacs-eclim)
 (use-package eclim :config (global-eclim-mode))
 (use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
