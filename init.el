@@ -119,6 +119,7 @@
               (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
               (add-to-list 'org-src-lang-modes '("css" . web))
               (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+              (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
               (add-to-list 'org-src-lang-modes '("js" . web))
               (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
               (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode)))
