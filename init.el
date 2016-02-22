@@ -142,7 +142,11 @@
 
 (quse-package markdown-mode)
 
-(quse-package go-mode :init (add-hook 'before-save-hook #'gofmt-before-save))
+(quse-package go-mode
+              :init
+              (add-hook 'before-save-hook #'gofmt-before-save)
+              :bind
+              ("M-." . godef-jump))
 
 (quse-package go-autocomplete)
 
