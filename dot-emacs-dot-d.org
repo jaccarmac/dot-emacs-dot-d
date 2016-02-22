@@ -210,13 +210,17 @@ Now, for some code.
   It works fine without installing the bleeding edge, but that's no fun. And
   installing the bleeding edge is just too easy...
 
+  Org mode is so awesome that I use it as my default mode.
+
   #+BEGIN_SRC emacs-lisp :noweb-ref org
     (quse-package (org :fetcher git
                        :url "git://orgmode.org/org-mode.git"
                        :files ("lisp/*.el"
                                "contrib/lisp/*.el"
                                "doc/dir"
-                               "doc/*.texi")))
+                               "doc/*.texi"))
+                  :init
+                  (setq default-major-mode 'org-mode))
   #+END_SRC
 
 * Manage my money.
