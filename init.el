@@ -63,7 +63,9 @@
                    :files ("lisp/*.el"
                            "contrib/lisp/*.el"
                            "doc/dir"
-                           "doc/*.texi")))
+                           "doc/*.texi"))
+              :init
+              (setq default-major-mode 'org-mode))
 
 (quse-package ledger-mode
               :init (add-to-list 'auto-mode-alist
