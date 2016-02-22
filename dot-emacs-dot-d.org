@@ -449,7 +449,11 @@ Now, for some code.
   install.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref go-mode
-    (quse-package go-mode :init (add-hook 'before-save-hook #'gofmt-before-save))
+    (quse-package go-mode
+                  :init
+                  (add-hook 'before-save-hook #'gofmt-before-save)
+                  :bind
+                  ("M-." . godef-jump))
   #+END_SRC
 
   #+BEGIN_SRC emacs-lisp :noweb-ref go-autocomplete
