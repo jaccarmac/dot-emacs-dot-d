@@ -185,3 +185,5 @@
 (quse-package csharp-mode)
 
 (quse-package omnisharp :init (add-hook 'csharp-mode-hook 'omnisharp-mode))
+
+(quse-package lua-mode)
