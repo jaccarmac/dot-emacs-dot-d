@@ -567,6 +567,15 @@ Now, for some code.
     (quse-package omnisharp :init (add-hook 'csharp-mode-hook 'omnisharp-mode))
   #+END_SRC
 
+* Edit Lua.
+
+  Lua-mode is a simple major mode for the Lua programming language which
+  includes, highlighting, indentation, and send-to-REPL.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref lua-mode
+    (quse-package lua-mode)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -659,4 +668,6 @@ Now, for some code.
      <<csharp-mode>>
 
      <<omnisharp>>
+
+     <<lua-mode>>
    #+END_SRC
