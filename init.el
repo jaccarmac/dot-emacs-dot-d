@@ -67,6 +67,8 @@
               :init
               (setq default-major-mode 'org-mode))
 
+(quse-package ox-reveal)
+
 (quse-package ledger-mode
               :init (add-to-list 'auto-mode-alist
                                  '("ledger/.*\\.dat\\'" . ledger-mode)))
