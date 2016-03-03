@@ -223,6 +223,17 @@ Now, for some code.
                   (setq default-major-mode 'org-mode))
   #+END_SRC
 
+** Create presentations in Org.
+
+   Org comes preloaded with facilities for Beamer export, which produces
+   high-quality LaTeX presentations. I prefer something lighter and webbier,
+   and that thing is reveal.js, which also has an Org exporter. However, this
+   one needs to be installed.
+
+   #+BEGIN_SRC emacs-lisp :noweb-ref ox-reveal
+     (quse-package ox-reveal)
+   #+END_SRC
+
 * Manage my money.
 
   Ledger is a fantastic personal accounting application. It has a ton of
@@ -614,6 +625,8 @@ Now, for some code.
      <<dired-dwim-target>>
 
      <<org>>
+
+     <<ox-reveal>>
 
      <<ledger-mode>>
 
