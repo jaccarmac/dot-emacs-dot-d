@@ -136,6 +136,8 @@
               (add-to-list 'web-mode-content-types '("json" . ".tern-project")))
 (quse-package tern-auto-complete :config (tern-ac-setup))
 
+(quse-package coffee-mode)
+
 (quelpa 'emacs-eclim)
 (use-package eclim :config (global-eclim-mode))
 (use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
