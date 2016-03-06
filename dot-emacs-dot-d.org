@@ -414,6 +414,19 @@ Now, for some code.
     (quse-package tern-auto-complete :config (tern-ac-setup))
   #+END_SRC
 
+** Edit CoffeeScript (maybe).
+
+   CoffeeScript is a light version of Javascript inspired by Python's syntax,
+   which makes me like it automatically. In addition, a further variation,
+   IcedCoffeeScript, makes a point of using continuation-passing style, which I
+   find really fun to think about, especially in JavaScript. I may never end up
+   using either for serious work, but just in case here's the mode
+   installation.
+
+   #+BEGIN_SRC emacs-lisp :noweb-ref coffee-mode
+     (quse-package coffee-mode)
+   #+END_SRC
+
 * Steal Java-editing features from Eclipse.
 
   Trying to edit Java with just Emacs is a nightmare. I tried it for a while,
@@ -651,6 +664,8 @@ Now, for some code.
      <<web-mode>>
 
      <<tern>>
+
+     <<coffee-mode>>
 
      <<emacs-eclim>>
 
