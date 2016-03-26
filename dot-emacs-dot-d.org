@@ -486,8 +486,8 @@ Now, for some code.
     (quse-package go-mode
                   :init
                   (add-hook 'before-save-hook #'gofmt-before-save)
-                  :bind
-                  ("M-." . godef-jump))
+                  :bind (:map go-mode-map
+                              ("M-." . godef-jump)))
   #+END_SRC
 
   #+BEGIN_SRC emacs-lisp :noweb-ref go-autocomplete
