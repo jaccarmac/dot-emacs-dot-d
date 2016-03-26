@@ -99,8 +99,11 @@
 (quse-package ac-cider
               :init
               (add-hook 'cider-mode-hook 'ac-cider-setup)
+              (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
               (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+              (add-hook 'cider-repl-mode-hook 'ac-flyspell-workaround)
               (add-hook 'cider-clojure-interaction-mode-hook 'ac-cider-setup)
+              (add-hook 'cider-clojure-interaction-mode-hook 'ac-flyspell-workaround)
               (eval-after-load "auto-complete"
                 '(progn
                    (add-to-list 'ac-modes 'cider-mode)
