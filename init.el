@@ -149,7 +149,7 @@
 
 (quelpa 'emacs-eclim)
 (use-package eclim :config (global-eclim-mode))
-(use-package eclimd)
+(use-package eclimd :config (setf eclimd-wait-for-process nil))
 (use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
 
 (quse-package yasnippet)
