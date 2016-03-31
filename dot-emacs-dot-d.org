@@ -448,7 +448,7 @@ Now, for some code.
   #+BEGIN_SRC emacs-lisp :noweb-ref emacs-eclim
     (quelpa 'emacs-eclim)
     (use-package eclim :config (global-eclim-mode))
-    (use-package eclimd)
+    (use-package eclimd :config (setf eclimd-wait-for-process nil))
     (use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
   #+END_SRC
 
