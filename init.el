@@ -69,6 +69,8 @@
 
 (quse-package ox-reveal)
 
+(setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
+
 (quse-package ledger-mode
               :init (add-to-list 'auto-mode-alist
                                  '("ledger/.*\\.dat\\'" . ledger-mode)))
