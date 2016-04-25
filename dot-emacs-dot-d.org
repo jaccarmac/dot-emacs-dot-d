@@ -234,6 +234,19 @@ Now, for some code.
      (quse-package ox-reveal)
    #+END_SRC
 
+** Improve Org's LaTeX export.
+
+   I end up writing a lot of papers in Org and exporting via LaTeX for nice
+   PDFs. After a few months of doing this with a more-or-less vanilla Org
+   setup, I've found that doing citations properly is difficult. That is the
+   motivation for the changes below, which consist of:
+
+   1. Setting the export process to =latexmk=.
+
+      #+BEGIN_SRC emacs-lisp :noweb-ref org-pdf-latexmk
+        (setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
+      #+END_SRC
+
 * Manage my money.
 
   Ledger is a fantastic personal accounting application. It has a ton of
@@ -650,6 +663,8 @@ Now, for some code.
      <<org>>
 
      <<ox-reveal>>
+
+     <<org-pdf-latexmk>>
 
      <<ledger-mode>>
 
