@@ -94,7 +94,6 @@
 
 (quse-package cider
               :init
-              (add-hook 'cider-mode-hook 'eldoc-mode)
               (setf cider-repl-tab-command 'indent-for-tab-command)
               (setf cider-default-repl-command "boot"))
 
