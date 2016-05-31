@@ -71,6 +71,15 @@
 
 (setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
 
+(add-to-list 'org-latex-classes
+             '("apa6"
+               "\\documentclass[man,12pt]{apa6}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
 (quse-package ledger-mode
               :init (add-to-list 'auto-mode-alist
                                  '("ledger/.*\\.dat\\'" . ledger-mode)))

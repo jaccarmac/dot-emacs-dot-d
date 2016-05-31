@@ -247,6 +247,23 @@ Now, for some code.
         (setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
       #+END_SRC
 
+*** Allow APA-style export from Org.
+
+    To use document classes that aren't ~article~, ~report~, or ~book~, the
+    class needs to be registered in Org. I took the samples from the existing
+    ~org-latex-classes~ and added one for the LaTeX ~apa6~ package.
+
+    #+BEGIN_SRC emacs-lisp :noweb-ref org-latex-classes-apa6
+      (add-to-list 'org-latex-classes
+                   '("apa6"
+                     "\\documentclass[man,12pt]{apa6}"
+                     ("\\section{%s}" . "\\section*{%s}")
+                     ("\\subsection{%s}" . "\\subsection*{%s}")
+                     ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                     ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                     ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+    #+END_SRC
+
 * Manage my money.
 
   Ledger is a fantastic personal accounting application. It has a ton of
@@ -664,6 +681,8 @@ Now, for some code.
      <<ox-reveal>>
 
      <<org-pdf-latexmk>>
+
+     <<org-latex-classes-apa6>>
 
      <<ledger-mode>>
 
