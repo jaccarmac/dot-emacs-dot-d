@@ -220,7 +220,7 @@ Now, for some code.
                                "doc/dir"
                                "doc/*.texi"))
                   :init
-                  (setq default-major-mode 'org-mode))
+                  (setf default-major-mode 'org-mode))
   #+END_SRC
 
 ** Create presentations in Org.
@@ -244,7 +244,7 @@ Now, for some code.
    1. Setting the export process to =latexmk=.
 
       #+BEGIN_SRC emacs-lisp :noweb-ref org-pdf-latexmk
-        (setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
+        (setf org-latex-pdf-process (list "latexmk -f -pdf %f"))
       #+END_SRC
 
 *** Allow APA-style export from Org.
