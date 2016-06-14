@@ -182,6 +182,10 @@
 
 (quse-package yaml-mode)
 
+(let ((global-venv-location "~/.virtualenvs"))
+  (setf python-environment-directory global-venv-location)
+  (setf venv-location global-venv-location))
+
 (quse-package jedi
               :init
               (add-hook 'python-mode-hook 'jedi:setup)
@@ -191,10 +195,7 @@
 (quse-package virtualenvwrapper
               :init
               (venv-initialize-interactive-shells)
-              (venv-initialize-eshell)
-              (let ((global-venv-location "~/.virtualenvs"))
-                (setf python-environment-directory global-venv-location)
-                (setf venv-location global-venv-location)))
+              (venv-initialize-eshell))
 
 (quse-package (hoon-mode :fetcher github
                          :repo "urbit/urbit"
