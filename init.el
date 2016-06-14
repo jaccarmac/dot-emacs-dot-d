@@ -65,11 +65,11 @@
                            "doc/dir"
                            "doc/*.texi"))
               :init
-              (setq default-major-mode 'org-mode))
+              (setf default-major-mode 'org-mode))
 
 (quse-package ox-reveal)
 
-(setq org-latex-pdf-process (list "latexmk -f -pdf %f"))
+(setf org-latex-pdf-process (list "latexmk -f -pdf %f"))
 
 (add-to-list 'org-latex-classes
              '("apa6"
@@ -191,7 +191,10 @@
 (quse-package virtualenvwrapper
               :init
               (venv-initialize-interactive-shells)
-              (venv-initialize-eshell))
+              (venv-initialize-eshell)
+              (let ((global-venv-location "~/.virtualenvs"))
+                (setf python-environment-directory global-venv-location)
+                (setf venv-location global-venv-location)))
 
 (quse-package (hoon-mode :fetcher github
                          :repo "urbit/urbit"
