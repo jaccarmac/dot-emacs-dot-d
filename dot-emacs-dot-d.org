@@ -568,11 +568,20 @@ Now, for some code.
   need to install and configure the =virtualenvwrapper.el= package for
   everything to work properly.
 
+  Unfortunatelier, =virtualenvwrapper.el= seems to not respect the global
+  "directory for virtualenvs" setting, while Jedi does. They end up being in
+  different places. Ostensibly, the default for =virtualenvwrapper.el= is
+  =~/.virtualenvs=, but since I've been bitten enough by edge cases around
+  virtualenvs already, I set both variables here.
+
   #+BEGIN_SRC emacs-lisp :noweb-ref virtualenvwrapper
     (quse-package virtualenvwrapper
                   :init
                   (venv-initialize-interactive-shells)
-                  (venv-initialize-eshell))
+                  (venv-initialize-eshell)
+                  (let ((global-venv-location "~/.virtualenvs"))
+                    (setf python-environment-directory global-venv-location)
+                    (setf venv-location global-venv-location)))
   #+END_SRC
 
 * Edit Hoon files.
