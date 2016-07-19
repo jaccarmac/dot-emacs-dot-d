@@ -618,12 +618,18 @@ Now, for some code.
   mind. Two packages, Spotify's =dockerfile-mode= and Silex's =docker.el=,
   allow Emacs to edit Dockerfiles and control docker operations, respectively.
 
+  Connecting to Docker over Tramp is useful, especially on Windows where it's
+  not easy to run an Emacs session directly from the container. The package
+  providing an appropriate Tramp method is =docker-tramp= and is a dependency
+  of =docker.el=. The dependency is made explicit anyway.
+
   #+BEGIN_SRC emacs-lisp :noweb-ref docker
     (quse-package dockerfile-mode :init (add-to-list
                                          'auto-mode-alist
                                          '("Dockerfile\\'" . dockerfile-mode)))
 
     (quse-package docker :init (docker-global-mode))
+    (quse-package docker-tramp)
   #+END_SRC
 
 * Make Emacs and .NET cooperate.
