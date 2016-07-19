@@ -96,6 +96,8 @@
 
 (quse-package ssh-agency)
 
+(quse-package editorconfig :config (editorconfig-mode 1))
+
 (quse-package auto-complete
               :init
               (require 'auto-complete-config)

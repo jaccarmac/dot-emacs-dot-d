@@ -326,6 +326,12 @@ Now, for some code.
     (quse-package ssh-agency)
   #+END_SRC
 
+  Some projects use EditorConfig to manage style settings, etc.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref editorconfig
+    (quse-package editorconfig :config (editorconfig-mode 1))
+  #+END_SRC
+
 * Complete symbols.
 
   It's nearly impossible to work with large projects or avoid misspellings
@@ -713,6 +719,8 @@ Now, for some code.
      <<magit>>
 
      <<ssh-agency>>
+
+     <<editorconfig>>
 
      <<auto-complete>>
 
