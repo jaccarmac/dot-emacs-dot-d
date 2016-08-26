@@ -77,6 +77,16 @@ Now, for some code.
     (require 'quse-package)
   #+END_SRC
 
+  Here's a very simple function to upgrade/clean out packages. It combines
+  features from =quelpa= and those built into Emacs.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref upgrade-and-clean-packages
+    (defun upgrade-and-clean-packages ()
+      (interactive)
+      (quelpa-upgrade)
+      (package-autoremove))
+  #+END_SRC
+
 * Improve Emacs' interface.
 
   Vanilla Emacs is usable, but not usable enough to allow me to be
@@ -690,6 +700,8 @@ Now, for some code.
      <<use-package>>
 
      <<quse-package>>
+
+     <<upgrade-and-clean-packages>>
 
      <<better-defaults>>
 
