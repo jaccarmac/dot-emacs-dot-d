@@ -64,7 +64,6 @@
               (sp-use-smartparens-bindings))
 
 (setf custom-file "~/.emacs.d/custom.el")
-(load custom-file)
 
 (defun upgrade-and-clean-packages ()
   (interactive)

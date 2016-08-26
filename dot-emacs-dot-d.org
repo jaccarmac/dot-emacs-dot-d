@@ -223,11 +223,11 @@ Now, for some code.
 
   I hate the way that playing with packages, among other things, dirties up my
   carefully (ha!) curated ~init.el~. Emacs allows you to customize the location
-  of the so-called "custom file".
+  of the so-called "custom file". I also don't care about any customize
+  variables at the moment, so I won't even load it hehe.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref custom-file
     (setf custom-file "~/.emacs.d/custom.el")
-    (load custom-file)
   #+END_SRC
 
   Speaking of that file, in =quse-package= and a few times in this file,
