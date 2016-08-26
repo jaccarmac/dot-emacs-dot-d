@@ -190,7 +190,7 @@ Now, for some code.
   isn't there.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref face-attribute-font
-    (set-face-attribute 'default nil :font "Iosevka")
+    (set-face-attribute 'default nil :font "Iosevka 10")
   #+END_SRC
 
   The =smartparens= package is like =paredit= plus a bunch of nice extras. I
