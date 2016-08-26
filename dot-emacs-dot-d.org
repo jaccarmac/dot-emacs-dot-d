@@ -77,14 +77,16 @@ Now, for some code.
     (require 'quse-package)
   #+END_SRC
 
-  Here's a very simple function to upgrade/clean out packages. It combines
-  features from =quelpa= and those built into Emacs.
+  Here's a very simple function to upgrade/clean out packages. This will also
+  nuke the settings in =custom-file=. It combines features from =quelpa= and
+  those built into Emacs.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref upgrade-and-clean-packages
     (defun upgrade-and-clean-packages ()
       (interactive)
       (quelpa-upgrade)
-      (package-autoremove))
+      (package-autoremove)
+      (write-region "" nil custom-file))
   #+END_SRC
 
 * Improve Emacs' interface.
@@ -710,8 +712,6 @@ Now, for some code.
 
      <<quse-package>>
 
-     <<upgrade-and-clean-packages>>
-
      <<better-defaults>>
 
      <<save-place-mode>>
@@ -735,6 +735,8 @@ Now, for some code.
      <<smartparens>>
 
      <<custom-file>>
+
+     <<upgrade-and-clean-packages>>
 
      <<dired-dwim-target>>
 
