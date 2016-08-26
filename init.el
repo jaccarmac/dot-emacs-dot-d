@@ -70,7 +70,7 @@
   (interactive)
   (quelpa-upgrade)
   (package-autoremove)
-  (write-region "" nil custom-file))
+  (customize-save-variable 'package-selected-packages nil))
 
 (setf dired-dwim-target t)
 

@@ -86,7 +86,7 @@ Now, for some code.
       (interactive)
       (quelpa-upgrade)
       (package-autoremove)
-      (write-region "" nil custom-file))
+      (customize-save-variable 'package-selected-packages nil))
   #+END_SRC
 
 * Improve Emacs' interface.
