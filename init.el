@@ -5,11 +5,14 @@
     (url-insert-file-contents
      "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
     (eval-buffer)))
+(add-to-list 'package-selected-packages 'quelpa)
 
 (quelpa 'use-package)
+(add-to-list 'package-selected-packages 'use-package)
 (require 'use-package)
 
 (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
+(add-to-list 'package-selected-packages 'quse-package)
 (require 'quse-package)
 
 (quse-package better-defaults)
@@ -161,6 +164,7 @@
 (quse-package coffee-mode)
 
 (quelpa 'emacs-eclim)
+(add-to-list 'package-selected-packages 'emacs-eclim)
 (use-package eclim :config (global-eclim-mode))
 (use-package eclimd :config (setf eclimd-wait-for-process nil))
 (use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
