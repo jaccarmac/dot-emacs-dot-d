@@ -232,3 +232,5 @@
 (quse-package omnisharp :init (add-hook 'csharp-mode-hook 'omnisharp-mode))
 
 (quse-package lua-mode)
+
+(customize-save-variable 'package-selected-packages package-selected-packages)

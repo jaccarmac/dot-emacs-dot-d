@@ -226,6 +226,14 @@ Now, for some code.
     (load custom-file)
   #+END_SRC
 
+  Speaking of that file, in =quse-package= and a few times in this file,
+  =package-selected-packages= is changed without getting persisted. Let's fix
+  that.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref save-package-selected-packages
+    (customize-save-variable 'package-selected-packages package-selected-packages)
+  #+END_SRC
+
 * Make copying in Dired marginally better.
 
   `dired-dwim-target` makes Dired Do What I Mean when copying. This means I can
@@ -809,4 +817,6 @@ Now, for some code.
      <<omnisharp>>
 
      <<lua-mode>>
+
+     <<save-package-selected-packages>>
    #+END_SRC
