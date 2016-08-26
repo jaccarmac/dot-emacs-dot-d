@@ -15,11 +15,6 @@
 (add-to-list 'package-selected-packages 'quse-package)
 (require 'quse-package)
 
-(defun upgrade-and-clean-packages ()
-  (interactive)
-  (quelpa-upgrade)
-  (package-autoremove))
-
 (quse-package better-defaults)
 
 (use-package saveplace :init
@@ -66,6 +61,12 @@
 
 (setf custom-file "~/.emacs.d/custom.el")
 (load custom-file)
+
+(defun upgrade-and-clean-packages ()
+  (interactive)
+  (quelpa-upgrade)
+  (package-autoremove)
+  (write-region "" nil custom-file))
 
 (setf dired-dwim-target t)
 
