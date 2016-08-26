@@ -215,6 +215,15 @@ Now, for some code.
                   (sp-use-smartparens-bindings))
   #+END_SRC
 
+  I hate the way that playing with packages, among other things, dirties up my
+  carefully (ha!) curated ~init.el~. Emacs allows you to customize the location
+  of the so-called "custom file".
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref custom-file
+    (setf custom-file "~/.emacs.d/custom.el")
+    (load custom-file)
+  #+END_SRC
+
 * Make copying in Dired marginally better.
 
   `dired-dwim-target` makes Dired Do What I Mean when copying. This means I can
@@ -724,6 +733,8 @@ Now, for some code.
      <<face-attribute-font>>
 
      <<smartparens>>
+
+     <<custom-file>>
 
      <<dired-dwim-target>>
 

@@ -64,6 +64,9 @@
               (require 'smartparens-config)
               (sp-use-smartparens-bindings))
 
+(setf custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 (setf dired-dwim-target t)
 
 (quse-package (org :fetcher git
