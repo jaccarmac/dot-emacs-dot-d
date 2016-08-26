@@ -48,7 +48,7 @@
 
 (quse-package powerline :init (powerline-default-theme))
 
-(quse-package moe-theme :config (load-theme 'moe-dark t))
+(quse-package grandshell-theme :config (load-theme 'grandshell t))
 
 (set-face-attribute 'default nil :font "Iosevka")
 

@@ -175,6 +175,13 @@ Now, for some code.
     (quse-package moe-theme :config (load-theme 'moe-dark t))
   #+END_SRC
 
+  That said, I've been using steckerhalter's Grand Shell recently and am more
+  partial to it at the moment.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref grandshell-theme
+    (quse-package grandshell-theme :config (load-theme 'grandshell t))
+  #+END_SRC
+
   I also enjoy using a pleasant monospace font. It's pretty easy to get Emacs
   to recognize your global GTK settings on a Linux box, but for Windows
   machines the font needs to be set programmatically or in the
@@ -700,7 +707,7 @@ Now, for some code.
 
      <<powerline>>
 
-     <<moe-theme>>
+     <<grandshell-theme>>
 
      <<face-attribute-font>>
 
