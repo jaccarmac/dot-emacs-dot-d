@@ -50,9 +50,11 @@
 
 (quse-package grandshell-theme :config (load-theme 'grandshell t))
 
-(let ((desired-font "Iosevka 10"))
-  (when (x-list-fonts desired-font)
-    (set-face-attribute 'default nil :font desired-font)))
+(run-with-idle-timer 1 nil (lambda ()
+                             (ignore-errors
+                               (set-face-attribute 'default
+                                                   nil
+                                                   :font "Iosevka 10"))))
 
 (quse-package smartparens
               :init
