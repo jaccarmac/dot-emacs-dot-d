@@ -375,6 +375,16 @@ Now, for some code.
     (quse-package editorconfig :config (editorconfig-mode 1))
   #+END_SRC
 
+  Dired, powerful as it is, is sometimes bad about showing the structure of a
+  deeply nested set of directories. Direx is a tree-based file browser. While
+  it isn't as powerful as Dired, it's useful to have around. The relevant
+  interactive function is =direx:find-directory=. (=direx:jump-to-directory= is
+  a shortcut to view the current directory.)
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref direx
+    (quse-package direx)
+  #+END_SRC
+
 * Complete symbols.
 
   It's nearly impossible to work with large projects or avoid misspellings
@@ -771,6 +781,8 @@ Now, for some code.
      <<ssh-agency>>
 
      <<editorconfig>>
+
+     <<direx>>
 
      <<auto-complete>>
 

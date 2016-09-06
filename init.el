@@ -113,6 +113,8 @@
 
 (quse-package editorconfig :config (editorconfig-mode 1))
 
+(quse-package direx)
+
 (quse-package auto-complete
               :init
               (require 'auto-complete-config)
