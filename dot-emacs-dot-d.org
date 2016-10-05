@@ -496,7 +496,8 @@ Now, for some code.
                   (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
                   (add-to-list 'org-src-lang-modes '("js" . web))
                   (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-                  (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode)))
+                  (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
+                  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode)))
   #+END_SRC
 
   =web-mode= takes care of Javascript, but isn't able to provide a full set of
