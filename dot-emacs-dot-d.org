@@ -401,6 +401,15 @@ Now, for some code.
                   (ac-config-default))
   #+END_SRC
 
+  A few modes (see [[Edit and complete Nim.][my Nim configuration]] for example) create hooks on
+  ~completion-at-point-function~ instead of hooking into a dedicated external
+  completion package. To pulll these completions into Auto-Complete's list, we
+  set up ~ac-capf~. It is activated in the relevant modes' setups.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref ac-capf
+    (quse-package ac-capf)
+  #+END_SRC
+
 * Clojure.
 
   Clojure is a fantastic Lisp that gives me access to the JVM without having to
@@ -788,6 +797,8 @@ Now, for some code.
      <<direx>>
 
      <<auto-complete>>
+
+     <<ac-capf>>
 
      <<cider>>
 
