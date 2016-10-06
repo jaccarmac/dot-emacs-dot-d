@@ -568,10 +568,16 @@ Now, for some code.
 * Edit and complete Nim.
 
   Nim is a systems programming languages that compiles to C, C++, ObjC, and
-  JavaScript. It's the latest toy language I am trying to learn.
+  JavaScript. It's the latest toy language I am trying to learn. Nim's Emacs
+  mode adds some completion information to ~completion-at-point-function~. Here
+  the completion daemon is configured and ~ac-capf~ is setup in the relevant
+  modes.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref nim-mode
-    (quse-package nim-mode)
+    (quse-package nim-mode
+                  :init
+                  (add-hook 'nim-mode-hook 'nimsuggest-mode)
+                  (add-hook 'nim-mode-hook 'ac-capf-setup))
   #+END_SRC
 
 * View Markdown.
