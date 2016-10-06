@@ -189,7 +189,10 @@
 
 (quse-package yasnippet)
 
-(quse-package nim-mode)
+(quse-package nim-mode
+              :init
+              (add-hook 'nim-mode-hook 'nimsuggest-mode)
+              (add-hook 'nim-mode-hook 'ac-capf-setup))
 
 (quse-package markdown-mode)
 
