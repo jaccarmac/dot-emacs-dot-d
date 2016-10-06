@@ -120,6 +120,8 @@
               (require 'auto-complete-config)
               (ac-config-default))
 
+(quse-package ac-capf)
+
 (quse-package cider
               :init
               (setf cider-repl-tab-command 'indent-for-tab-command)
