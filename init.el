@@ -198,6 +198,7 @@
 
 (quse-package go-mode
               :init
+              (setf gofmt-command "goimports")
               (add-hook 'before-save-hook #'gofmt-before-save)
               :bind (:map go-mode-map
                           ("M-." . godef-jump)))
