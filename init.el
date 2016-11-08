@@ -206,6 +206,8 @@
 
 (quse-package go-autocomplete)
 
+(quse-package go-guru)
+
 (quse-package (protobuf-mode :fetcher github
                              :repo "google/protobuf"
                              :files ("editors/protobuf-mode.el")))
