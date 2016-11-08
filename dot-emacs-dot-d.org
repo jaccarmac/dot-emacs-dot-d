@@ -609,6 +609,10 @@ Now, for some code.
     (quse-package go-autocomplete)
   #+END_SRC
 
+  #+BEGIN_SRC emacs-lisp :noweb-ref go-guru
+    (quse-package go-guru)
+  #+END_SRC
+
 * Edit Protocol Buffer files.
 
   Google's Protocol Buffers are a data exchange format useful for quick
@@ -833,6 +837,8 @@ Now, for some code.
      <<go-mode>>
 
      <<go-autocomplete>>
+
+     <<go-guru>>
 
      <<protobuf-mode>>
 
