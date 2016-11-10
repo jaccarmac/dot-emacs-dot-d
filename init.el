@@ -181,11 +181,11 @@
 
 (quse-package coffee-mode)
 
-(quelpa 'emacs-eclim)
-(add-to-list 'package-selected-packages 'emacs-eclim)
+(quelpa 'eclim)
+(add-to-list 'package-selected-packages 'eclim)
 (use-package eclim :config (global-eclim-mode))
 (use-package eclimd :config (setf eclimd-wait-for-process nil))
-(use-package ac-emacs-eclim-source :config (ac-emacs-eclim-config))
+(quse-package ac-emacs-eclim :config (ac-emacs-eclim-config))
 
 (quse-package yasnippet)
 
