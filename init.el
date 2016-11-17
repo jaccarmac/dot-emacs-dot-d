@@ -54,7 +54,7 @@
                              (ignore-errors
                                (set-face-attribute 'default
                                                    nil
-                                                   :font "Iosevka 10"))))
+                                                   :font "Go Mono 10"))))
 
 (quse-package smartparens
               :init

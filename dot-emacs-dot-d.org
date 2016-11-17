@@ -196,17 +196,19 @@ Now, for some code.
 
   I also enjoy using a pleasant monospace font. It's pretty easy to get Emacs
   to recognize your global GTK settings on a Linux box, but for Windows
-  machines the font needs to be set programmatically or in the
-  registry. Explicitly using Iosevka works on all systems with the font
-  installed, and defaults back to the font provided by the system if Iosevka
-  isn't there.
+  machines the font needs to be set programmatically or in the registry. I
+  explicitly use a chosen font it it's installed installed, and defaults back
+  to the font provided by the system if the font I want isn't there.
+
+  Generally I'm partial to Iosevka, but when Go announced its own series of
+  special fonts, I had to give them a try.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref face-attribute-font
     (run-with-idle-timer 1 nil (lambda ()
                                  (ignore-errors
                                    (set-face-attribute 'default
                                                        nil
-                                                       :font "Iosevka 10"))))
+                                                       :font "Go Mono 10"))))
   #+END_SRC
 
   The =smartparens= package is like =paredit= plus a bunch of nice extras. I
