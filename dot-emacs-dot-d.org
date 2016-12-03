@@ -696,7 +696,8 @@ Now, for some code.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref gdscript-mode
     (quse-package (gdscript-mode :fetcher github
-                                 :repo "akoaysigod/gdscript-mode"))
+                                 :repo "jaccarmac/gdscript-mode"
+                                 :branch "fix-line-endings"))
   #+END_SRC
 
 * Create and control Docker containers.
