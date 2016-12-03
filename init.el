@@ -234,7 +234,8 @@
                          :files ("extras/hoon-mode.el/hoon-mode.el")))
 
 (quse-package (gdscript-mode :fetcher github
-                             :repo "akoaysigod/gdscript-mode"))
+                             :repo "jaccarmac/gdscript-mode"
+                             :branch "fix-line-endings"))
 
 (quse-package dockerfile-mode :init (add-to-list
                                      'auto-mode-alist
