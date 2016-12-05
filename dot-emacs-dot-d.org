@@ -265,7 +265,7 @@ Now, for some code.
                                "doc/dir"
                                "doc/*.texi"))
                   :init
-                  (setf default-major-mode 'org-mode))
+                  (setq-default major-mode 'org-mode))
   #+END_SRC
 
 ** Create presentations in Org.
