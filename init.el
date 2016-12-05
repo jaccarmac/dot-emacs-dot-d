@@ -80,7 +80,7 @@
                            "doc/dir"
                            "doc/*.texi"))
               :init
-              (setf default-major-mode 'org-mode))
+              (setq-default major-mode 'org-mode))
 
 (quse-package ox-reveal)
 
