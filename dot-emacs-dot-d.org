@@ -211,6 +211,13 @@ Now, for some code.
                                                        :font "Go Mono 10"))))
   #+END_SRC
 
+  Emoji look like garbage by default, so I use the =emojify= package to insert
+  nice images in their place.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref emojify
+    (quse-package emojify :config (global-emojify-mode))
+  #+END_SRC
+
   The =smartparens= package is like =paredit= plus a bunch of nice extras. I
   enable the strict mode globally and use the maintainer's default keybindings.
 
@@ -780,6 +787,8 @@ Now, for some code.
      <<grandshell-theme>>
 
      <<face-attribute-font>>
+
+     <<emojify>>
 
      <<smartparens>>
 

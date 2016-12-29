@@ -56,6 +56,8 @@
                                                    nil
                                                    :font "Go Mono 10"))))
 
+(quse-package emojify :config (global-emojify-mode))
+
 (quse-package smartparens
               :init
               (smartparens-global-mode)
