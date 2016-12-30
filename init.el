@@ -254,4 +254,6 @@
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
 
-(quse-package edit-server :config (edit-server-start))
+(quse-package edit-server
+              :init (setf edit-server-new-frame nil)
+              :config (edit-server-start))

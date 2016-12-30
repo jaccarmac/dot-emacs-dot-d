@@ -761,7 +761,9 @@ Now, for some code.
   does.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref edit-server
-    (quse-package edit-server :config (edit-server-start))
+    (quse-package edit-server
+                  :init (setf edit-server-new-frame nil)
+                  :config (edit-server-start))
   #+END_SRC
 
 * Tangle source code.
