@@ -755,6 +755,15 @@ Now, for some code.
     (quse-package lua-mode)
   #+END_SRC
 
+* Edit browser text fields from Emacs.
+
+  It's quite a handy ability, and just requires starting a server when emacs
+  does.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref edit-server
+    (quse-package edit-server :config (edit-server-start))
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -875,4 +884,6 @@ Now, for some code.
      <<lua-mode>>
 
      <<save-package-selected-packages>>
+
+     <<edit-server>>
    #+END_SRC

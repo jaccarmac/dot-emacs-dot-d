@@ -253,3 +253,5 @@
 (quse-package lua-mode)
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
+
+(quse-package edit-server :config (edit-server-start))
