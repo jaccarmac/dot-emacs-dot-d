@@ -257,3 +257,5 @@
 (quse-package edit-server
               :init (setf edit-server-new-frame nil)
               :config (edit-server-start))
+
+(quse-package erlang)

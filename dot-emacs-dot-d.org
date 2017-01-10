@@ -766,6 +766,14 @@ Now, for some code.
                   :config (edit-server-start))
   #+END_SRC
 
+* Edit Erlang.
+
+  Erlang comes with a mode that sets itself up pretty nicely.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref erlang
+    (quse-package erlang)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -888,4 +896,6 @@ Now, for some code.
      <<save-package-selected-packages>>
 
      <<edit-server>>
+
+     <<erlang>>
    #+END_SRC
