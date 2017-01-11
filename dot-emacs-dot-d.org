@@ -200,15 +200,19 @@ Now, for some code.
   explicitly use a chosen font it it's installed installed, and defaults back
   to the font provided by the system if the font I want isn't there.
 
-  Generally I'm partial to Iosevka, but when Go announced its own series of
-  special fonts, I had to give them a try.
+  I like finding new fonts; The one below is an interesting one, probably from
+  the set below:
+
+  * Iosevka
+  * Go Mono
+  * Unscii
 
   #+BEGIN_SRC emacs-lisp :noweb-ref face-attribute-font
     (run-with-idle-timer 1 nil (lambda ()
                                  (ignore-errors
                                    (set-face-attribute 'default
                                                        nil
-                                                       :font "Go Mono 10"))))
+                                                       :font "Unscii 11"))))
   #+END_SRC
 
   Emoji look like garbage by default, so I use the =emojify= package to insert

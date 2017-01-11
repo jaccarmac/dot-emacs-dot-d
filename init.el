@@ -54,7 +54,7 @@
                              (ignore-errors
                                (set-face-attribute 'default
                                                    nil
-                                                   :font "Go Mono 10"))))
+                                                   :font "Unscii 11"))))
 
 (quse-package emojify :config (global-emojify-mode))
 
