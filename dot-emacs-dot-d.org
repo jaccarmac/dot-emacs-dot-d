@@ -212,7 +212,7 @@ Now, for some code.
                                  (ignore-errors
                                    (set-face-attribute 'default
                                                        nil
-                                                       :font "Unscii 11"))))
+                                                       :font "Iosevka 10"))))
   #+END_SRC
 
   Emoji look like garbage by default, so I use the =emojify= package to insert
@@ -807,7 +807,7 @@ Now, for some code.
 
      <<powerline>>
 
-     <<grandshell-theme>>
+     <<moe-theme>>
 
      <<face-attribute-font>>
 

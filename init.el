@@ -48,13 +48,13 @@
 
 (quse-package powerline :init (powerline-default-theme))
 
-(quse-package grandshell-theme :config (load-theme 'grandshell t))
+(quse-package moe-theme :config (load-theme 'moe-dark t))
 
 (run-with-idle-timer 1 nil (lambda ()
                              (ignore-errors
                                (set-face-attribute 'default
                                                    nil
-                                                   :font "Unscii 11"))))
+                                                   :font "Iosevka 10"))))
 
 (quse-package emojify :config (global-emojify-mode))
 
