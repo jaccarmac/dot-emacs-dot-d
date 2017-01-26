@@ -259,3 +259,9 @@
               :config (edit-server-start))
 
 (quse-package erlang)
+
+(quse-package rust-mode)
+
+(quse-package cargo :init (add-hook 'rust-mode-hook 'cargo-minor-mode))
+
+(quse-package toml-mode)

@@ -778,6 +778,29 @@ Now, for some code.
     (quse-package erlang)
   #+END_SRC
 
+* Edit Rust projects.
+
+  Emacs has a mode for Rust.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref rust-mode
+    (quse-package rust-mode)
+  #+END_SRC
+
+  It has a minor mode which hooks up some keybinds in that mode to various
+  Cargo commands.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref cargo
+    (quse-package cargo :init (add-hook 'rust-mode-hook 'cargo-minor-mode))
+  #+END_SRC
+
+  Emacs also has a mode for TOML files. This should /probably/ go in another
+  section, but since I don't use it for anything other than =Cargo.toml= files,
+  meh.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref toml-mode
+    (quse-package toml-mode)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -902,4 +925,10 @@ Now, for some code.
      <<edit-server>>
 
      <<erlang>>
+
+     <<rust-mode>>
+
+     <<cargo>>
+
+     <<toml-mode>>
    #+END_SRC
