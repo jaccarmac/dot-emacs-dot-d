@@ -808,6 +808,8 @@ Now, for some code.
 ** =init.el=
 
    #+BEGIN_SRC emacs-lisp :tangle init.el
+     ;;; -*- lexical-binding: t; -*-
+
      <<quelpa>>
 
      <<use-package>>

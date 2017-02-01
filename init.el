@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t; -*-
+
 (package-initialize)
 (setf quelpa-update-melpa-p nil)
 (unless (require 'quelpa nil t)
