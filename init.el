@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 
+(setf default-directory "~")
+
 (package-initialize)
 (setf quelpa-update-melpa-p nil)
 (unless (require 'quelpa nil t)
@@ -50,13 +52,15 @@
 
 (quse-package powerline :init (powerline-default-theme))
 
-(quse-package moe-theme :config (load-theme 'moe-dark t))
+(quse-package material-theme :config (load-theme 'material t))
+
+(quse-package rainbow-delimiters)
 
 (run-with-idle-timer 1 nil (lambda ()
                              (ignore-errors
                                (set-face-attribute 'default
                                                    nil
-                                                   :font "Iosevka 10"))))
+                                                   :font "Go Mono 10"))))
 
 (quse-package emojify :config (global-emojify-mode))
 
@@ -74,6 +78,8 @@
   (quelpa-upgrade)
   (package-autoremove)
   (customize-save-variable 'package-selected-packages nil))
+
+(setf delete-by-moving-to-trash t)
 
 (setf dired-dwim-target t)
 
@@ -267,3 +273,5 @@
 (quse-package cargo :init (add-hook 'rust-mode-hook 'cargo-minor-mode))
 
 (quse-package toml-mode)
+
+(quse-package mediawiki)

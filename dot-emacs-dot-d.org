@@ -101,6 +101,14 @@ Now, for some code.
     (quse-package better-defaults)
   #+END_SRC
 
+  I like Emacs to start up in a predictable place. This ensures that
+  =default-directory= is reasonable even if the Emacs daemon is started out of
+  =$HOME=, perhaps in a project's repository to start a commit message.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref default-directory
+    (setf default-directory "~")
+  #+END_SRC
+
   Emacs recently changed the way it handles saving the position of the point in
   visited files. =better-defaults= uses the old way (setting a variable) while
   newer versions of Emacs use a mode for the same behavior. I'm almost ready to
@@ -179,19 +187,37 @@ Now, for some code.
     (quse-package powerline :init (powerline-default-theme))
   #+END_SRC
 
-  I have used many themes for Emacs during my time using it. I tend to come
-  back to kuanyui's =moe-theme= due to its amount of contrast and variety of
-  faces.
+
+  kuanyui's =moe-theme= is a perennial favoritedue to its amount of contrast
+  and variety of faces.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref moe-theme
     (quse-package moe-theme :config (load-theme 'moe-dark t))
   #+END_SRC
 
-  That said, I've been using steckerhalter's Grand Shell recently and am more
-  partial to it at the moment.
+  That said, after discovering steckerhalter's Grand Shell recently I became
+  partial to and used it for a while.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref grandshell-theme
     (quse-package grandshell-theme :config (load-theme 'grandshell t))
+  #+END_SRC
+
+  Even more recently, I've decided that this Material Design-based theme is
+  pretty nice.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref material-theme
+    (quse-package material-theme :config (load-theme 'material t))
+  #+END_SRC
+
+  One of those themes will likely be used. No promises on which one, and it
+  changes pretty often!
+
+  On top of the color themes themselves, I find it useful to add even more
+  shiny colors. The best way to do this when lots of Lisp is being edited is,
+  without a doubt, rainbow delimiters.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref rainbow-delimiters
+    (quse-package rainbow-delimiters)
   #+END_SRC
 
   I also enjoy using a pleasant monospace font. It's pretty easy to get Emacs
@@ -212,7 +238,7 @@ Now, for some code.
                                  (ignore-errors
                                    (set-face-attribute 'default
                                                        nil
-                                                       :font "Iosevka 10"))))
+                                                       :font "Go Mono 10"))))
   #+END_SRC
 
   Emoji look like garbage by default, so I use the =emojify= package to insert
@@ -249,6 +275,13 @@ Now, for some code.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref save-package-selected-packages
     (customize-save-variable 'package-selected-packages package-selected-packages)
+  #+END_SRC
+
+  Emacs can integrate with your system's trash so deletions are less
+  permanent. A simple flag enables this feature.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref delete-with-trash
+    (setf delete-by-moving-to-trash t)
   #+END_SRC
 
 * Make copying in Dired marginally better.
@@ -801,6 +834,18 @@ Now, for some code.
     (quse-package toml-mode)
   #+END_SRC
 
+* Edit wikis.
+
+  Wikipedia and workplace wikis are often-useful. There's a very nice MediaWiki
+  integration package for Emacs. Eventually, I'd like to configure it to
+  properly use external files for authentication. For right now, I just cobble
+  together my creds in Customize every time I need to edit something. Consider
+  it a TODO.
+
+  #+BEGIN_SRC emacs-lisp :noweb-ref mediawiki
+    (quse-package mediawiki)
+  #+END_SRC
+
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
@@ -809,6 +854,8 @@ Now, for some code.
 
    #+BEGIN_SRC emacs-lisp :tangle init.el
      ;;; -*- lexical-binding: t; -*-
+
+     <<default-directory>>
 
      <<quelpa>>
 
@@ -832,7 +879,9 @@ Now, for some code.
 
      <<powerline>>
 
-     <<moe-theme>>
+     <<material-theme>>
+
+     <<rainbow-delimiters>>
 
      <<face-attribute-font>>
 
@@ -843,6 +892,8 @@ Now, for some code.
      <<custom-file>>
 
      <<upgrade-and-clean-packages>>
+
+     <<delete-with-trash>>
 
      <<dired-dwim-target>>
 
@@ -933,4 +984,6 @@ Now, for some code.
      <<cargo>>
 
      <<toml-mode>>
+
+     <<mediawiki>>
    #+END_SRC
