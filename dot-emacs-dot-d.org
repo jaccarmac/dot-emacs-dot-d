@@ -779,8 +779,15 @@ Now, for some code.
   installing the server component, but the Emacs mode is easy to install and
   add to the C# mode's hook.
 
+  Omnisharp breaks Emacs on Windows at the moment, a problem which is easily
+  solved by using the HTTP bus which uses =request-deferred=.
+
   #+BEGIN_SRC emacs-lisp :noweb-ref omnisharp
-    (quse-package omnisharp :init (add-hook 'csharp-mode-hook 'omnisharp-mode))
+    (quse-package request-deferred)
+    (quse-package omnisharp
+                  :config
+                  (add-hook 'csharp-mode-hook 'omnisharp-mode)
+                  (setf omnisharp-use-http t))
   #+END_SRC
 
 * Edit Lua.

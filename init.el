@@ -256,7 +256,11 @@
 
 (quse-package csharp-mode)
 
-(quse-package omnisharp :init (add-hook 'csharp-mode-hook 'omnisharp-mode))
+(quse-package request-deferred)
+(quse-package omnisharp
+              :config
+              (add-hook 'csharp-mode-hook 'omnisharp-mode)
+              (setf omnisharp-use-http t))
 
 (quse-package lua-mode)
 
