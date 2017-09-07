@@ -26,7 +26,7 @@
 
 (ido-everywhere)
 
-(quse-package ido-ubiquitous
+(quse-package ido-completing-read+
               :init
               (ido-ubiquitous-mode)
               (setf org-completion-use-ido t)
@@ -155,7 +155,7 @@
 
 (quse-package slime
               :init
-              (setf inferior-lisp-program "sbcl")
+              (setf inferior-lisp-program "ros run")
               (setf common-lisp-hyperspec-root (getenv "HYPERSPEC_ROOT"))
               (setf slime-contribs '(slime-fancy))
               (slime-setup))
@@ -279,3 +279,25 @@
 (quse-package toml-mode)
 
 (quse-package mediawiki)
+
+(quse-package (xelb :fetcher github :repo "ch11ng/xelb"))
+(quse-package (exwm :fetcher github :repo "ch11ng/exwm")
+              :config
+              (require 'exwm-config)
+              (exwm-config-default))
+
+(quse-package erc-twitch
+              :config
+              (erc-twitch-enable))
+
+(defun lock-screen ()                   ; TODO: pick a random function, show it, zone on that
+   "Lock screen using (zone) and xtrlock
+ calls M-x zone on all frames and runs xtrlock"
+   (interactive)
+   (save-excursion
+     ;(shell-command "xtrlock &")
+     (set-process-sentinel
+      (start-process "xtrlock" nil "xtrlock")
+      '(lambda (process event)
+         (zone-leave-me-alone)))
+     (zone-when-idle 1)))
