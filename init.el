@@ -290,14 +290,14 @@
               :config
               (erc-twitch-enable))
 
-(defun lock-screen ()                   ; TODO: pick a random function, show it, zone on that
-   "Lock screen using (zone) and xtrlock
+(use-package zone :config (defun lock-screen () ; TODO: pick a random function, show it, zone on that
+                            "Lock screen using (zone) and xtrlock
  calls M-x zone on all frames and runs xtrlock"
-   (interactive)
-   (save-excursion
-     ;(shell-command "xtrlock &")
-     (set-process-sentinel
-      (start-process "xtrlock" nil "xtrlock")
-      '(lambda (process event)
-         (zone-leave-me-alone)))
-     (zone-when-idle 1)))
+                            (interactive)
+                            (save-excursion
+                                        ;(shell-command "xtrlock &")
+                              (set-process-sentinel
+                               (start-process "xtrlock" nil "xtrlock")
+                               '(lambda (process event)
+                                  (zone-leave-me-alone)))
+                              (zone-when-idle 1))))
