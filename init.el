@@ -56,11 +56,7 @@
 
 (quse-package rainbow-delimiters)
 
-(run-with-idle-timer 1 nil (lambda ()
-                             (ignore-errors
-                               (set-face-attribute 'default
-                                                   nil
-                                                   :font "Go Mono 10"))))
+(setf default-frame-alist '((font . "Go Mono 10")))
 
 (quse-package emojify :config (global-emojify-mode))
 
