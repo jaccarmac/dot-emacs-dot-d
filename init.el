@@ -56,7 +56,7 @@
 
 (quse-package rainbow-delimiters)
 
-(setf default-frame-alist '((font . "Go Mono 10")))
+(add-to-list 'default-frame-alist '((font . "Go Mono 10")))
 
 (quse-package emojify :config (global-emojify-mode))
 
