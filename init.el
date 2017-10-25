@@ -268,7 +268,8 @@
 
 (quse-package erlang)
 
-(quse-package rust-mode)
+(quse-package rust-mode
+              :init (setf rust-format-on-save t))
 
 (quse-package cargo :init (add-hook 'rust-mode-hook 'cargo-minor-mode))
 
