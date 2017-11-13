@@ -25,6 +25,7 @@
   (when (fboundp 'save-place-mode) (save-place-mode)))
 
 (ido-everywhere)
+(setf ido-auto-merge-work-directories-length -1)
 
 (quse-package ido-completing-read+
               :init
