@@ -302,3 +302,5 @@
           (zone-leave-me-alone)))
       (zone-when-idle 1)))
   :commands (zone-leave-me-alone zone-when-idle))
+
+(quse-package mingus)
