@@ -304,3 +304,5 @@
   :commands (zone-leave-me-alone zone-when-idle))
 
 (quse-package mingus)
+
+(quse-package elm-mode :init (setf elm-format-on-save t))
