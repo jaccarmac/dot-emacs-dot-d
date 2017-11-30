@@ -306,3 +306,8 @@
 (quse-package mingus)
 
 (quse-package elm-mode :init (setf elm-format-on-save t))
+
+(quse-package intero
+              :init
+              (add-hook 'haskell-mode-hook 'intero-mode)
+              (setf haskell-stylish-on-save t))
