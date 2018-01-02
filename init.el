@@ -53,7 +53,10 @@
 
 (quse-package powerline :init (powerline-default-theme))
 
-(quse-package material-theme :config (load-theme 'material t))
+(quse-package (fairyfloss-theme :fetcher github
+                                :repo "lrlna/fairyfloss"
+                                :files ("fairyfloss-theme.el"))
+              :config (load-theme 'fairyfloss t))
 
 (quse-package rainbow-delimiters)
 
