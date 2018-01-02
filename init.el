@@ -81,7 +81,7 @@
 (setf dired-dwim-target t)
 
 (quse-package (org :fetcher git
-                   :url "git://orgmode.org/org-mode.git"
+                   :url "https://code.orgmode.org/bzg/org-mode.git"
                    :files ("lisp/*.el"
                            "contrib/lisp/*.el"
                            "doc/dir"
