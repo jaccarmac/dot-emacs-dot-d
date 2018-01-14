@@ -264,8 +264,6 @@
 
 (quse-package lua-mode)
 
-(customize-save-variable 'package-selected-packages package-selected-packages)
-
 (quse-package edit-server
               :init (setf edit-server-new-frame nil)
               :config (edit-server-start))
@@ -314,3 +312,5 @@
               :init
               (add-hook 'haskell-mode-hook 'intero-mode)
               (setf haskell-stylish-on-save t))
+
+(customize-save-variable 'package-selected-packages package-selected-packages)
