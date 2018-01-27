@@ -53,14 +53,11 @@
 
 (quse-package powerline :init (powerline-default-theme))
 
-(quse-package (fairyfloss-theme :fetcher github
-                                :repo "lrlna/fairyfloss"
-                                :files ("fairyfloss-theme.el"))
-              :config (load-theme 'fairyfloss t))
+(quse-package grandshell-theme :config (load-theme 'grandshell t))
 
 (quse-package rainbow-delimiters)
 
-(add-to-list 'default-frame-alist '(font . "Go Mono 10"))
+(add-to-list 'default-frame-alist '(font . "Fantasque Sans Mono 11"))
 
 (quse-package emojify :config (global-emojify-mode))
 
@@ -191,11 +188,11 @@
 
 (quse-package coffee-mode)
 
-(quelpa 'eclim)
-(add-to-list 'package-selected-packages 'eclim)
-(use-package eclim :config (global-eclim-mode))
-(use-package eclimd :config (setf eclimd-wait-for-process nil))
-(quse-package ac-emacs-eclim :config (ac-emacs-eclim-config))
+;; (quelpa 'eclim)
+;; (add-to-list 'package-selected-packages 'eclim)
+;; (use-package eclim :config (global-eclim-mode))
+;; (use-package eclimd :config (setf eclimd-wait-for-process nil))
+;; (quse-package ac-emacs-eclim :config (ac-emacs-eclim-config))
 
 (quse-package yasnippet)
 
@@ -259,8 +256,7 @@
 (quse-package request-deferred)
 (quse-package omnisharp
               :config
-              (add-hook 'csharp-mode-hook 'omnisharp-mode)
-              (setf omnisharp-use-http t))
+              (add-hook 'csharp-mode-hook 'omnisharp-mode))
 
 (quse-package lua-mode)
 
@@ -312,5 +308,7 @@
               :init
               (add-hook 'haskell-mode-hook 'intero-mode)
               (setf haskell-stylish-on-save t))
+
+(quse-package fsharp-mode)
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
