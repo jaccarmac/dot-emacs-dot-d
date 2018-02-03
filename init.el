@@ -1,5 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 
+(setf tls-checktrust t)
+
 (setf default-directory "~")
 
 (package-initialize)
