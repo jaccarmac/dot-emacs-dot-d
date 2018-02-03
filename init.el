@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; -*-
 
-(setf tls-checktrust t)
+(setf network-security-level 'high)
 
 (setf default-directory "~")
 
