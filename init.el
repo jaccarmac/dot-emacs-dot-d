@@ -34,20 +34,20 @@
 (setf ido-auto-merge-work-directories-length -1)
 
 (quse-package ido-completing-read+
-              :init
-              (ido-ubiquitous-mode)
-              (setf org-completion-use-ido t)
-              (setf magit-completing-read-function 'magit-ido-completing-read))
+  :init
+  (ido-ubiquitous-mode)
+  (setf org-completion-use-ido t)
+  (setf magit-completing-read-function 'magit-ido-completing-read))
 
 (quse-package ido-yes-or-no :init (ido-yes-or-no-mode))
 
 (quse-package crm-custom :init (crm-custom-mode))
 
 (quse-package smex
-              :init (smex-initialize)
-              :bind (("M-x" . smex)
-                     ("M-X" . smex-major-mode-commands)
-                     ("C-c C-c M-x" . execute-extended-command)))
+  :init (smex-initialize)
+  :bind (("M-x" . smex)
+         ("M-X" . smex-major-mode-commands)
+         ("C-c C-c M-x" . execute-extended-command)))
 
 (setq-default fill-column 79)
 
@@ -68,11 +68,11 @@
 (quse-package emojify :config (global-emojify-mode))
 
 (quse-package smartparens
-              :init
-              (smartparens-global-mode)
-              (smartparens-global-strict-mode)
-              (require 'smartparens-config)
-              (sp-use-smartparens-bindings))
+  :init
+  (smartparens-global-mode)
+  (smartparens-global-strict-mode)
+  (require 'smartparens-config)
+  (sp-use-smartparens-bindings))
 
 (setf custom-file "~/.emacs.d/custom.el")
 
@@ -92,8 +92,8 @@
                            "contrib/lisp/*.el"
                            "doc/dir"
                            "doc/*.texi"))
-              :init
-              (setq-default major-mode 'org-mode))
+  :init
+  (setq-default major-mode 'org-mode))
 
 (quse-package ox-reveal)
 
@@ -109,16 +109,16 @@
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 (quse-package ledger-mode
-              :init (add-to-list 'auto-mode-alist
-                                 '("ledger/.*\\.dat\\'" . ledger-mode)))
+  :init (add-to-list 'auto-mode-alist
+                     '("ledger/.*\\.dat\\'" . ledger-mode)))
 
 (quse-package password-store)
 
 (quse-package projectile
-              :init
-              (projectile-global-mode)
-              (setf projectile-switch-project-action 'projectile-dired)
-              (setf projectile-indexing-method 'alien))
+  :init
+  (projectile-global-mode)
+  (setf projectile-switch-project-action 'projectile-dired)
+  (setf projectile-indexing-method 'alien))
 
 (quse-package magit)
 
@@ -129,67 +129,67 @@
 (quse-package direx)
 
 (quse-package auto-complete
-              :init
-              (require 'auto-complete-config)
-              (ac-config-default))
+  :init
+  (require 'auto-complete-config)
+  (ac-config-default))
 
 (quse-package ac-capf)
 
 (quse-package cider
-              :init
-              (setf cider-repl-tab-command 'indent-for-tab-command)
-              (setf cider-default-repl-command "boot")
-              (setf cider-repl-history-file "~/.cider-repl-history")
-              (setf cider-repl-display-help-banner nil))
+  :init
+  (setf cider-repl-tab-command 'indent-for-tab-command)
+  (setf cider-default-repl-command "boot")
+  (setf cider-repl-history-file "~/.cider-repl-history")
+  (setf cider-repl-display-help-banner nil))
 
 (quse-package ac-cider
-              :init
-              (add-hook 'cider-mode-hook 'ac-cider-setup)
-              (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
-              (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-              (add-hook 'cider-repl-mode-hook 'ac-flyspell-workaround)
-              (add-hook 'cider-clojure-interaction-mode-hook 'ac-cider-setup)
-              (add-hook 'cider-clojure-interaction-mode-hook 'ac-flyspell-workaround)
-              (eval-after-load "auto-complete"
-                '(progn
-                   (add-to-list 'ac-modes 'cider-mode)
-                   (add-to-list 'ac-modes 'cider-repl-mode)
-                   (add-to-list 'ac-modes 'cider-clojure-interaction-mode))))
+  :init
+  (add-hook 'cider-mode-hook 'ac-cider-setup)
+  (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+  (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+  (add-hook 'cider-repl-mode-hook 'ac-flyspell-workaround)
+  (add-hook 'cider-clojure-interaction-mode-hook 'ac-cider-setup)
+  (add-hook 'cider-clojure-interaction-mode-hook 'ac-flyspell-workaround)
+  (eval-after-load "auto-complete"
+    '(progn
+       (add-to-list 'ac-modes 'cider-mode)
+       (add-to-list 'ac-modes 'cider-repl-mode)
+       (add-to-list 'ac-modes 'cider-clojure-interaction-mode))))
 
 (quse-package slime
-              :init
-              (setf inferior-lisp-program "ros run")
-              (setf common-lisp-hyperspec-root (getenv "HYPERSPEC_ROOT"))
-              (setf slime-contribs '(slime-fancy))
-              (slime-setup))
+  :init
+  (setf inferior-lisp-program "ros run")
+  (setf common-lisp-hyperspec-root (getenv "HYPERSPEC_ROOT"))
+  (setf slime-contribs '(slime-fancy))
+  (slime-setup))
 
 (quse-package ac-slime
-              :init
-              (add-hook 'slime-mode-hook 'set-up-slime-ac)
-              (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-              (eval-after-load "auto-complete"
-                '(add-to-list 'ac-modes 'slime-repl-mode)))
+  :init
+  (add-hook 'slime-mode-hook 'set-up-slime-ac)
+  (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+  (eval-after-load "auto-complete"
+    '(add-to-list 'ac-modes 'slime-repl-mode)))
 
 (quse-package web-mode
-              :init
-              (setf web-mode-enable-engine-detection t)
-              (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-              (add-to-list 'org-src-lang-modes '("html" . web))
-              (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-              (add-to-list 'org-src-lang-modes '("css" . web))
-              (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
-              (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
-              (add-to-list 'org-src-lang-modes '("js" . web))
-              (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-              (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
-              (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode)))
+  :init
+  (setf web-mode-enable-engine-detection t)
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'org-src-lang-modes '("html" . web))
+  (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+  (add-to-list 'org-src-lang-modes '("css" . web))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
+  (add-to-list 'org-src-lang-modes '("js" . web))
+  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tmpl\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode)))
 
 (quse-package tern
-              :config
-              (setf tern-command '("tern"))
-              (add-hook 'web-mode-hook 'tern-mode)
-              (add-to-list 'auto-mode-alist '(".tern-project" . web-mode))
-              (add-to-list 'web-mode-content-types '("json" . ".tern-project")))
+  :config
+  (setf tern-command '("tern"))
+  (add-hook 'web-mode-hook 'tern-mode)
+  (add-to-list 'auto-mode-alist '(".tern-project" . web-mode))
+  (add-to-list 'web-mode-content-types '("json" . ".tern-project")))
 (quse-package tern-auto-complete :config (tern-ac-setup))
 
 (quse-package coffee-mode)
@@ -203,19 +203,19 @@
 (quse-package yasnippet)
 
 (quse-package nim-mode
-              :init
-              (add-hook 'nim-mode-hook 'nimsuggest-mode)
-              (add-hook 'nim-mode-hook 'ac-capf-setup))
+  :init
+  (add-hook 'nim-mode-hook 'nimsuggest-mode)
+  (add-hook 'nim-mode-hook 'ac-capf-setup))
 
 (quse-package markdown-mode)
 
 (quse-package go-mode
-              :init
-              (when (executable-find "goimports")
-                (setf gofmt-command "goimports"))
-              (add-hook 'before-save-hook #'gofmt-before-save)
-              :bind (:map go-mode-map
-                          ("M-." . godef-jump)))
+  :init
+  (when (executable-find "goimports")
+    (setf gofmt-command "goimports"))
+  (add-hook 'before-save-hook #'gofmt-before-save)
+  :bind (:map go-mode-map
+              ("M-." . godef-jump)))
 
 (quse-package go-autocomplete)
 
@@ -232,15 +232,15 @@
   (setf venv-location global-venv-location))
 
 (quse-package jedi
-              :init
-              (add-hook 'python-mode-hook 'jedi:setup)
-              (setf jedi:complete-on-dot t)
-              (setf jedi:use-shortcuts t))
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setf jedi:complete-on-dot t)
+  (setf jedi:use-shortcuts t))
 
 (quse-package virtualenvwrapper
-              :init
-              (venv-initialize-interactive-shells)
-              (venv-initialize-eshell))
+  :init
+  (venv-initialize-interactive-shells)
+  (venv-initialize-eshell))
 
 (quse-package (hoon-mode :fetcher github
                          :repo "urbit/urbit"
@@ -261,19 +261,19 @@
 
 (quse-package request-deferred)
 (quse-package omnisharp
-              :config
-              (add-hook 'csharp-mode-hook 'omnisharp-mode))
+  :config
+  (add-hook 'csharp-mode-hook 'omnisharp-mode))
 
 (quse-package lua-mode)
 
 (quse-package edit-server
-              :init (setf edit-server-new-frame nil)
-              :config (edit-server-start))
+  :init (setf edit-server-new-frame nil)
+  :config (edit-server-start))
 
 (quse-package erlang)
 
 (quse-package rust-mode
-              :init (setf rust-format-on-save t))
+  :init (setf rust-format-on-save t))
 
 (quse-package cargo :init (add-hook 'rust-mode-hook 'cargo-minor-mode))
 
@@ -283,13 +283,13 @@
 
 (quse-package (xelb :fetcher github :repo "ch11ng/xelb"))
 (quse-package (exwm :fetcher github :repo "ch11ng/exwm")
-              :config
-              (require 'exwm-config)
-              (exwm-config-default))
+  :config
+  (require 'exwm-config)
+  (exwm-config-default))
 
 (quse-package erc-twitch
-              :config
-              (erc-twitch-enable))
+  :config
+  (erc-twitch-enable))
 
 (use-package zone
   :init
@@ -311,9 +311,9 @@
 (quse-package elm-mode :init (setf elm-format-on-save t))
 
 (quse-package intero
-              :init
-              (add-hook 'haskell-mode-hook 'intero-mode)
-              (setf haskell-stylish-on-save t))
+  :init
+  (add-hook 'haskell-mode-hook 'intero-mode)
+  (setf haskell-stylish-on-save t))
 
 (quse-package fsharp-mode)
 
