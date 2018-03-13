@@ -4,22 +4,26 @@
 
 (setf default-directory "~")
 
-(package-initialize)
-(setf quelpa-update-melpa-p nil)
-(unless (require 'quelpa nil t)
-  (with-temp-buffer
-    (url-insert-file-contents
-     "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
-    (eval-buffer)))
-(add-to-list 'package-selected-packages 'quelpa)
+(eval-and-compile
+  (package-initialize)
+  (setf quelpa-update-melpa-p nil)
+  (unless (require 'quelpa nil t)
+    (with-temp-buffer
+      (url-insert-file-contents
+       "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
+      (eval-buffer)))
+  (add-to-list 'package-selected-packages 'quelpa))
 
-(quelpa 'use-package)
-(add-to-list 'package-selected-packages 'use-package)
-(require 'use-package)
+(eval-when-compile
+  (quelpa 'use-package)
+  (add-to-list 'package-selected-packages 'use-package)
+  (require 'use-package)
 
-(quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
-(add-to-list 'package-selected-packages 'quse-package)
-(require 'quse-package)
+  (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
+  (add-to-list 'package-selected-packages 'quse-package)
+  (require 'quse-package))
+
+(require 'bind-key)
 
 (quse-package better-defaults)
 
@@ -312,5 +316,7 @@
               (setf haskell-stylish-on-save t))
 
 (quse-package fsharp-mode)
+
+(quse-package pdf-tools)
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
