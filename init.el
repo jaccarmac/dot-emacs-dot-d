@@ -317,6 +317,8 @@
 
 (quse-package fsharp-mode)
 
-(quse-package pdf-tools)
+(quse-package pdf-tools
+  :config
+  (pdf-tools-install))
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
