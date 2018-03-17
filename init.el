@@ -242,9 +242,7 @@
   (venv-initialize-interactive-shells)
   (venv-initialize-eshell))
 
-(quse-package (hoon-mode :fetcher github
-                         :repo "urbit/urbit"
-                         :files ("extras/hoon-mode.el/hoon-mode.el")))
+(quse-package (hoon-mode :fetcher github :repo "urbit/hoon-mode.el"))
 
 (quse-package (gdscript-mode :fetcher github
                              :repo "jaccarmac/gdscript-mode"
