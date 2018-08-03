@@ -1,11 +1,11 @@
 ;;; -*- lexical-binding: t; -*-
 
+(defvar network-security-level)
 (setf network-security-level 'high)
 
 (setf default-directory "~")
 
 (eval-and-compile
-  (package-initialize)
   (setf quelpa-update-melpa-p nil)
   (unless (require 'quelpa nil t)
     (with-temp-buffer
@@ -15,13 +15,14 @@
   (add-to-list 'package-selected-packages 'quelpa))
 
 (eval-when-compile
+  (package-initialize)
   (quelpa 'use-package)
-  (add-to-list 'package-selected-packages 'use-package)
   (require 'use-package)
 
   (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
-  (add-to-list 'package-selected-packages 'quse-package)
   (require 'quse-package))
+(add-to-list 'package-selected-packages 'use-package)
+(add-to-list 'package-selected-packages 'quse-package)
 
 (require 'bind-key)
 
@@ -30,10 +31,14 @@
 (use-package saveplace :init
   (when (fboundp 'save-place-mode) (save-place-mode)))
 
+(declare-function ido-everywhere "ido")
 (ido-everywhere)
 (setf ido-auto-merge-work-directories-length -1)
 
 (quse-package ido-completing-read+
+  :preface
+  (defvar org-completion-use-ido)
+  (defvar magit-completing-read-function)
   :init
   (ido-ubiquitous-mode)
   (setf org-completion-use-ido t)
@@ -59,11 +64,11 @@
 
 (quse-package powerline :init (powerline-default-theme))
 
-(quse-package grandshell-theme :config (load-theme 'grandshell t))
+(quse-package dracula-theme :config (load-theme 'dracula t))
 
 (quse-package rainbow-delimiters)
 
-(add-to-list 'default-frame-alist '(font . "Fantasque Sans Mono 11"))
+(push '(font . "Iosevka Term 11") default-frame-alist)
 
 (quse-package emojify :config (global-emojify-mode))
 
@@ -93,9 +98,14 @@
                            "doc/dir"
                            "doc/*.texi"))
   :init
-  (setq-default major-mode 'org-mode))
+  (setq-default major-mode 'org-mode)
+  (use-package org-tempo))
 
-(quse-package ox-reveal)
+(quse-package htmlize)
+
+(quse-package (ox-reveal :fetcher github
+                         :repo "jaccarmac/org-reveal"
+                         :branch "fix-org-structure-template-alist"))
 
 (setf org-latex-pdf-process (list "latexmk -f -pdf %f"))
 
@@ -116,7 +126,7 @@
 
 (quse-package projectile
   :init
-  (projectile-global-mode)
+  (projectile-mode)
   (setf projectile-switch-project-action 'projectile-dired)
   (setf projectile-indexing-method 'alien))
 
@@ -158,7 +168,10 @@
 
 (quse-package slime
   :init
-  (setf inferior-lisp-program "ros run")
+  (setf slime-lisp-implementations '((sbcl ("ros" "run" "-L" "sbcl-bin"))
+                                     (ccl ("ros" "run" "-L" "ccl-bin"))
+                                     (abcl ("ros" "run" "-L" "abcl-bin"))
+                                     (ecl ("ros" "run" "-L" "ecl"))))
   (setf common-lisp-hyperspec-root (getenv "HYPERSPEC_ROOT"))
   (setf slime-contribs '(slime-fancy))
   (slime-setup))
@@ -227,10 +240,6 @@
 
 (quse-package yaml-mode)
 
-(let ((global-venv-location "~/.virtualenvs"))
-  (setf python-environment-directory global-venv-location)
-  (setf venv-location global-venv-location))
-
 (quse-package jedi
   :init
   (add-hook 'python-mode-hook 'jedi:setup)
@@ -238,9 +247,15 @@
   (setf jedi:use-shortcuts t))
 
 (quse-package virtualenvwrapper
+  :preface
+  (defvar python-environment-directory)
+  (defvar venv-location)
   :init
   (venv-initialize-interactive-shells)
-  (venv-initialize-eshell))
+  (venv-initialize-eshell)
+  (let ((global-venv-location "~/.virtualenvs"))
+    (setf python-environment-directory global-venv-location)
+    (setf venv-location global-venv-location)))
 
 (quse-package (hoon-mode :fetcher github :repo "urbit/hoon-mode.el"))
 
@@ -275,17 +290,31 @@
 
 (quse-package cargo :init (add-hook 'rust-mode-hook 'cargo-minor-mode))
 
+;; TODO check if this works
+
+(quse-package lsp-mode)
+
+(quse-package lsp-ui :init (add-hook 'rust-mode-hook 'lsp-ui-mode))
+
+(quse-package lsp-rust :init (setf lsp-rust-rls-command '("rustup" "run" "nightly" "rls")))
+
+;; end TODO check
+
 (quse-package toml-mode)
 
 (quse-package mediawiki)
 
 (quse-package (xelb :fetcher github :repo "ch11ng/xelb"))
 (quse-package (exwm :fetcher github :repo "ch11ng/exwm")
+  :preface
+  (declare-function exwm-config-default "exwm")
   :config
   (require 'exwm-config)
   (exwm-config-default))
 
 (quse-package erc-twitch
+  :preface
+  (declare-function erc-twitch-enable "erc-twitch")
   :config
   (erc-twitch-enable))
 
@@ -318,5 +347,24 @@
 (quse-package pdf-tools
   :config
   (pdf-tools-install))
+
+(savehist-mode)
+
+(quse-package golden-ratio
+  :init
+  (golden-ratio-mode)
+  (define-advice select-window
+      (:after (window &optional no-record) golden-ratio-resize-window)
+    (golden-ratio)
+    nil))
+
+(quse-package switch-window
+  :bind (("C-x o" . switch-window)
+         ("C-x 1" . switch-window-then-maximize)
+         ("C-x 2" . switch-window-then-split-below)
+         ("C-x 3" . switch-window-then-split-right)
+         ("C-x 0" . switch-window-then-delete)))
+
+(quse-package zig-mode)
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
