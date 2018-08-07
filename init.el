@@ -367,4 +367,8 @@
 
 (quse-package zig-mode)
 
+(quse-package ox-pandoc)
+
+(quse-package (bug-hunter :fetcher github :repo "Malabarba/elisp-bug-hunter"))
+
 (customize-save-variable 'package-selected-packages package-selected-packages)
