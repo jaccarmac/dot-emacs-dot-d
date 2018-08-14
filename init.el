@@ -128,7 +128,9 @@
   :init
   (projectile-mode)
   (setf projectile-switch-project-action 'projectile-dired)
-  (setf projectile-indexing-method 'alien))
+  (setf projectile-indexing-method 'alien)
+  :bind
+  (("C-c p" . projectile-command-map)))
 
 (quse-package magit)
 
