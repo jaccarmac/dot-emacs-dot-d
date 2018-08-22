@@ -64,7 +64,18 @@
 
 (quse-package powerline :init (powerline-default-theme))
 
-(quse-package dracula-theme :config (load-theme 'dracula t))
+(quse-package nord-theme
+              :defer t
+              :init
+              (if (daemonp)
+                  (cl-labels ((load-nord (frame)
+                                         (with-selected-frame frame
+                                           (load-theme 'nord t))
+                                         (remove-hook
+                                          'after-make-frame-functions
+                                          #'load-nord)))
+                    (add-hook 'after-make-frame-functions #'load-nord))
+	        (load-theme 'nord t)))
 
 (quse-package rainbow-delimiters)
 
