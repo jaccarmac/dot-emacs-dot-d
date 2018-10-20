@@ -20,7 +20,7 @@
   (require 'use-package)
 
   (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
-  (require 'quse-package))
+  (require 'quse-package))              ;This isn't working right
 (add-to-list 'package-selected-packages 'use-package)
 (add-to-list 'package-selected-packages 'quse-package)
 
@@ -383,5 +383,7 @@
 (quse-package ox-pandoc)
 
 (quse-package (bug-hunter :fetcher github :repo "Malabarba/elisp-bug-hunter"))
+
+(quse-package (inform7-mode :fetcher github :repo "fred-o/inform7-mode"))
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
