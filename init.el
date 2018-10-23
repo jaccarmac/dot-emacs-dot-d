@@ -6,6 +6,7 @@
 (setf default-directory "~")
 
 (eval-and-compile
+  (package-initialize)
   (setf quelpa-update-melpa-p nil)
   (unless (require 'quelpa nil t)
     (with-temp-buffer
@@ -15,12 +16,11 @@
   (add-to-list 'package-selected-packages 'quelpa))
 
 (eval-when-compile
-  (package-initialize)
   (quelpa 'use-package)
   (require 'use-package)
 
   (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
-  (require 'quse-package))              ;This isn't working right
+  (require 'quse-package))
 (add-to-list 'package-selected-packages 'use-package)
 (add-to-list 'package-selected-packages 'quse-package)
 
