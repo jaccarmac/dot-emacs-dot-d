@@ -181,7 +181,8 @@
 
 (quse-package slime
   :init
-  (setf slime-lisp-implementations '((sbcl ("ros" "run" "-L" "sbcl-bin"))
+  (setf slime-lisp-implementations '((ros ("ros" "run"))
+                                     (sbcl ("ros" "run" "-L" "sbcl-bin"))
                                      (ccl ("ros" "run" "-L" "ccl-bin"))
                                      (abcl ("ros" "run" "-L" "abcl-bin"))
                                      (ecl ("ros" "run" "-L" "ecl"))))
