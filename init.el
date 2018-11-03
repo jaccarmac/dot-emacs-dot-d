@@ -67,7 +67,7 @@
 (quse-package nord-theme
               :defer t
               :init
-              (if (daemonp)
+              (if (and (boundp 'server-process) server-process)
                   (cl-labels ((load-nord (frame)
                                          (with-selected-frame frame
                                            (load-theme 'nord t))
