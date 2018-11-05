@@ -5,3 +5,7 @@ use portacle as example
 easy way to use my forks temporarily
 https://github.com/Fuco1/Elsa <--- dis cool
 https://github.com/brotzeit/rustic <--- so dis
+
+Nuke below warnings:
+Error (use-package): docker/:init: Symbol’s function definition is void: docker-global-mode
+Warning (emacs): [EXWM] EXWM fails to start (error: (Other window manager detected))
