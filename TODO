@@ -9,3 +9,5 @@ https://github.com/brotzeit/rustic <--- so dis
 Nuke below warnings:
 Error (use-package): docker/:init: Symbol’s function definition is void: docker-global-mode
 Warning (emacs): [EXWM] EXWM fails to start (error: (Other window manager detected))
+https://emacsredux.com/blog/2018/11/09/an-easy-kill/
+https://www.reddit.com/r/emacs/comments/9vmljb/what_do_you_have_bound_to_mn_and_mp/e9dm9fc/
