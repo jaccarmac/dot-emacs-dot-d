@@ -67,7 +67,6 @@
 (quse-package powerline :init (powerline-default-theme))
 
 (quse-package nord-theme
-              :defer t
               :init
               (if (and (boundp 'server-process) server-process)
                   (cl-labels ((load-nord (frame)
