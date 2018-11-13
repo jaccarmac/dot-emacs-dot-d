@@ -282,7 +282,7 @@
                                      'auto-mode-alist
                                      '("Dockerfile\\'" . dockerfile-mode)))
 
-(quse-package docker :init (docker-global-mode))
+(quse-package docker :config (docker-global-mode))
 (quse-package docker-tramp)
 
 (quse-package csharp-mode)
