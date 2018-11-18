@@ -80,7 +80,7 @@
 
 (quse-package rainbow-delimiters)
 
-(push '(font . "Iosevka Term 11") default-frame-alist)
+(push '(font . "Unscii 11") default-frame-alist)
 
 (quse-package emojify :config (global-emojify-mode))
 
