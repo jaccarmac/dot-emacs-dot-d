@@ -232,8 +232,7 @@
 
 (quse-package nim-mode
   :init
-  (add-hook 'nim-mode-hook 'nimsuggest-mode)
-  (add-hook 'nim-mode-hook 'ac-capf-setup))
+  (add-hook 'nim-mode-hook 'nimsuggest-mode))
 
 (quse-package markdown-mode)
 
