@@ -387,4 +387,11 @@
 
 (quse-package (inform7-mode :fetcher github :repo "jaccarmac/inform7-mode" :branch "extension-files"))
 
+(quse-package helpful
+  :bind (("C-h f" . helpful-callable)
+         ("C-h F" . helpful-function)
+         ("C-h v" . helpful-variable)
+         ("C-h k" . helpful-key)
+         ("C-c C-d" . helpful-at-point)))
+
 (customize-save-variable 'package-selected-packages package-selected-packages)
