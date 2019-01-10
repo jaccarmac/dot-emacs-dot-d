@@ -18,3 +18,9 @@ https://vxlabs.com/2018/06/08/python-language-server-with-emacs-and-lsp-mode/
 https://www.reddit.com/r/emacs/comments/aazjl5/blog_how_im_failing_literate_config_in_emacs/
 
 https://github.com/tttuuu888/.emacs.d/blob/master/install.el use this to do an initial install pass or some garbage idk
+
+https://github.com/joaotavora/eglot other LSP
+[[https://github.com/abo-abo/swiper]] completion alternative
+https://github.com/leoliu/easy-kill
+https://github.com/tarsius/hl-todo highlight TODO
+https://github.com/bbatsov/crux maybe useful util collection
