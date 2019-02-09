@@ -80,7 +80,7 @@
 
 (quse-package rainbow-delimiters)
 
-(push '(font . "Input Mono Compressed 11") default-frame-alist)
+(push '(font . "IBM Plex Mono 11") default-frame-alist)
 
 (quse-package emojify :config (global-emojify-mode))
 
