@@ -394,4 +394,9 @@
          ("C-h k" . helpful-key)
          ("C-c C-d" . helpful-at-point)))
 
+(quelpa 'fuel)
+(add-to-list 'package-selected-packages 'fuel)
+(require 'factor-mode)
+(setf fuel-factor-root-dir "~/.local/bonsai/factor-2019-02-03")
+
 (customize-save-variable 'package-selected-packages package-selected-packages)
