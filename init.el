@@ -397,6 +397,6 @@
 (quelpa 'fuel)
 (add-to-list 'package-selected-packages 'fuel)
 (require 'fuel-mode)
-(setf fuel-factor-root-dir "~/.local/bonsai/factor-2019-02-03")
+(setf fuel-factor-root-dir (getenv "FACTOR_ROOT"))
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
