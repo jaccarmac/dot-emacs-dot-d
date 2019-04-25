@@ -395,8 +395,8 @@
          ("C-c C-d" . helpful-at-point)))
 
 (quelpa 'fuel)
-(add-to-list 'package-selected-packages 'fuel)
-(require 'fuel-mode)
-(setf fuel-factor-root-dir (getenv "FACTOR_ROOT"))
+(add-to-list 'package-selected-packages 'fuel-mode)
+(use-package fuel-mode
+  :init (setf fuel-factor-root-dir (getenv "FACTOR_ROOT")))
 
 (customize-save-variable 'package-selected-packages package-selected-packages)
