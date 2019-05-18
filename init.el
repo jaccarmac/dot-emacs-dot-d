@@ -358,6 +358,12 @@
 
 (quse-package fsharp-mode)
 
+;; I'm building this in Guix at the moment. The environment I'm using looks
+;; like this.
+;;
+;; guix environment --ad-hoc emacs gcc-toolchain zlib glib gobject-introspection cairo libpng poppler -- emacs
+;;
+;; Then M-x pdf-tools-install from inside Emacs.
 (quse-package pdf-tools)
 
 (savehist-mode)
