@@ -132,7 +132,7 @@
 
 (quse-package ledger-mode
   :init (add-to-list 'auto-mode-alist
-                     '("ledger/.*\\.dat\\'" . ledger-mode)))
+                     '("ledger.dat" . ledger-mode)))
 
 (quse-package password-store)
 
@@ -358,9 +358,7 @@
 
 (quse-package fsharp-mode)
 
-(quse-package pdf-tools
-  :config
-  (pdf-tools-install))
+(quse-package pdf-tools)
 
 (savehist-mode)
 
