@@ -131,8 +131,13 @@
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 (quse-package ledger-mode
-  :init (add-to-list 'auto-mode-alist
-                     '("ledger.dat" . ledger-mode)))
+  :init
+  (add-to-list 'auto-mode-alist
+               '("ledger.dat" . ledger-mode))
+  (add-hook 'ledger-mode-hook (lambda ()
+                                (setq-local tab-always-indent 'complete)
+                                (setq-local completion-cycle-threshold t)
+                                (setq-local ledger-complete-in-steps t))))
 
 (quse-package password-store)
 
