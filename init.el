@@ -115,9 +115,7 @@
 
 (quse-package htmlize)
 
-(quse-package (ox-reveal :fetcher github
-                         :repo "jaccarmac/org-reveal"
-                         :branch "fix-org-structure-template-alist"))
+(quse-package ox-reveal)
 
 (setf org-latex-pdf-process (list "latexmk -f -pdf %f"))
 
