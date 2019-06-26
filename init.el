@@ -352,7 +352,8 @@
 
 (quse-package mingus)
 
-(quse-package (mingus-header-mode :repo "atheriel/mingus-header-mode" :fetcher github))
+(quse-package (mingus-header-mode :repo "atheriel/mingus-header-mode" :fetcher github)
+  (add-hook 'mingus-playlist-hooks 'mingus-header-mode))
 
 (quse-package elm-mode :init (setf elm-format-on-save t))
 
