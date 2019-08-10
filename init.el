@@ -409,4 +409,9 @@
 (use-package fuel-mode
   :init (setf fuel-factor-root-dir (getenv "FACTOR_ROOT")))
 
+(quse-package (fast-scroll :fetcher github :repo "ahungry/fast-scroll")
+  :config
+  (fast-scroll-config)
+  (fast-scroll-advice-scroll-functions))
+
 (customize-save-variable 'package-selected-packages package-selected-packages)
