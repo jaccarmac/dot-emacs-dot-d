@@ -2,6 +2,8 @@
 
 (defvar network-security-level)
 (setf network-security-level 'high)
+;; bugfix for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34341
+(setf gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (setf default-directory "~")
 
@@ -11,7 +13,7 @@
   (unless (require 'quelpa nil t)
     (with-temp-buffer
       (url-insert-file-contents
-       "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
+       "https://framagit.org/steckerhalter/quelpa/raw/master/bootstrap.el")
       (eval-buffer)))
   (add-to-list 'package-selected-packages 'quelpa))
 
