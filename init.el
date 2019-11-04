@@ -340,6 +340,16 @@
 (use-package zone
   :init
   (defun lock-screen () ; TODO: pick a random function, show it, zone on that
+    ;; https://www.reddit.com/r/lisp/comments/dprpt6/is_there_a_way_to_get_every_symbol_that_is_of/f5yb5fi/
+    ;;
+    ;; CL code:
+    ;; (let (list)
+    ;;   (do-all-symbols (x)
+    ;;     (when (and (fboundp x)
+    ;;           (not (macro-function x))
+    ;;           (not (special-operator-p x)))
+    ;;       (push x list)))
+    ;;   list)
     "Lock screen using (zone) and xtrlock
  calls M-x zone on all frames and runs xtrlock"
     (interactive)
