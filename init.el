@@ -13,7 +13,7 @@
   (unless (require 'quelpa nil t)
     (with-temp-buffer
       (url-insert-file-contents
-       "https://framagit.org/steckerhalter/quelpa/raw/master/bootstrap.el")
+       "https://github.com/quelpa/quelpa/raw/master/bootstrap.el")
       (eval-buffer)))
   (add-to-list 'package-selected-packages 'quelpa))
 
