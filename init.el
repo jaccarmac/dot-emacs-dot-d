@@ -10,12 +10,13 @@
 (eval-and-compile
   (package-initialize)
   (setf quelpa-update-melpa-p nil)
-  (unless (require 'quelpa nil t)
+  (unless (package-installed-p 'quelpa)
     (with-temp-buffer
       (url-insert-file-contents
-       "https://github.com/quelpa/quelpa/raw/master/bootstrap.el")
-      (eval-buffer)))
-  (add-to-list 'package-selected-packages 'quelpa))
+       "https://github.com/quelpa/quelpa/raw/master/quelpa.el")
+      (eval-buffer)
+      (quelpa-self-upgrade))
+    (add-to-list 'package-selected-packages 'quelpa)))
 
 (eval-when-compile
   (quelpa 'use-package)
@@ -97,7 +98,7 @@
 
 (defun upgrade-and-clean-packages ()
   (interactive)
-  (quelpa-upgrade)
+  (quelpa-upgrade-all)
   (package-autoremove)
   (customize-save-variable 'package-selected-packages nil))
 
