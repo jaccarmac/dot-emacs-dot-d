@@ -168,7 +168,7 @@
 (quse-package cider
   :init
   (setf cider-repl-tab-command 'indent-for-tab-command)
-  (setf cider-default-repl-command "boot")
+  (setf cider-jack-in-default 'boot)
   (setf cider-repl-history-file "~/.cider-repl-history")
   (setf cider-repl-display-help-banner nil))
 
