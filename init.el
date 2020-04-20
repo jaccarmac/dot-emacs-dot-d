@@ -15,8 +15,8 @@
       (url-insert-file-contents
        "https://github.com/quelpa/quelpa/raw/master/quelpa.el")
       (eval-buffer)
-      (quelpa-self-upgrade))
-    (add-to-list 'package-selected-packages 'quelpa)))
+      (quelpa-self-upgrade)))
+  (add-to-list 'package-selected-packages 'quelpa))
 
 (eval-when-compile
   (quelpa 'use-package)
