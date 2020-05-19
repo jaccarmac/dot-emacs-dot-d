@@ -327,10 +327,10 @@
 (quse-package (xelb :fetcher github :repo "ch11ng/xelb"))
 (quse-package (exwm :fetcher github :repo "ch11ng/exwm")
   :preface
-  (declare-function exwm-config-default "exwm")
+  (declare-function exwm-config-example "exwm")
   :config
   (require 'exwm-config)
-  (exwm-config-default))
+  (exwm-config-example))
 
 (quse-package erc-twitch
   :preface
