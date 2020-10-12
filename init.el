@@ -83,7 +83,7 @@
 
 (quse-package rainbow-delimiters)
 
-(push '(font . "Iosevka 11") default-frame-alist)
+(push '(font . "JuliaMono 11") default-frame-alist)
 
 (quse-package emojify :config (global-emojify-mode))
 
