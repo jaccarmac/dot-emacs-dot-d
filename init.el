@@ -64,7 +64,7 @@
 (setq-default inhibit-splash-screen t)
 
 (quse-package (undo-tree :fetcher git
-                         :url "http://www.dr-qubit.org/git/undo-tree.git")
+                         :url "https://gitlab.com/tsc25/undo-tree")
               :init (global-undo-tree-mode))
 
 (quse-package powerline :init (powerline-default-theme))
