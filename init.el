@@ -383,7 +383,7 @@
 ;;
 ;; guix environment --ad-hoc emacs gcc-toolchain zlib glib gobject-introspection cairo libpng poppler -- emacs
 ;;
-;; Then M-x pdf-tools-install from inside Emacs.
+;; Then (pdf-tools-install nil t) from inside Emacs.
 (quse-package pdf-tools)
 
 (savehist-mode)
