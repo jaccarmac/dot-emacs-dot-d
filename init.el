@@ -65,7 +65,10 @@
 
 (quse-package (undo-tree :fetcher git
                          :url "https://gitlab.com/tsc25/undo-tree")
-              :init (global-undo-tree-mode))
+  :init
+  (global-undo-tree-mode)
+  (setf undo-tree-history-directory-alist
+        `((".". ,(concat user-emacs-directory "undo-tree-history")))))
 
 (quse-package powerline :init (powerline-default-theme))
 
