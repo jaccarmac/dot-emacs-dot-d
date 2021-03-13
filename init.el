@@ -431,4 +431,6 @@
   (fast-scroll-config)
   (fast-scroll-advice-scroll-functions))
 
+(quse-package elpher)
+
 (customize-save-variable 'package-selected-packages package-selected-packages)
