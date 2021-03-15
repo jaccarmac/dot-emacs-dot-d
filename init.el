@@ -88,7 +88,7 @@
 
 (push '(font . "JuliaMono 11") default-frame-alist)
 
-(quse-package emojify :config (global-emojify-mode))
+(quse-package emojify :hook (after-init . global-emojify-mode))
 
 (quse-package smartparens
   :init
