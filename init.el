@@ -374,10 +374,10 @@
 
 (quse-package elm-mode :init (setf elm-format-on-save t))
 
-(quse-package intero
-  :init
-  (add-hook 'haskell-mode-hook 'intero-mode)
-  (setf haskell-stylish-on-save t))
+(quelpa 'intero)
+(add-to-list 'package-selected-packages 'intero)
+(add-hook 'haskell-mode-hook 'intero-mode)
+(setf haskell-stylish-on-save t)
 
 (quse-package fsharp-mode)
 
