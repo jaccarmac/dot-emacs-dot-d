@@ -31,6 +31,8 @@
 
 (quse-package better-defaults)
 
+(put 'narrow-to-region 'disabled nil)
+
 (use-package saveplace :init
   (when (fboundp 'save-place-mode) (save-place-mode)))
 
