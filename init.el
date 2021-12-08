@@ -388,7 +388,7 @@
 ;; I'm building this in Guix at the moment. The environment I'm using looks
 ;; like this.
 ;;
-;; guix environment --ad-hoc emacs gcc-toolchain zlib glib gobject-introspection cairo libpng poppler -- emacs
+;; guix shell emacs gcc-toolchain zlib glib gobject-introspection cairo libpng poppler -- emacs
 ;;
 ;; Then (pdf-tools-install nil t) from inside Emacs.
 (quse-package pdf-tools)
