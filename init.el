@@ -391,7 +391,8 @@
 ;; guix shell emacs gcc-toolchain zlib glib gobject-introspection cairo libpng poppler -- emacs
 ;;
 ;; Then (pdf-tools-install nil t) from inside Emacs.
-(quse-package pdf-tools)
+(quse-package pdf-tools
+  :config (pdf-loader-install))
 
 (savehist-mode)
 
