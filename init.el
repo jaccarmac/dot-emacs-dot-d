@@ -438,4 +438,6 @@
 
 (quse-package elpher)
 
+(quse-package gnu-apl-mode)
+
 (customize-save-variable 'package-selected-packages package-selected-packages)
