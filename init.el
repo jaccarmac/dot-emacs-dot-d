@@ -193,11 +193,10 @@
 
 (quse-package slime
   :init
-  (setf slime-lisp-implementations '((ros ("ros" "run"))
-                                     (sbcl ("ros" "run" "-L" "sbcl-bin"))
-                                     (ccl ("ros" "run" "-L" "ccl-bin"))
-                                     (abcl ("ros" "run" "-L" "abcl-bin"))
-                                     (ecl ("ros" "run" "-L" "ecl"))))
+  (setf slime-lisp-implementations '((sbcl ("guix" "shell" "sbcl" "--" "sbcl"))
+                                     (ccl ("guix" "shell" "ccl" "--" "ccl"))
+                                     (abcl ("guix" "shell" "abcl" "--" "abcl"))
+                                     (ecl ("guix" "shell" "ecl" "--" "ecl"))))
   (setf common-lisp-hyperspec-root (getenv "HYPERSPEC_ROOT"))
   (setf slime-contribs '(slime-fancy))
   (slime-setup))
