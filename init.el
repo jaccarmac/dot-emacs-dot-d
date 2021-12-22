@@ -233,12 +233,6 @@
 
 (quse-package coffee-mode)
 
-;; (quelpa 'eclim)
-;; (add-to-list 'package-selected-packages 'eclim)
-;; (use-package eclim :config (global-eclim-mode))
-;; (use-package eclimd :config (setf eclimd-wait-for-process nil))
-;; (quse-package ac-emacs-eclim :config (ac-emacs-eclim-config))
-
 (quse-package yasnippet)
 
 (quse-package nim-mode)
