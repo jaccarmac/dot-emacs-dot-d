@@ -84,7 +84,7 @@
                                           'after-make-frame-functions
                                           #'load-nord)))
                     (add-hook 'after-make-frame-functions #'load-nord))
-	        (load-theme 'nord t)))
+                (load-theme 'nord t)))
 
 (quse-package rainbow-delimiters)
 
