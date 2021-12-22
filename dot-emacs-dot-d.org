@@ -641,9 +641,7 @@ Now, for some code.
   modes.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref nim-mode
-    (quse-package nim-mode
-      :init
-      (add-hook 'nim-mode-hook 'nimsuggest-mode))
+    (quse-package nim-mode)
   #+END_SRC
 
 * View Markdown.
