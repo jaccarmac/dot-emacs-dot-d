@@ -66,7 +66,8 @@ Now, for some code.
   #+BEGIN_SRC emacs-lisp :noweb-ref use-package
     (eval-when-compile
       (quelpa 'use-package)
-      (require 'use-package)
+      (require 'use-package))
+    (add-to-list 'package-selected-packages 'use-package)
   #+END_SRC
 
   After the actual boostrapping I can use a small convenience macro I wrote
@@ -74,9 +75,9 @@ Now, for some code.
   is fetched via (you guessed it) =quelpa=.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref quse-package
+    (eval-when-compile
       (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
       (require 'quse-package))
-    (add-to-list 'package-selected-packages 'use-package)
     (add-to-list 'package-selected-packages 'quse-package)
   #+END_SRC
 

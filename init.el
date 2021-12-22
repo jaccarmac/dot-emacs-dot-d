@@ -20,11 +20,12 @@
 
 (eval-when-compile
   (quelpa 'use-package)
-  (require 'use-package)
+  (require 'use-package))
+(add-to-list 'package-selected-packages 'use-package)
 
+(eval-when-compile
   (quelpa '(quse-package :fetcher github :repo "jaccarmac/quse-package"))
   (require 'quse-package))
-(add-to-list 'package-selected-packages 'use-package)
 (add-to-list 'package-selected-packages 'quse-package)
 
 (require 'bind-key)
