@@ -121,7 +121,8 @@ Now, for some code.
   behavior for myself.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref save-place-mode
-    (use-package saveplace :init
+    (use-package saveplace
+      :init
       (when (fboundp 'save-place-mode) (save-place-mode)))
   #+END_SRC
 
@@ -956,16 +957,16 @@ Is [[https://countvajhula.com/2021/09/25/the-animated-guide-to-symex/][Symex]] b
      <<powerline>>
 
      (quse-package nord-theme
-                   :init
-                   (if (daemonp)
-                       (cl-labels ((load-nord (frame)
-                                              (with-selected-frame frame
-                                                (load-theme 'nord t))
-                                              (remove-hook
-                                               'after-make-frame-functions
-                                               #'load-nord)))
-                         (add-hook 'after-make-frame-functions #'load-nord))
-                     (load-theme 'nord t)))
+       :init
+       (if (daemonp)
+           (cl-labels ((load-nord (frame)
+                                  (with-selected-frame frame
+                                    (load-theme 'nord t))
+                                  (remove-hook
+                                   'after-make-frame-functions
+                                   #'load-nord)))
+             (add-hook 'after-make-frame-functions #'load-nord))
+         (load-theme 'nord t)))
 
      <<rainbow-delimiters>>
 
