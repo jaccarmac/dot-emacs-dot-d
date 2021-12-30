@@ -914,6 +914,8 @@ emacs-libvterm
 take hints from https://github.com/hardcoreplayers/Eva
 
 Is [[https://countvajhula.com/2021/09/25/the-animated-guide-to-symex/][Symex]] better than Paredit/Smartparens?
+
+[[https://github.com/MatthewZMD/.emacs.d][M-EMACS, a possibly faster distribution]]
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
