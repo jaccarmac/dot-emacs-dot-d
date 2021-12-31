@@ -186,6 +186,11 @@ Now, for some code.
   Exposing Emacs' multi-branch undo and redo feature graphically is
   fantastically useful. Tony Cubitt's =undo-tree-mode= does just that.
 
+  TODO =undo-tree= has started to get really slow. None of the solutions I've
+  found online seem to help, as it seems unrelated to corrupt history. Lazy
+  drawing is enabled, undo-in-region is disabled... Profiling tells me
+  little. ~line-number-at-pos~ in ~undo-tree-move-down~ eats a lot of CPU time.
+
   #+BEGIN_SRC emacs-lisp :noweb-ref undo-tree
     (quse-package (undo-tree :fetcher git
                              :url "https://gitlab.com/tsc25/undo-tree")
