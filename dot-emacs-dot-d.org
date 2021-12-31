@@ -192,6 +192,11 @@ Now, for some code.
   little. ~line-number-at-pos~ in ~undo-tree-move-down~ eats a lot of CPU
   time. The author wrote a [[https://www.dr-qubit.org/Lost_undo-tree_history.html][blog post]] which is at least worth reading.
 
+  There is a problem in the definition of ~undo-tree-switch-branch~. It pulls
+  data from ~prefix-arg~, when ~current-prefix-arg~ is the correct place to
+  check. I'm not sure why its ~interactive~ doesn't use a string, but that
+  change is enough to allow use of the undo tree without the visualization.
+
   #+BEGIN_SRC emacs-lisp :noweb-ref undo-tree
     (quse-package (undo-tree :fetcher git
                              :url "https://gitlab.com/tsc25/undo-tree")
