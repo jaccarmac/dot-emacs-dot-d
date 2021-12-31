@@ -189,7 +189,8 @@ Now, for some code.
   TODO =undo-tree= has started to get really slow. None of the solutions I've
   found online seem to help, as it seems unrelated to corrupt history. Lazy
   drawing is enabled, undo-in-region is disabled... Profiling tells me
-  little. ~line-number-at-pos~ in ~undo-tree-move-down~ eats a lot of CPU time.
+  little. ~line-number-at-pos~ in ~undo-tree-move-down~ eats a lot of CPU
+  time. The author wrote a [[https://www.dr-qubit.org/Lost_undo-tree_history.html][blog post]] which is at least worth reading.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref undo-tree
     (quse-package (undo-tree :fetcher git
