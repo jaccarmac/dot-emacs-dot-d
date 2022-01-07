@@ -928,8 +928,34 @@ Is [[https://countvajhula.com/2021/09/25/the-animated-guide-to-symex/][Symex]] b
 
 [[https://github.com/MatthewZMD/.emacs.d][M-EMACS, a possibly faster distribution]]
 ** Profile startup.
-I haven't tried the [[https://www.emacswiki.org/emacs/ProfileDotEmacs][file linked on the wiki]] yet. [[https://github.com/jschaf/esup][ESUP]] downloads but chokes on
-something in the Zig mode.
+[[https://github.com/jschaf/esup][ESUP]] chokes on the Zig mode and YASnippet. Making a few changes - variable at
+the top and a couple explicit ~require~ calls - speeds things way up. It seems
+that most of my startup sluggishness is due to activating global stuff and
+loading Org. The latter issue can be fixed in a more or less elegant way:
+~use-package~ dependency specification.
+
+#+begin_src elisp
+  ;;; -*- lexical-binding: t; -*-
+
+  (setf use-package-always-defer t)
+#+end_src
+
+#+begin_src elisp
+  (declare-function ido-everywhere "ido")
+  (require 'ido)
+  (ido-everywhere)
+#+end_src
+
+#+begin_src elisp
+  (require 'ox-latex)
+   (add-to-list 'org-latex-classes
+#+end_src
+
+I got further speedups by changing ~quse-package~ to ~use-package~, so it sure
+looks like Quelpa is slowing my startup way down. Deferring everything makes
+Emacs a little weird. Most of the weirdness seems to be fixed with well-placed
+~:demand~ marks, but I imagine I should change ~quse-package~ to behave more
+like ~quelpa-use-package~, avoiding anything Quelpa for as long as possible.
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
