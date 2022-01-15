@@ -929,6 +929,8 @@ Is [[https://countvajhula.com/2021/09/25/the-animated-guide-to-symex/][Symex]] b
 [[https://github.com/MatthewZMD/.emacs.d][M-EMACS, a possibly faster distribution]]
 
 [[https://shaunsingh.github.io/nix-darwin-dotfiles/][Shaun Singh's config, yet another possible template]].
+
+[[https://github.com/daviwil/emacs-from-scratch][Something closer to an actual template]].
 ** Profile startup.
 [[https://github.com/jschaf/esup][ESUP]] chokes on the Zig mode and YASnippet. Making a few changes - variable at
 the top and a couple explicit ~require~ calls - speeds things way up. It seems
