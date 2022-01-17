@@ -960,6 +960,10 @@ looks like Quelpa is slowing my startup way down. Deferring everything makes
 Emacs a little weird. Most of the weirdness seems to be fixed with well-placed
 ~:demand~ marks, but I imagine I should change ~quse-package~ to behave more
 like ~quelpa-use-package~, avoiding anything Quelpa for as long as possible.
+** Templating.
+[[https://www.emacswiki.org/emacs/TempoMode][Tempo]] seems to be behind the Org Tempo stuff I enabled manually a while
+back. There's an incremental improvement package which showed up on MELPA:
+[[https://github.com/minad/tempel][TempEl]]. It may be worth checking out.
 * Tangle source code.
 
   All files get tangled to the directory that this file is in.
