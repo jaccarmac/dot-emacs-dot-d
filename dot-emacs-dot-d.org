@@ -936,6 +936,8 @@ It's at least useful to read to get a handle on the new init structure. Ideally
 it will be good enough to incrementally approach a better config or better
 ~quse-package~.
 ** Profile startup.
+An article about [[https://blog.d46.us/advanced-emacs-startup/][advanced techniques]] seems apropos.
+
 [[https://github.com/jschaf/esup][ESUP]] chokes on the Zig mode and YASnippet. Making a few changes - variable at
 the top and a couple explicit ~require~ calls - speeds things way up. It seems
 that most of my startup sluggishness is due to activating global stuff and
