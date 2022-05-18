@@ -369,6 +369,8 @@
 
 (quse-package elm-mode :init (setf elm-format-on-save t))
 
+(quse-package haskell-mode)
+
 ;; TODO Find a replacement as Intero seems to have stopped working and has
 ;; definitely stopped getting updates.
 (quelpa 'intero)
