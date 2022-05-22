@@ -357,7 +357,7 @@
       ;; (shell-command "xtrlock &")
       (set-process-sentinel
        (start-process "xtrlock" nil "xtrlock")
-       '(lambda (process event)
+       #'(lambda ()
           (zone-leave-me-alone)))
       (zone-when-idle 1)))
   :commands (zone-leave-me-alone zone-when-idle))
