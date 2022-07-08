@@ -412,7 +412,7 @@
 
 (quse-package (bug-hunter :fetcher github :repo "Malabarba/elisp-bug-hunter"))
 
-(quse-package (inform7-mode :fetcher github :repo "jaccarmac/inform7-mode" :branch "extension-files"))
+(quse-package (inform7-mode :fetcher github :repo "fred-o/inform7-mode"))
 
 (quse-package helpful
   :bind (("C-h f" . helpful-callable)
