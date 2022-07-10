@@ -18,6 +18,23 @@
       (quelpa-self-upgrade)))
   (add-to-list 'package-selected-packages 'quelpa))
 
+(advice-add 'quelpa-build--config-file-list :around
+            #'fix-quelpa-build-default-files-spec)
+(advice-add 'quelpa-build-package :around
+            #'fix-quelpa-build-default-files-spec)
+(defun fix-quelpa-build-default-files-spec (oldfun &rest r)
+  (let ((quelpa-build-default-files-spec
+         '("*.el" "lisp/*.el"
+           "dir" "*.info" "*.texi" "*.texinfo"
+           "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
+           "docs/dir" "docs/*.info" "docs/*.texi" "docs/*.texinfo"
+           (:exclude
+            ".dir-locals.el" "lisp/.dir-locals.el"
+            "test.el" "tests.el" "*-test.el" "*-tests.el"
+            "lisp/test.el" "lisp/tests.el" "lisp/*-test.el"
+            "lisp/*-tests.el"))))
+    (apply oldfun r)))
+
 (eval-when-compile
   (quelpa 'use-package)
   (require 'use-package))
