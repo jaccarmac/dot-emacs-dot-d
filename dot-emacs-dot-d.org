@@ -1122,9 +1122,9 @@ back. There's an incremental improvement package which showed up on MELPA:
 
      <<yaml-mode>>
 
-     <<jedi>>
-
      <<virtualenvwrapper>>
+
+     <<jedi>>
 
      <<hoon-mode>>
 

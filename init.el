@@ -276,12 +276,6 @@
 
 (quse-package yaml-mode)
 
-(quse-package jedi
-  :init
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setf jedi:complete-on-dot t)
-  (setf jedi:use-shortcuts t))
-
 (quse-package virtualenvwrapper
   :preface
   (defvar python-environment-directory)
@@ -292,6 +286,12 @@
   (let ((global-venv-location "~/.virtualenvs"))
     (setf python-environment-directory global-venv-location)
     (setf venv-location global-venv-location)))
+
+(quse-package jedi
+  :init
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setf jedi:complete-on-dot t)
+  (setf jedi:use-shortcuts t))
 
 (quse-package (hoon-mode :fetcher github :repo "urbit/hoon-mode.el"))
 
