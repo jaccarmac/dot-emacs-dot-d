@@ -458,6 +458,13 @@ Now, for some code.
     (quse-package magit)
   #+END_SRC
 
+Magit's interface to the GitHubs and GitLabs of the world ("forges"), is
+seemingly useful and not half as difficult to set up as advertised.
+
+#+begin_src emacs-lisp :noweb-ref forge
+  (quse-package forge)
+#+end_src
+
   Using SSH Git remotes on Windows is a nightmare due to how difficult it is to
   get ssh-agent's environment variables into an Emacs not started in Cygwin or
   MSYS. Thankfully, the Magit maintainers have written a package to manage said
@@ -1081,6 +1088,8 @@ back. There's an incremental improvement package which showed up on MELPA:
      <<projectile>>
 
      <<magit>>
+
+     <<forge>>
 
      <<ssh-agency>>
 

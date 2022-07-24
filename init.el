@@ -176,6 +176,8 @@
 
 (quse-package magit)
 
+(quse-package forge)
+
 (quse-package ssh-agency)
 
 (quse-package editorconfig :config (editorconfig-mode 1))
