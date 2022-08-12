@@ -377,7 +377,7 @@
       (set-process-sentinel
        (start-process "xtrlock" nil "xtrlock")
        #'(lambda ()
-          (zone-leave-me-alone)))
+           (zone-leave-me-alone)))
       (zone-when-idle 1)))
   :commands (zone-leave-me-alone zone-when-idle))
 
@@ -402,7 +402,7 @@
 ;; I'm building this in Guix at the moment. The environment I'm using looks
 ;; like this.
 ;;
-;; guix shell --pure emacs bash grep sed gawk gcc-toolchain autoconf automake pkg-config make zlib glib gobject-introspection cairo libpng poppler -- emacs
+;; guix shell --pure emacs bash grep sed gawk gcc-toolchain autoconf automake pkg-config make zlib gobject-introspection cairo libpng poppler -- emacs
 ;;
 ;; Then (pdf-tools-install nil t) from inside Emacs.
 (quse-package pdf-tools
