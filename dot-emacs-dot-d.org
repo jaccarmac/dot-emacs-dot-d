@@ -461,6 +461,10 @@ Now, for some code.
 Magit's interface to the GitHubs and GitLabs of the world ("forges"), is
 seemingly useful and not half as difficult to set up as advertised.
 
+It does require compilation of a SQL library and is not as polite as
+=pdf-tools= (starts the process without asking). A similar Guix profile is
+probably in order but not documented here yet.
+
 #+begin_src emacs-lisp :noweb-ref forge
   (quse-package forge)
 #+end_src
