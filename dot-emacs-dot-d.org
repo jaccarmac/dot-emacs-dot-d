@@ -494,6 +494,16 @@ probably in order but not documented here yet.
     (quse-package direx)
   #+END_SRC
 
+  I started using =direnv= and realized instantly how powerful it is,
+  especially combined with Guix and a little bit of shell scripting. The
+  per-buffer approach to adding it to Emacs adds a little bit of latency, which
+  I'm not thrilled with. But other than that it works like a charm. This
+  snippet gets put at the very end of the init file, for reasons detailed on
+  =envrc='s GitHub page.
+
+  #+begin_src emacs-lisp :noweb-ref envrc
+    (quse-package envrc :init (envrc-global-mode))
+  #+end_src
 * Complete symbols.
 
   It's nearly impossible to work with large projects or avoid misspellings
@@ -1291,6 +1301,8 @@ back. There's an incremental improvement package which showed up on MELPA:
      (quse-package elpher)
 
      (quse-package gnu-apl-mode)
+
+     <<envrc>>
 
      <<save-package-selected-packages>>
    #+END_SRC

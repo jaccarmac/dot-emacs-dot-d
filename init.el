@@ -459,4 +459,6 @@
 
 (quse-package gnu-apl-mode)
 
+(quse-package envrc :init (envrc-global-mode))
+
 (customize-save-variable 'package-selected-packages package-selected-packages)
