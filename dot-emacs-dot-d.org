@@ -1242,17 +1242,12 @@ back. There's an incremental improvement package which showed up on MELPA:
 
      (quse-package fsharp-mode)
 
-     ;; I'm building this in Guix at the moment. The profile in use is initialized
-     ;; with:
+     ;; I'm building this in Guix at the moment. The environment I'm using looks
+     ;; like this.
      ;;
-     ;; guix install emacs bash grep sed gawk gcc-toolchain autoconf automake pkg-config make zlib gobject-introspection cairo libpng poppler
+     ;; guix shell -r ~/.emacs.d/pdf-tools-environment --pure emacs bash grep sed gawk gcc-toolchain autoconf automake pkg-config make zlib gobject-introspection cairo libpng poppler -- emacs
      ;;
-     ;; Launch Emacs from that profile or an environment, then (pdf-tools-install
-     ;; nil t) from inside Emacs.
-     ;;
-     ;; It was a guix shell --pure invocation for a while, but profiles are better
-     ;; for keeping around the linked libraries and the need for purity is
-     ;; debatable.
+     ;; Then (pdf-tools-install nil t) from inside Emacs.
      (quse-package pdf-tools
        :config (pdf-loader-install))
 
