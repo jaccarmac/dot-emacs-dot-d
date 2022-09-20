@@ -35,6 +35,11 @@
             "lisp/*-tests.el"))))
     (apply oldfun r)))
 
+(defun quelpa-build--checkout-sourcehut (name config dir)
+  "Check package NAME with config CONFIG out of sourcehut into DIR."
+  (let ((url (format "https://git.sr.ht/~%s" (plist-get config :repo))))
+    (quelpa-build--checkout-git name (plist-put (copy-sequence config) :url url) dir)))
+
 (eval-when-compile
   (quelpa 'use-package)
   (require 'use-package))

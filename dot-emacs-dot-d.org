@@ -48,8 +48,8 @@ Now, for some code.
 
   Unfortunately, the package has started to bitrot with regard to the
   =package-build= embedding/dependency. I'm patching the affected functions
-  with advice, but probably need to start moving away from this style of
-  package management.
+  with advice and adding sourcehut support, but probably need to start moving
+  away from this style of package management.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref quelpa
     (eval-and-compile
@@ -79,6 +79,11 @@ Now, for some code.
                 "lisp/test.el" "lisp/tests.el" "lisp/*-test.el"
                 "lisp/*-tests.el"))))
         (apply oldfun r)))
+
+    (defun quelpa-build--checkout-sourcehut (name config dir)
+      "Check package NAME with config CONFIG out of sourcehut into DIR."
+      (let ((url (format "https://git.sr.ht/~%s" (plist-get config :repo))))
+        (quelpa-build--checkout-git name (plist-put (copy-sequence config) :url url) dir)))
   #+END_SRC
 
   Because of the last snippet, =use-package= can be downloaded using the
