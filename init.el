@@ -300,7 +300,7 @@
   (setf jedi:complete-on-dot t)
   (setf jedi:use-shortcuts t))
 
-(quse-package (hoon-mode :fetcher github :repo "urbit/hoon-mode.el"))
+(quse-package (hoon-mode :fetcher github :repo "urbit/hoon-mode.el" :files (:defaults "hoon-dictionary.json")))
 
 (quse-package (gdscript-mode :fetcher github
                              :repo "jaccarmac/gdscript-mode"
@@ -311,9 +311,6 @@
                                      '("Dockerfile\\'" . dockerfile-mode)))
 
 (quse-package docker)
-(quse-package docker-tramp)
-
-(quse-package csharp-mode)
 
 (quse-package request-deferred)
 (quse-package omnisharp
