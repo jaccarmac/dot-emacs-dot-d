@@ -845,17 +845,9 @@ probably in order but not documented here yet.
                                          '("Dockerfile\\'" . dockerfile-mode)))
 
     (quse-package docker)
-    (quse-package docker-tramp)
   #+END_SRC
 
 * Make Emacs and .NET cooperate.
-
-  There is a complete and up-to-date major mode for C#, the only the .NET
-  language I use at the moment, on MELPA.
-
-  #+BEGIN_SRC emacs-lisp :noweb-ref csharp-mode
-    (quse-package csharp-mode)
-  #+END_SRC
 
   OmniSharp is a project which provides integration with .NET's introspection
   libraries to tools other than Visual Studio. I've had a lot of problems
@@ -1161,8 +1153,6 @@ back. There's an incremental improvement package which showed up on MELPA:
      <<gdscript-mode>>
 
      <<docker>>
-
-     <<csharp-mode>>
 
      <<omnisharp>>
 
