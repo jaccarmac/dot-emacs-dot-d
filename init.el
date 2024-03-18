@@ -136,7 +136,7 @@
 (setf dired-dwim-target t)
 
 (quse-package (org :fetcher git
-                   :url "https://code.orgmode.org/bzg/org-mode.git"
+                   :url "https://git.sr.ht/~bzg/org-mode"
                    :files ("lisp/*.el"
                            "contrib/lisp/*.el"
                            "doc/dir"
@@ -344,8 +344,8 @@
 
 (quse-package mediawiki)
 
-(quse-package (xelb :fetcher github :repo "ch11ng/xelb"))
-(quse-package (exwm :fetcher github :repo "ch11ng/exwm")
+(quse-package (xelb :fetcher github :repo "emacs-exwm/xelb"))
+(quse-package (exwm :fetcher github :repo "emacs-exwm/exwm")
   :preface
   (declare-function exwm-config-example "exwm")
   :config
