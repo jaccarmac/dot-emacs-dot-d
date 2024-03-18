@@ -813,7 +813,7 @@ probably in order but not documented here yet.
   mode.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref hoon-mode
-    (quse-package (hoon-mode :fetcher github :repo "urbit/hoon-mode.el"))
+    (quse-package (hoon-mode :fetcher github :repo "urbit/hoon-mode.el" :files (:defaults "hoon-dictionary.json")))
   #+END_SRC
 
 * Edit GDScript files.
