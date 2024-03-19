@@ -18,28 +18,6 @@
       (quelpa-self-upgrade)))
   (add-to-list 'package-selected-packages 'quelpa))
 
-(advice-add 'quelpa-build--config-file-list :around
-            #'fix-quelpa-build-default-files-spec)
-(advice-add 'quelpa-build-package :around
-            #'fix-quelpa-build-default-files-spec)
-(defun fix-quelpa-build-default-files-spec (oldfun &rest r)
-  (let ((quelpa-build-default-files-spec
-         '("*.el" "lisp/*.el"
-           "dir" "*.info" "*.texi" "*.texinfo"
-           "doc/dir" "doc/*.info" "doc/*.texi" "doc/*.texinfo"
-           "docs/dir" "docs/*.info" "docs/*.texi" "docs/*.texinfo"
-           (:exclude
-            ".dir-locals.el" "lisp/.dir-locals.el"
-            "test.el" "tests.el" "*-test.el" "*-tests.el"
-            "lisp/test.el" "lisp/tests.el" "lisp/*-test.el"
-            "lisp/*-tests.el"))))
-    (apply oldfun r)))
-
-(defun quelpa-build--checkout-sourcehut (name config dir)
-  "Check package NAME with config CONFIG out of sourcehut into DIR."
-  (let ((url (format "https://git.sr.ht/~%s" (plist-get config :repo))))
-    (quelpa-build--checkout-git name (plist-put (copy-sequence config) :url url) dir)))
-
 (eval-when-compile
   (quelpa 'use-package)
   (require 'use-package))
@@ -89,8 +67,8 @@
 
 (setq-default inhibit-splash-screen t)
 
-(quse-package (undo-tree :fetcher git
-                         :url "https://gitlab.com/tsc25/undo-tree")
+(quse-package (undo-tree :fetcher gitlab
+                         :repo "tsc25/undo-tree")
   :init
   (global-undo-tree-mode)
   (setf undo-tree-history-directory-alist
@@ -135,8 +113,8 @@
 
 (setf dired-dwim-target t)
 
-(quse-package (org :fetcher git
-                   :url "https://git.sr.ht/~bzg/org-mode"
+(quse-package (org :fetcher sourcehut
+                   :repo "bzg/org-mode"
                    :files ("lisp/*.el"
                            "contrib/lisp/*.el"
                            "doc/dir"
