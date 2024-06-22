@@ -1094,8 +1094,6 @@ back. There's an incremental improvement package which showed up on MELPA:
 
      <<cider>>
 
-     <<ac-cider>>
-
      <<slime>>
 
      <<ac-slime>>
@@ -1132,8 +1130,6 @@ back. There's an incremental improvement package which showed up on MELPA:
 
      <<docker>>
 
-     <<omnisharp>>
-
      <<lua-mode>>
 
      <<edit-server>>
@@ -1159,12 +1155,7 @@ back. There's an incremental improvement package which showed up on MELPA:
      <<mediawiki>>
 
      (quse-package (xelb :fetcher github :repo "emacs-exwm/xelb"))
-     (quse-package (exwm :fetcher github :repo "emacs-exwm/exwm")
-       :preface
-       (declare-function exwm-config-example "exwm")
-       :config
-       (require 'exwm-config)
-       (exwm-config-example))
+     (quse-package (exwm :fetcher github :repo "emacs-exwm/exwm"))
 
      (quse-package erc-twitch
        :preface

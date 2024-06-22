@@ -181,20 +181,6 @@
   (setf cider-repl-history-file "~/.cider-repl-history")
   (setf cider-repl-display-help-banner nil))
 
-(quse-package ac-cider
-  :init
-  (add-hook 'cider-mode-hook 'ac-cider-setup)
-  (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
-  (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-  (add-hook 'cider-repl-mode-hook 'ac-flyspell-workaround)
-  (add-hook 'cider-clojure-interaction-mode-hook 'ac-cider-setup)
-  (add-hook 'cider-clojure-interaction-mode-hook 'ac-flyspell-workaround)
-  (eval-after-load "auto-complete"
-    '(progn
-       (add-to-list 'ac-modes 'cider-mode)
-       (add-to-list 'ac-modes 'cider-repl-mode)
-       (add-to-list 'ac-modes 'cider-clojure-interaction-mode))))
-
 (quse-package slime
   :init
   (setf slime-lisp-implementations '((sbcl ("guix" "shell" "sbcl" "--" "sbcl"))
@@ -290,11 +276,6 @@
 
 (quse-package docker)
 
-(quse-package request-deferred)
-(quse-package omnisharp
-  :config
-  (add-hook 'csharp-mode-hook 'omnisharp-mode))
-
 (quse-package lua-mode)
 
 (quse-package edit-server
@@ -323,12 +304,7 @@
 (quse-package mediawiki)
 
 (quse-package (xelb :fetcher github :repo "emacs-exwm/xelb"))
-(quse-package (exwm :fetcher github :repo "emacs-exwm/exwm")
-  :preface
-  (declare-function exwm-config-example "exwm")
-  :config
-  (require 'exwm-config)
-  (exwm-config-example))
+(quse-package (exwm :fetcher github :repo "emacs-exwm/exwm"))
 
 (quse-package erc-twitch
   :preface
