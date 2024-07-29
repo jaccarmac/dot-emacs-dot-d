@@ -360,6 +360,10 @@
 ;;
 ;; guix shell -r ~/.emacs.d/pdf-tools-environment --pure emacs bash grep sed gawk gcc-toolchain autoconf automake pkg-config make zlib gobject-introspection cairo libpng poppler -- emacs
 ;;
+;; Add AC_USE_SYSTEM_EXTENSIONS to the checks in server's configure.ac;
+;; #include config.h at the top of synctex_parser.c. This fixes
+;; vedang/pdf-tools#282.
+;;
 ;; Then (pdf-tools-install nil t) from inside Emacs.
 (quse-package pdf-tools
   :config (pdf-loader-install))
