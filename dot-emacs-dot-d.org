@@ -329,8 +329,8 @@ Now, for some code.
   Org mode is so awesome that I use it as my default mode.
 
   #+BEGIN_SRC emacs-lisp :noweb-ref org
-    (quse-package (org :fetcher sourcehut
-                       :repo "bzg/org-mode"
+    (quse-package (org :fetcher git
+                       :url "https://git.savannah.gnu.org/git/emacs/org-mode"
                        :files ("lisp/*.el"
                                "contrib/lisp/*.el"
                                "doc/dir"

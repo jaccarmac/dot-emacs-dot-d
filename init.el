@@ -113,8 +113,8 @@
 
 (setf dired-dwim-target t)
 
-(quse-package (org :fetcher sourcehut
-                   :repo "bzg/org-mode"
+(quse-package (org :fetcher git
+                   :url "https://git.savannah.gnu.org/git/emacs/org-mode"
                    :files ("lisp/*.el"
                            "contrib/lisp/*.el"
                            "doc/dir"
