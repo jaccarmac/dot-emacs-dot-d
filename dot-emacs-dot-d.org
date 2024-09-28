@@ -907,6 +907,10 @@ probably in order but not documented here yet.
   #+END_SRC
 
 * TODO
+I learned about [[https://github.com/emacs-citar/citar][citar]] via a [[https://localauthor.github.io/posts/popup-frames.html][blog post covering pop-up frames]] ([[https://www.reddit.com/r/emacs/comments/1frg7yg/using_prots_emacsclient_popup_frames_with_macos/][Reddit]]); Sure
+feels like the right place to start using Emacs as more of an
+everything-reader. That is: Think like a researcher in citations (= seriously).
+
 https://www.gnu.org/software/hyperbole/
 
 unicode-fonts by rolandwalker
