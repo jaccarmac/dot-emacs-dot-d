@@ -955,6 +955,7 @@ Is [[https://countvajhula.com/2021/09/25/the-animated-guide-to-symex/][Symex]] b
 [[https://github.com/daviwil/emacs-from-scratch][Something closer to an actual template]].
 ** [[https://www.emacswiki.org/emacs/Icicles][Icicles]]
 *** [[https://www.reddit.com/r/emacs/comments/vr81n6/comment/ieu8d9q/][and minibuffer completion]]
+*** [[https://git.sr.ht/~protesilaos/mct][MCT as another minimal layer]]
 ** [[https://github.com/plexus/chemacs2][Chemacs2]]
 It's at least useful to read to get a handle on the new init structure. Ideally
 it will be good enough to incrementally approach a better config or better
