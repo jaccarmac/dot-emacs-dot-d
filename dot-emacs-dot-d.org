@@ -952,6 +952,8 @@ Is [[https://countvajhula.com/2021/09/25/the-animated-guide-to-symex/][Symex]] b
 [[https://shaunsingh.github.io/nix-darwin-dotfiles/][Shaun Singh's config, yet another possible template]].
 
 [[https://github.com/daviwil/emacs-from-scratch][Something closer to an actual template]].
+
+[[https://www.reddit.com/r/emacs/comments/1ktfl8b/what_is_the_undotree_sucessor/][undo-tree outdated or slow?]]
 ** [[https://www.emacswiki.org/emacs/Icicles][Icicles]]
 *** [[https://www.reddit.com/r/emacs/comments/vr81n6/comment/ieu8d9q/][and minibuffer completion]]
 *** [[https://git.sr.ht/~protesilaos/mct][MCT as another minimal layer]]
