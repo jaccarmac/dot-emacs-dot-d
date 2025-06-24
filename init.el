@@ -170,7 +170,8 @@
 (quse-package auto-complete
   :init
   (require 'auto-complete-config)
-  (ac-config-default))
+  (ac-config-default)
+  (setq-default ac-sources (remove 'ac-source-abbrev ac-sources)))
 
 (quse-package ac-capf)
 
@@ -354,16 +355,19 @@
 
 (quse-package fsharp-mode)
 
-;; I'm building this in Guix at the moment. The environment I'm using looks
-;; like this.
+;; I'm building this in Guix at the moment. direnv is already installed, so I'm
+;; using a directory with the following contents. The build succeeds with some
+;; seemingly uncritical locale warnings.
 ;;
-;; guix shell -r ~/.emacs.d/pdf-tools-environment --pure emacs bash grep sed gawk gcc-toolchain autoconf automake pkg-config make zlib gobject-introspection cairo libpng poppler -- emacs
+;; eval "$(guix shell --root=env --pure bash coreutils grep sed gawk gcc-toolchain autoconf automake pkg-config make zlib gobject-introspection cairo libpng poppler --search-paths)"
 ;;
 ;; Add AC_USE_SYSTEM_EXTENSIONS to the checks in server's configure.ac;
 ;; #include config.h at the top of synctex_parser.c. This fixes
 ;; vedang/pdf-tools#282.
 ;;
 ;; Then (pdf-tools-install nil t) from inside Emacs.
+;;
+;; TODO: An Emacs-only environment setup to run the build: direnv exec .emacs.d/pdf-tools-environment /home/jaccarmac/.guix-profile/bin/direnv export json + with-environment-variables
 (quse-package pdf-tools
   :config (pdf-loader-install))
 
